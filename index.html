@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VDOT Coach — Daniels-Style Running Coach</title>
+<title>VDOT Coach — Your Personal Running Coach</title>
 <style>
   :root{
     --bg:#0b1220; --panel:#131c2e; --panel2:#1a2740; --line:#25344f;
@@ -18,26 +18,34 @@
     background:radial-gradient(1200px 600px at 80% -10%,#16233d 0%,var(--bg) 55%);
     color:var(--text); line-height:1.5; min-height:100vh;
   }
-  .wrap{max-width:960px;margin:0 auto;padding:24px 18px 64px}
+  .wrap{max-width:980px;margin:0 auto;padding:24px 18px 64px}
   header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
   .logo{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
     background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:24px;box-shadow:var(--shadow)}
   h1{font-size:1.5rem;margin:0;letter-spacing:.2px}
   .tag{color:var(--muted);font-size:.9rem;margin:2px 0 0}
+  .steps{display:flex;gap:8px;margin:18px 0 4px;flex-wrap:wrap}
+  .stepdot{font-size:.75rem;color:var(--muted);background:var(--panel2);border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;font-weight:600}
+  .stepdot.on{color:#06231a;background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
     padding:20px;margin-top:18px;box-shadow:var(--shadow)}
-  .card h2{margin:0 0 4px;font-size:1.1rem}
+  .card h2{margin:0 0 4px;font-size:1.15rem}
   .card .sub{color:var(--muted);font-size:.88rem;margin:0 0 16px}
-  label{display:block;font-size:.82rem;color:var(--muted);margin:0 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  label{display:block;font-size:.8rem;color:var(--muted);margin:14px 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  label:first-of-type{margin-top:0}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-  select,input{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);
-    background:var(--panel2);color:var(--text);font-size:1rem;outline:none}
-  select:focus,input:focus{border-color:var(--accent2)}
-  .btn{margin-top:16px;width:100%;padding:14px;border:0;border-radius:12px;cursor:pointer;
+  select,input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+    background:var(--panel2);color:var(--text);font-size:1rem;outline:none;font-family:inherit}
+  textarea{min-height:64px;resize:vertical}
+  select:focus,input:focus,textarea:focus{border-color:var(--accent2)}
+  .btn{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;cursor:pointer;
     font-size:1.02rem;font-weight:700;color:#06231a;
     background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
   .btn:active{transform:translateY(1px)}
+  .btn.ghost{background:var(--panel2);color:var(--text);border:1px solid var(--line);box-shadow:none}
+  .btnrow{display:flex;gap:12px}
   .quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .quick button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);
     border-radius:999px;padding:7px 12px;font-size:.82rem;cursor:pointer}
@@ -49,22 +57,41 @@
   .vdot .lbl{color:var(--muted)}
   .coach{background:var(--panel2);border-left:3px solid var(--accent);border-radius:10px;
     padding:14px 16px;margin-top:14px;color:#dbe6fb}
-  .paces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
+  .paces{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:8px}
   .pace{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px}
   .pace .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
-  .pace .p{font-size:1.35rem;font-weight:800;margin:4px 0 2px}
-  .pace .d{font-size:.78rem;color:var(--muted)}
+  .pace .p{font-size:1.3rem;font-weight:800;margin:4px 0 2px}
+  .pace .d{font-size:.76rem;color:var(--muted)}
   .pace .bar{height:4px;border-radius:4px;margin-top:10px;opacity:.9}
   table{width:100%;border-collapse:collapse;margin-top:6px;font-variant-numeric:tabular-nums}
-  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:.94rem}
-  th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.5px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-size:.92rem}
+  th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.5px}
   td.t{font-weight:700}
+  .week{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px}
+  .week h3{margin:0 0 2px;font-size:1rem;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .phasetag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+    padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .wvol{color:var(--muted);font-size:.8rem;margin:0 0 8px}
+  .day{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:6px 0;border-top:1px dashed var(--line);font-size:.9rem}
+  .day:first-of-type{border-top:0}
+  .day .dn{color:var(--muted);font-weight:700;font-size:.8rem;padding-top:1px}
+  .day .role{font-weight:700}
   .plan li{margin:6px 0}
   .foot{color:var(--muted);font-size:.8rem;margin-top:26px;text-align:center;line-height:1.7}
   .foot a{color:var(--accent2);text-decoration:none}
   .pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:999px;
     padding:3px 10px;font-size:.75rem;color:var(--muted);margin-left:8px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
   @media(max-width:560px){.row,.row3{grid-template-columns:1fr}.vdot .num{font-size:2.4rem}}
+  @media print{
+    body{background:#fff;color:#000}
+    .noprint{display:none!important}
+    .card,.week{box-shadow:none;border-color:#ccc;background:#fff;break-inside:avoid}
+    .coach{background:#f3f3f3;color:#000}
+    .vdot .num{color:#000!important;-webkit-text-fill-color:#000}
+  }
 </style>
 </head>
 <body>
@@ -73,240 +100,419 @@
     <div class="logo">🏃</div>
     <div>
       <h1>VDOT Coach <span class="pill">Daniels method</span></h1>
-      <p class="tag">Tell the coach one recent race. Get your paces, predictions & plan.</p>
+      <p class="tag">Answer a few questions. Get a complete, dated training program in your own paces.</p>
     </div>
   </header>
 
-  <!-- INPUT -->
-  <section class="card" id="inputCard">
-    <h2>What has the coach got to work with?</h2>
-    <p class="sub">Enter one honest recent race or time-trial. That's all I need to calibrate everything.</p>
+  <div class="steps noprint">
+    <span class="stepdot on" id="s1">1 · About you</span>
+    <span class="stepdot" id="s2">2 · Your goal</span>
+    <span class="stepdot" id="s3">3 · Your program</span>
+  </div>
 
-    <label for="dist">Distance</label>
-    <select id="dist">
-      <option value="1500">1500 m</option>
-      <option value="1609.34">1 mile</option>
-      <option value="3000">3000 m</option>
-      <option value="5000" selected>5 km</option>
-      <option value="10000">10 km</option>
-      <option value="15000">15 km</option>
-      <option value="21097.5">Half marathon</option>
-      <option value="42195">Marathon</option>
-    </select>
+  <!-- STEP 1: BACKGROUND -->
+  <section class="card" id="bgCard">
+    <h2>First — tell me about you</h2>
+    <p class="sub">A good coach starts by understanding where you are. Nothing here is judged — honest answers give a safe, effective plan.</p>
 
-    <div class="row" style="margin-top:14px">
+    <label for="name">Your name (optional)</label>
+    <input id="name" placeholder="e.g. Alex" autocomplete="off">
+
+    <div class="row">
       <div>
-        <label>Your time</label>
-        <div class="row3">
-          <input id="hh" type="number" min="0" placeholder="h" inputmode="numeric">
-          <input id="mm" type="number" min="0" max="59" placeholder="m" inputmode="numeric">
-          <input id="ss" type="number" min="0" max="59" placeholder="s" inputmode="numeric">
-        </div>
+        <label for="level">Experience</label>
+        <select id="level">
+          <option value="beginner">New / returning runner</option>
+          <option value="intermediate" selected>Regular runner</option>
+          <option value="advanced">Experienced / competitive</option>
+        </select>
       </div>
       <div>
-        <label>Show paces in</label>
-        <select id="unit">
-          <option value="km" selected>min / km</option>
-          <option value="mi">min / mile</option>
+        <label for="days">Days you can run / week</label>
+        <select id="days">
+          <option value="3">3 days</option>
+          <option value="4" selected>4 days</option>
+          <option value="5">5 days</option>
+          <option value="6">6 days</option>
+          <option value="7">7 days</option>
         </select>
       </div>
     </div>
 
+    <div class="row">
+      <div>
+        <label for="unit">Preferred units</label>
+        <select id="unit">
+          <option value="km" selected>Kilometres</option>
+          <option value="mi">Miles</option>
+        </select>
+      </div>
+      <div>
+        <label for="vol">Current weekly volume (<span class="uL">km</span>)</label>
+        <input id="vol" type="number" min="0" placeholder="e.g. 30" inputmode="numeric">
+      </div>
+    </div>
+
+    <label>Recent race or all-out effort <span style="text-transform:none;color:var(--muted);font-weight:400">— this calibrates every pace</span></label>
+    <div class="row">
+      <div>
+        <select id="rdist">
+          <option value="1500">1500 m</option>
+          <option value="1609.34">1 mile</option>
+          <option value="3000">3000 m</option>
+          <option value="5000" selected>5 km</option>
+          <option value="10000">10 km</option>
+          <option value="15000">15 km</option>
+          <option value="21097.5">Half marathon</option>
+          <option value="42195">Marathon</option>
+        </select>
+      </div>
+      <div>
+        <div class="row3">
+          <input id="rhh" type="number" min="0" placeholder="h" inputmode="numeric">
+          <input id="rmm" type="number" min="0" placeholder="m" inputmode="numeric">
+          <input id="rss" type="number" min="0" placeholder="s" inputmode="numeric">
+        </div>
+      </div>
+    </div>
     <div class="quick" id="quick"></div>
-    <button class="btn" id="go">Coach me →</button>
+
+    <label for="inj">Injuries / limitations to work around (optional)</label>
+    <textarea id="inj" placeholder="e.g. tight left calf, coming back from a knee niggle, asthma..."></textarea>
+
+    <button class="btn" id="toGoal">Next: my goal →</button>
   </section>
 
-  <!-- RESULTS -->
-  <section class="card hidden" id="resultCard">
-    <h2>Your fitness</h2>
-    <p class="sub">This is your VDOT — one number that captures your current running fitness.</p>
+  <!-- STEP 2: GOAL -->
+  <section class="card hidden" id="goalCard">
+    <h2>Now — what are we chasing?</h2>
+    <p class="sub">Pick the target. I'll reverse-engineer the weeks between now and then into phases.</p>
+
+    <label for="gdist">Goal</label>
+    <select id="gdist">
+      <option value="5000">Race a 5 km</option>
+      <option value="10000">Race a 10 km</option>
+      <option value="21097.5" selected>Race a half marathon</option>
+      <option value="42195">Race a marathon</option>
+      <option value="fitness">Just get faster / general fitness</option>
+    </select>
+
+    <div class="row">
+      <div id="dateWrap">
+        <label for="gdate">Goal race date</label>
+        <input id="gdate" type="date">
+      </div>
+      <div id="goaltimeWrap">
+        <label>Goal time (optional)</label>
+        <div class="row3">
+          <input id="ghh" type="number" min="0" placeholder="h" inputmode="numeric">
+          <input id="gmm" type="number" min="0" placeholder="m" inputmode="numeric">
+          <input id="gss" type="number" min="0" placeholder="s" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+
+    <div class="btnrow">
+      <button class="btn ghost" id="backBg">← Back</button>
+      <button class="btn" id="build">Build my program →</button>
+    </div>
+  </section>
+
+  <!-- STEP 3: OUTPUT -->
+  <section class="card hidden" id="fitCard">
+    <h2 id="fitTitle">Your fitness &amp; paces</h2>
+    <p class="sub">This is your VDOT — one number for your current fitness — and the five paces every session is built from.</p>
     <div class="vdot"><span class="num" id="vdotNum">–</span><span class="lbl">VDOT</span></div>
     <div class="coach" id="coachMsg"></div>
-  </section>
-
-  <section class="card hidden" id="paceCard">
-    <h2>Your 5 training paces</h2>
-    <p class="sub">Every workout in the Daniels system lives in one of these five zones. Run each at the right speed and fitness takes care of itself.</p>
     <div class="paces" id="paces"></div>
-  </section>
-
-  <section class="card hidden" id="predCard">
-    <h2>What you can race right now</h2>
-    <p class="sub">Equivalent performances at your current fitness. Great for picking realistic goals.</p>
-    <table>
-      <thead><tr><th>Distance</th><th>Predicted time</th><th>Pace</th></tr></thead>
+    <table style="margin-top:16px">
+      <thead><tr><th>You could currently race</th><th>Time</th><th>Pace</th></tr></thead>
       <tbody id="predBody"></tbody>
     </table>
   </section>
 
-  <section class="card hidden" id="planCard">
-    <h2>This week, in plain language</h2>
-    <p class="sub" id="planSub"></p>
-    <ul class="plan" id="planList"></ul>
-    <div class="coach" id="planNote"></div>
+  <section class="card hidden" id="progCard">
+    <h2 id="progTitle">Your training program</h2>
+    <p class="sub" id="progSub"></p>
+    <div class="legend noprint">
+      <span><i class="dot" style="background:var(--easy)"></i>Easy</span>
+      <span><i class="dot" style="background:var(--marathon)"></i>Long</span>
+      <span><i class="dot" style="background:var(--thresh)"></i>Threshold</span>
+      <span><i class="dot" style="background:var(--interval)"></i>Interval</span>
+      <span><i class="dot" style="background:var(--rep)"></i>Reps / speed</span>
+    </div>
+    <div id="weeks"></div>
+    <div class="btnrow noprint">
+      <button class="btn ghost" id="edit">← Change answers</button>
+      <button class="btn" id="print">🖨 Print / save PDF</button>
+    </div>
   </section>
 
   <section class="card hidden" id="cueCard">
-    <h2>Coach's cues (straight from Daniels' method)</h2>
+    <h2>Coach's cues (Daniels' method)</h2>
     <p class="sub">The paces do the heavy lifting — these habits make every stride count.</p>
-    <ul class="plan">
-      <li><b>Aim for ~180 steps per minute.</b> A quick, light cadence keeps you over your feet and cuts landing shock. Count your steps for 1 minute on an easy run — if you're well under 180, shorten and quicken your stride, don't reach.</li>
-      <li><b>Breathe in a rhythm.</b> On easy running a relaxed <b>3-3</b> (in for 3 steps, out for 3) works well; as effort climbs through Threshold and Interval, drop to <b>2-2</b>. When you can't hold 2-2, you're past the pace — ease back.</li>
-      <li><b>Easy means easy.</b> If you can't talk in full sentences, you're running your easy days too hard. That's the #1 mistake — and it steals from your quality days.</li>
-      <li><b>Re-test to level up.</b> Race or time-trial every 4–6 weeks, re-enter it here, and your whole pace ladder moves up with your fitness.</li>
-    </ul>
+    <ul class="plan" id="cueList"></ul>
   </section>
 
   <p class="foot">
-    Built on Jack Daniels' VDOT methodology (VO₂ / %VO₂max model). Educational tool —
-    not affiliated with or endorsing any publication. Listen to your body; consult a
-    professional before starting hard training.
+    Built on Jack Daniels' VDOT methodology (VO₂ / %VO₂max model). Program structure is a
+    general periodization built from your own paces — educational, not affiliated with or
+    endorsing any publication. Listen to your body; consult a professional before hard training.
   </p>
 </div>
 
 <script>
-/* ---------- Daniels VDOT engine ---------- */
-// VO2 cost of running at velocity v (m/min)
+/* ================= Daniels VDOT engine ================= */
 function vo2(v){ return -4.60 + 0.182258*v + 0.000104*v*v; }
-// Fraction of VO2max sustainable for a race lasting t minutes
 function pctMax(t){ return 0.8 + 0.1894393*Math.exp(-0.012778*t) + 0.2989558*Math.exp(-0.1932605*t); }
-// VDOT from a race: distance d (m), time t (min)
 function vdotFromRace(d,t){ const v=d/t; return vo2(v)/pctMax(t); }
-// Velocity (m/min) that costs a given VO2
-function velFromVO2(target){
-  const a=0.000104,b=0.182258,c=-(4.60+target);
-  return (-b+Math.sqrt(b*b-4*a*c))/(2*a);
-}
-// Predict time (min) for distance d at a given VDOT (bisection)
-function predictTime(d,vdot){
-  let lo=0.5, hi=1200;
-  for(let i=0;i<80;i++){
-    const mid=(lo+hi)/2;
-    (vdotFromRace(d,mid) > vdot) ? lo=mid : hi=mid;
-  }
-  return (lo+hi)/2;
-}
+function velFromVO2(target){const a=0.000104,b=0.182258,c=-(4.60+target);return (-b+Math.sqrt(b*b-4*a*c))/(2*a);}
+function predictTime(d,vdot){let lo=0.5,hi=1200;for(let i=0;i<80;i++){const m=(lo+hi)/2;(vdotFromRace(d,m)>vdot)?lo=m:hi=m;}return (lo+hi)/2;}
 
-/* ---------- Training pace zones (intensity as fraction of VDOT) ---------- */
 const ZONES=[
-  {k:'Easy',       f:0.70, var:'--easy',     d:'Recovery & aerobic base. Most of your miles live here.'},
-  {k:'Marathon',   f:0.84, var:'--marathon', d:'Steady, controlled goal-marathon effort.'},
-  {k:'Threshold',  f:0.88, var:'--thresh',   d:'"Comfortably hard." Builds your lactate ceiling.'},
-  {k:'Interval',   f:0.98, var:'--interval', d:'~3–5 min reps. Sharpens VO₂max — your engine size.'},
-  {k:'Repetition', f:1.06, var:'--rep',      d:'Short, fast reps for speed & economy.'}
+  {k:'Easy',      f:0.70, var:'--easy',     d:'Recovery & aerobic base.'},
+  {k:'Marathon',  f:0.84, var:'--marathon', d:'Steady goal-marathon effort.'},
+  {k:'Threshold', f:0.88, var:'--thresh',   d:'"Comfortably hard." Lactate ceiling.'},
+  {k:'Interval',  f:0.98, var:'--interval', d:'VO₂max — your engine size.'},
+  {k:'Repetition',f:1.06, var:'--rep',      d:'Speed & running economy.'}
 ];
 
-/* ---------- Formatting ---------- */
-function fmtTime(min){
-  const s=Math.round(min*60), h=Math.floor(s/3600), m=Math.floor((s%3600)/60), sec=s%60;
-  const pad=n=>String(n).padStart(2,'0');
-  return h>0 ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
-}
-function paceStr(vel, unit){ // vel m/min -> pace per unit
-  const perUnit = unit==='km' ? 1000/vel : 1609.34/vel;
-  const s=Math.round(perUnit*60), m=Math.floor(s/60), sec=s%60;
-  return `${m}:${String(sec).padStart(2,'0')}`;
-}
+/* ================= formatting ================= */
+function fmtTime(min){const s=Math.round(min*60),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;const p=n=>String(n).padStart(2,'0');return h>0?`${h}:${p(m)}:${p(x)}`:`${m}:${p(x)}`;}
+function paceStr(vel,unit){const per=unit==='km'?1000/vel:1609.34/vel;const s=Math.round(per*60);return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;}
 
-/* ---------- UI ---------- */
 const $=id=>document.getElementById(id);
-const DIST_LABELS={1500:'1500 m','1609.34':'1 mile',3000:'3000 m',5000:'5 km',10000:'10 km',15000:'15 km','21097.5':'Half',42195:'Marathon'};
-const PRED_DISTS=[1609.34,5000,10000,21097.5,42195];
-const PRED_LABELS={1609.34:'1 mile',5000:'5 km',10000:'10 km','21097.5':'Half marathon',42195:'Marathon'};
+const DPRED=[[1609.34,'1 mile'],[5000,'5 km'],[10000,'10 km'],[21097.5,'Half marathon'],[42195,'Marathon']];
+const GLABEL={5000:'5 km',10000:'10 km','21097.5':'half marathon',42195:'marathon'};
 
-const QUICKS=[
-  {label:'5K in 25:00', d:'5000', h:0,m:25,s:0},
-  {label:'5K in 22:30', d:'5000', h:0,m:22,s:30},
-  {label:'10K in 50:00', d:'10000', h:0,m:50,s:0},
-  {label:'Half in 2:00', d:'21097.5', h:2,m:0,s:0},
-];
-const q=$('quick');
-QUICKS.forEach(x=>{
-  const b=document.createElement('button');
-  b.textContent=x.label;
-  b.onclick=()=>{ $('dist').value=x.d; $('hh').value=x.h||''; $('mm').value=x.m; $('ss').value=x.s; run(); };
-  q.appendChild(b);
-});
+/* quick-fill sample races */
+[['5K 25:00','5000',0,25,0],['5K 22:30','5000',0,22,30],['10K 50:00','10000',0,50,0],['Half 2:00','21097.5',2,0,0]]
+.forEach(([lab,d,h,m,s])=>{const b=document.createElement('button');b.textContent=lab;
+  b.onclick=()=>{$('rdist').value=d;$('rhh').value=h||'';$('rmm').value=m;$('rss').value=s;};$('quick').appendChild(b);});
 
-function coachTalk(vdot){
-  let level, msg;
-  if(vdot<35){ level='building your engine'; }
-  else if(vdot<45){ level='a solid recreational runner'; }
-  else if(vdot<55){ level='a strong club-level runner'; }
-  else if(vdot<65){ level='competitive / sub-elite'; }
-  else { level='elite territory'; }
-  return `Got it. Your VDOT of <b>${vdot.toFixed(1)}</b> puts you in <b>${level}</b>. `+
-         `I've turned that into exact paces below — the whole trick is running each workout at the right one. `+
-         `Do that consistently and your VDOT climbs. Re-test with a fresh race every 4–6 weeks and we'll move the paces up together.`;
+/* unit label + default date */
+$('unit').onchange=()=>{document.querySelectorAll('.uL').forEach(e=>e.textContent=$('unit').value==='km'?'km':'mi');};
+(function(){const d=new Date();d.setDate(d.getDate()+7*12);$('gdate').value=d.toISOString().slice(0,10);})();
+$('gdist').onchange=()=>{const fit=$('gdist').value==='fitness';$('dateWrap').style.opacity=fit?.5:1;$('goaltimeWrap').style.display=fit?'none':'block';};
+
+/* ================= step navigation ================= */
+function show(step){
+  [['s1','bgCard'],['s2','goalCard'],['s3','fitCard']].forEach(([dot],i)=>{
+    $(dot).classList.toggle('on', i<=step-1);
+  });
+  $('bgCard').classList.toggle('hidden', step!==1);
+  $('goalCard').classList.toggle('hidden', step!==2);
+  ['fitCard','progCard','cueCard'].forEach(id=>$(id).classList.toggle('hidden', step!==3));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('toGoal').onclick=()=>{ if(!getVdot()){alert('Please enter a recent race time so I can calibrate your paces.');return;} show(2); };
+$('backBg').onclick=()=>show(1);
+$('edit').onclick=()=>show(1);
+$('build').onclick=build;
+$('print').onclick=()=>window.print();
+
+function getVdot(){
+  const d=parseFloat($('rdist').value);
+  const t=(parseInt($('rhh').value||0))*60+parseInt($('rmm').value||0)+parseInt($('rss').value||0)/60;
+  if(!(t>0))return null;
+  const v=vdotFromRace(d,t);
+  return (v>0&&isFinite(v))?{vdot:v,rd:d}:null;
 }
 
-function weeklyPlan(vdot, unit, paces){
-  const p=k=>paces[k];
-  return {
-    sub:`A balanced Daniels week — adjust the number of days to your schedule. Paces shown per ${unit==='km'?'km':'mile'}.`,
-    items:[
-      `<b>3–4 Easy days</b> at <b>${p('Easy')}</b> — conversational. This is where fitness is built, not on the hard days.`,
-      `<b>1 Threshold session</b>, e.g. 20 min continuous or 4×5 min at <b>${p('Threshold')}</b> with short jogs. Raises your sustainable pace.`,
-      `<b>1 Interval session</b>, e.g. 5×3 min at <b>${p('Interval')}</b> with equal jog recovery. Grows your VO₂max.`,
-      `<b>1 Long run</b> at <b>${p('Easy')}</b>, building toward 90–120 min. Sprinkle in Marathon-pace (<b>${p('Marathon')}</b>) if racing longer.`,
-      `Optional strides: 6×20s at <b>${p('Repetition')}</b> after an easy run to stay smooth and fast.`
-    ],
-    note:`Golden rule: <b>~80% of weekly time easy, ~20% hard.</b> If a pace feels wrong, trust your body over the number and re-test.`
-  };
+/* ================= program generator ================= */
+function weeksUntil(dateStr){
+  if(!dateStr) return 12;
+  const diff=(new Date(dateStr+'T00:00:00')-new Date().setHours(0,0,0,0))/(1000*60*60*24);
+  return Math.max(1,Math.min(30,Math.round(diff/7)));
+}
+// role map per days/week: Q=quality, L=long, E=easy, R=rest built from remainder
+const DAYMAP={
+  3:{days:['Tue','Thu','Sun'],roles:['Q','E','L']},
+  4:{days:['Tue','Wed','Fri','Sun'],roles:['Q','E','Q','L']},
+  5:{days:['Tue','Wed','Thu','Sat','Sun'],roles:['Q','E','Q','E','L']},
+  6:{days:['Tue','Wed','Thu','Fri','Sat','Sun'],roles:['Q','E','Q','E','E','L']},
+  7:{days:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],roles:['E','Q','E','Q','E','E','L']}
+};
+const WEEKDAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+function phaseFor(i,W,taper){
+  if(i> W-taper) return 'Taper';
+  const p=i/(W-taper);
+  if(p<=0.35) return 'Foundation';
+  if(p<=0.68) return 'Strength';
+  return 'Peak';
+}
+const PHASE_STYLE={
+  Foundation:{c:'var(--easy)',label:'Foundation'},
+  Strength:{c:'var(--thresh)',label:'Strength'},
+  Peak:{c:'var(--interval)',label:'Peak'},
+  Taper:{c:'var(--marathon)',label:'Taper'}
+};
+
+// build the two quality sessions for a week
+function qualityWorkouts(phase,goal,prog,P){
+  const T=P.Threshold,I=P.Interval,R=P.Repetition,M=P.Marathon;
+  const g=String(goal);
+  if(phase==='Foundation'){
+    return [
+      {role:'Strides',color:'--rep',txt:`WU 12 min easy · 6×20s at ${R} (walk-back recovery) · easy fill · CD 10 min. Light, fast, relaxed.`},
+      {role:'Tempo intro',color:'--thresh',txt:`WU 12 min · ${15+Math.round(prog*5)} min continuous at ${T} (Threshold) · CD 10 min.`}
+    ];
+  }
+  if(phase==='Strength'){
+    const reps=6+Math.round(prog*4);
+    return [
+      {role:'Reps',color:'--rep',txt:`WU · ${reps}×200 m at ${R} w/ 200 m jog · CD. Smooth speed, never straining.`},
+      {role:'Threshold',color:'--thresh',txt:`WU · 4×5 min at ${T} w/ 1 min jog · CD.`}
+    ];
+  }
+  if(phase==='Peak'){
+    const ir=4+Math.round(prog*2);
+    const q2 = (g==='42195'||g==='21097.5')
+      ? {role:'Race pace',color:'--marathon',txt:`WU · 5 km at ${M} (goal effort) then 2×5 min at ${T} · CD.`}
+      : {role:'Threshold',color:'--thresh',txt:`WU · 5×1 km at ${T} w/ 1 min jog · CD.`};
+    return [
+      {role:'Intervals',color:'--interval',txt:`WU · ${ir}×3 min at ${I} (VO₂max) w/ equal jog · CD. The pace that grows your engine.`},
+      q2
+    ];
+  }
+  // Taper
+  return [
+    {role:'Sharpener',color:'--interval',txt:`WU · 3×3 min at ${I} w/ 3 min jog · CD. Stay sharp, stay fresh.`},
+    {role:'Tune-up',color:'--thresh',txt:`WU · 2×1 km at ${T} · a few 20s strides at ${R} · CD. Legs feel snappy.`}
+  ];
 }
 
-function run(){
-  const d=parseFloat($('dist').value);
-  const h=parseInt($('hh').value||0), m=parseInt($('mm').value||0), s=parseInt($('ss').value||0);
-  const tMin=h*60+m+s/60;
-  if(!(tMin>0)){ alert('Enter a time — minutes at minimum.'); return; }
-  const unit=$('unit').value;
-  const vdot=vdotFromRace(d,tMin);
-  if(!(vdot>0)||!isFinite(vdot)){ alert('That time looks off for the distance — double-check it.'); return; }
+function longRun(phase,goal,volTxt,P){
+  const g=String(goal);
+  if(phase==='Peak'&&(g==='42195'||g==='21097.5'))
+    return {role:'Long + MP',color:'--marathon',txt:`Long run at ${P.Easy}; finish the last 15–20 min at ${P.Marathon} (goal-marathon effort).`};
+  if(phase==='Taper')
+    return {role:'Long (easy)',color:'--marathon',txt:`Relaxed long run at ${P.Easy} — shorter than peak. Bank rest, not fatigue.`};
+  return {role:'Long run',color:'--marathon',txt:`Steady long run at ${P.Easy}, building gradually. This is your aerobic backbone.`};
+}
 
-  // VDOT + coach message
-  $('vdotNum').textContent=vdot.toFixed(1);
-  $('coachMsg').innerHTML=coachTalk(vdot);
+function volumeSchedule(base,level,W,taper,unit){
+  const capKm={beginner:55,intermediate:85,advanced:125}[level];
+  const cap = unit==='km'?capKm:capKm*0.621;
+  const start = base>0 ? base : (unit==='km'?{beginner:20,intermediate:35,advanced:55}[level]:{beginner:12,intermediate:22,advanced:34}[level]);
+  const peak = Math.min(Math.max(start*1.35,start), cap);
+  const buildW = W-taper;
+  const out=[];
+  for(let i=1;i<=W;i++){
+    let v;
+    if(i>buildW){ const tp=(i-buildW); v=peak*(tp===1?0.7:0.5); }
+    else {
+      const frac=buildW<=1?1:(i-1)/(buildW-1);
+      v=start+(peak-start)*frac;
+      if(i%4===0) v*=0.85; // recovery week cutback
+    }
+    out.push(Math.round(v));
+  }
+  return out;
+}
 
-  // Paces
-  const paceMap={};
-  const pc=$('paces'); pc.innerHTML='';
+function build(){
+  const info=getVdot();
+  if(!info){alert('Please enter a recent race time in step 1.');return;}
+  const vdot=info.vdot, unit=$('unit').value;
+  const name=$('name').value.trim();
+  const level=$('level').value;
+  const days=parseInt($('days').value);
+  const base=parseFloat($('vol').value)||0;
+  const inj=$('inj').value.trim();
+  const goal=$('gdist').value;
+  const isFit=goal==='fitness';
+
+  // paces
+  const P={};
+  const pc=$('paces');pc.innerHTML='';
   ZONES.forEach(z=>{
-    const vel=velFromVO2(z.f*vdot);
-    const ps=paceStr(vel,unit);
-    paceMap[z.k]=ps+`/${unit}`;
-    const el=document.createElement('div'); el.className='pace';
-    el.innerHTML=`<div class="k">${z.k}</div><div class="p">${ps}<span style="font-size:.7rem;color:var(--muted)"> /${unit}</span></div>`+
-      `<div class="d">${z.d}</div><div class="bar" style="background:var(${z.var})"></div>`;
+    const vel=velFromVO2(z.f*vdot);const ps=paceStr(vel,unit)+`/${unit}`;P[z.k]=ps;
+    const el=document.createElement('div');el.className='pace';
+    el.innerHTML=`<div class="k">${z.k}</div><div class="p">${paceStr(vel,unit)}<span style="font-size:.7rem;color:var(--muted)"> /${unit}</span></div><div class="d">${z.d}</div><div class="bar" style="background:var(${z.var})"></div>`;
     pc.appendChild(el);
   });
 
-  // Predictions
-  const pb=$('predBody'); pb.innerHTML='';
-  PRED_DISTS.forEach(pd=>{
-    const t=predictTime(pd,vdot);
-    const vel=pd/t;
-    const tr=document.createElement('tr');
-    const isSelf = Math.abs(pd-d)<1;
-    tr.innerHTML=`<td>${PRED_LABELS[pd]}${isSelf?' <span class="pill">your race</span>':''}</td>`+
-      `<td class="t">${fmtTime(t)}</td><td>${paceStr(vel,unit)}/${unit}</td>`;
-    pb.appendChild(tr);
-  });
+  // fitness header + coach message
+  $('vdotNum').textContent=vdot.toFixed(1);
+  let lvlWord = vdot<35?'building your base':vdot<45?'a solid recreational runner':vdot<55?'a strong club-level runner':vdot<65?'competitive / sub-elite':'elite territory';
+  const hi = name?`${name}, here's`:`Here's`;
+  let msg=`${hi} the plan. Your VDOT of <b>${vdot.toFixed(1)}</b> puts you in <b>${lvlWord}</b>. `;
+  if(inj) msg+=`I've noted your "<i>${inj.replace(/</g,'&lt;')}</i>" — keep every easy day truly easy and stop if it flares; swap a run for cross-training if needed. `;
+  msg+=`Everything below is built from your five paces. Re-race every 4–6 weeks and we move the whole ladder up.`;
+  $('coachMsg').innerHTML=msg;
 
-  // Plan
-  const plan=weeklyPlan(vdot,unit,paceMap);
-  $('planSub').textContent=plan.sub;
-  const pl=$('planList'); pl.innerHTML='';
-  plan.items.forEach(t=>{ const li=document.createElement('li'); li.innerHTML=t; pl.appendChild(li); });
-  $('planNote').innerHTML=plan.note;
+  // predictions
+  const pb=$('predBody');pb.innerHTML='';
+  DPRED.forEach(([d,l])=>{const t=predictTime(d,vdot);const vel=d/t;
+    const self=Math.abs(d-info.rd)<1;
+    pb.insertAdjacentHTML('beforeend',`<tr><td>${l}${self?' <span class="pill">your race</span>':''}</td><td class="t">${fmtTime(t)}</td><td>${paceStr(vel,unit)}/${unit}</td></tr>`);});
 
-  // Reveal
-  ['resultCard','paceCard','predCard','planCard','cueCard'].forEach(id=>$(id).classList.remove('hidden'));
-  $('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
+  // program
+  const W = isFit?8:weeksUntil($('gdate').value);
+  const taper = isFit?0:(W>=9?2:W>=5?1:0);
+  const vols = volumeSchedule(base,level,W,taper,unit);
+  const map = DAYMAP[days];
+  const beginner = level==='beginner';
+  const wrap=$('weeks');wrap.innerHTML='';
+
+  for(let i=1;i<=W;i++){
+    const phase = isFit ? (['Foundation','Strength','Peak'][Math.min(2,Math.floor((i-1)/3))]) : phaseFor(i,W,taper);
+    const st=PHASE_STYLE[phase];
+    // progress within phase (0..1) for workout growth
+    const prog = Math.min(1,(i-1)/Math.max(1,W-1));
+    const q=qualityWorkouts(phase,goal,prog,P);
+    const lr=longRun(phase,goal,'',P);
+    let qi=0;
+    const rows=map.roles.map((role,idx)=>{
+      const dn=map.days[idx];
+      if(role==='L') return {dn,role:lr.role,color:lr.color,txt:lr.txt};
+      if(role==='Q'){
+        // beginner gets only 1 quality/week -> extra Q becomes easy
+        if(beginner && qi>=1){return {dn,role:'Easy',color:'--easy',txt:`Easy run at ${P.Easy}. Conversational — building fitness quietly.`};}
+        const w=q[Math.min(qi,q.length-1)];qi++;
+        return {dn,role:w.role,color:w.color,txt:w.txt};
+      }
+      return {dn,role:'Easy',color:'--easy',txt:`Easy run at ${P.Easy}. Conversational — this is where fitness is built.`};
+    });
+    // rest days
+    const restDays=WEEKDAYS.filter(d=>!map.days.includes(d));
+
+    const wk=document.createElement('div');wk.className='week';
+    const label = isFit?`Week ${i}`:`Week ${i} · ${W-i} to go`;
+    wk.innerHTML=`<h3><span>${label}</span><span class="phasetag" style="background:${st.c};color:#06231a">${st.label}</span></h3>
+      <p class="wvol">Target volume ≈ <b>${vols[i-1]} ${unit}</b> · ${days} run days${restDays.length?` · rest: ${restDays.join(', ')}`:''}</p>`;
+    rows.forEach(r=>{wk.insertAdjacentHTML('beforeend',
+      `<div class="day"><span class="dn">${r.dn}</span><span><span class="role" style="color:var(${r.color})">${r.role}.</span> ${r.txt}</span></div>`);});
+    // race week note
+    if(!isFit && i===W){
+      const gt=parseInt($('ghh').value||0)*60+parseInt($('gmm').value||0)+parseInt($('gss').value||0)/60;
+      const goalNote = gt>0?` Goal: <b>${fmtTime(gt)}</b> — that's ${(vdotFromRace(parseFloat(goal),gt)).toFixed(1)} VDOT effort.`:'';
+      wk.insertAdjacentHTML('beforeend',`<div class="day"><span class="dn">RACE</span><span><span class="role" style="color:var(--accent)">Race day 🏁</span> ${GLABEL[goal]||'goal race'}.${goalNote} Trust the work. WU with 10 min easy + a few strides.</span></div>`);
+    }
+    wrap.appendChild(wk);
+  }
+
+  // titles
+  $('progTitle').textContent = isFit?'Your training program (8-week block)':`Your ${W}-week program to your ${GLABEL[goal]||'goal'}`;
+  let sub = isFit
+    ? `A repeatable, balanced ${days}-day week that keeps building fitness. Re-test and rebuild.`
+    : `${W} weeks from today to race day, periodized Foundation → Strength → Peak → Taper. Paces in ${unit}.`;
+  $('progSub').textContent=sub;
+
+  // cues
+  $('cueList').innerHTML=[
+    `<b>Aim for ~180 steps per minute.</b> Quick, light cadence keeps you over your feet and cuts landing shock. If you're well under 180, shorten and quicken your stride — don't reach.`,
+    `<b>Breathe in a rhythm.</b> Easy running: relaxed <b>3-3</b> (in 3 steps, out 3). As effort climbs through Threshold & Interval, drop to <b>2-2</b>. Can't hold 2-2? You're past the pace — ease back.`,
+    `<b>Easy means easy.</b> If you can't talk in full sentences, your easy days are too hard — and that steals from your quality days. ~80% of weekly time easy, ~20% hard.`,
+    `<b>WU/CD = warm-up / cool-down.</b> Every quality session opens and closes with easy running.`+(inj?` And respect that ${inj.replace(/</g,'&lt;')} — pain is a stop sign, not a challenge.`:``),
+    `<b>Re-test to level up.</b> Race or time-trial every 4–6 weeks, re-enter it here, and your whole pace ladder moves up with your fitness.`
+  ].map(t=>`<li>${t}</li>`).join('');
+
+  $('fitTitle').textContent = name?`${name}'s fitness & paces`:'Your fitness & paces';
+  show(3);
 }
-
-$('go').onclick=run;
-document.addEventListener('keydown',e=>{ if(e.key==='Enter') run(); });
 </script>
 </body>
 </html>

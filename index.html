@@ -146,6 +146,17 @@
     <div class="coach" id="planNote"></div>
   </section>
 
+  <section class="card hidden" id="cueCard">
+    <h2>Coach's cues (straight from Daniels' method)</h2>
+    <p class="sub">The paces do the heavy lifting — these habits make every stride count.</p>
+    <ul class="plan">
+      <li><b>Aim for ~180 steps per minute.</b> A quick, light cadence keeps you over your feet and cuts landing shock. Count your steps for 1 minute on an easy run — if you're well under 180, shorten and quicken your stride, don't reach.</li>
+      <li><b>Breathe in a rhythm.</b> On easy running a relaxed <b>3-3</b> (in for 3 steps, out for 3) works well; as effort climbs through Threshold and Interval, drop to <b>2-2</b>. When you can't hold 2-2, you're past the pace — ease back.</li>
+      <li><b>Easy means easy.</b> If you can't talk in full sentences, you're running your easy days too hard. That's the #1 mistake — and it steals from your quality days.</li>
+      <li><b>Re-test to level up.</b> Race or time-trial every 4–6 weeks, re-enter it here, and your whole pace ladder moves up with your fitness.</li>
+    </ul>
+  </section>
+
   <p class="foot">
     Built on Jack Daniels' VDOT methodology (VO₂ / %VO₂max model). Educational tool —
     not affiliated with or endorsing any publication. Listen to your body; consult a
@@ -290,7 +301,7 @@ function run(){
   $('planNote').innerHTML=plan.note;
 
   // Reveal
-  ['resultCard','paceCard','predCard','planCard'].forEach(id=>$(id).classList.remove('hidden'));
+  ['resultCard','paceCard','predCard','planCard','cueCard'].forEach(id=>$(id).classList.remove('hidden'));
   $('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 

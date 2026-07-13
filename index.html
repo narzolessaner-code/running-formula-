@@ -498,14 +498,30 @@ function build(){
     const prog=Math.min(1,(i-1)/Math.max(1,W-1));
     const q=qualityWorkouts(phase,goal,prog,P,focus,rmod);
     const lr=longRun(phase,goal,P);let qi=0;
-    const rows=map.roles.map((role,idx)=>{
+    // pass 1: assign a category to each running day
+    const draft=map.roles.map((role,idx)=>{
       const dn=map.days[idx];
-      if(role==='L')return {dn,role:lr.role,color:lr.color,txt:lr.txt};
+      if(role==='L')return {dn,cat:'long',role:lr.role,color:lr.color,base:lr.txt};
       if(role==='Q'){
-        if(beginner&&qi>=1)return {dn,role:'Easy',color:'--easy',txt:`Easy run at ${P.Easy}. Conversational.`};
-        const w=q[Math.min(qi,q.length-1)];qi++;return {dn,role:w.role,color:w.color,txt:w.txt};
+        if(beginner&&qi>=1)return {dn,cat:'easy',role:'Easy',color:'--easy',base:`Conversational — where aerobic fitness is built.`};
+        const w=q[Math.min(qi,q.length-1)];qi++;return {dn,cat:'quality',role:w.role,color:w.color,base:w.txt};
       }
-      return {dn,role:'Easy',color:'--easy',txt:`Easy run at ${P.Easy}. Conversational — where aerobic fitness is built.`};
+      return {dn,cat:'easy',role:'Easy',color:'--easy',base:`Conversational — where aerobic fitness is built.`};
+    });
+    // pass 2: distribute the week's volume across the days
+    const uf=unit==='km'?1:0.621, V=vols[i-1];
+    const capLong={'5000':14,'10000':18,'21097.5':24,'42195':32}[String(goal)]||20;
+    const longKm=Math.max(Math.round(8*uf),Math.min(Math.round(V*0.32),Math.round(capLong*uf),Math.round(V*0.5)));
+    const nQ=draft.filter(d=>d.cat==='quality').length;
+    const qKm=Math.max(Math.round(7*uf),Math.round(V*0.15));
+    const nE=draft.filter(d=>d.cat==='easy').length;
+    const eKm=nE>0?Math.max(Math.round(4*uf),Math.round((V-longKm-qKm*nQ)/nE)):0;
+    const rows=draft.map(d=>{
+      let txt;
+      if(d.cat==='long') txt=`<b>${longKm} ${unit}</b> — ${d.base}`;
+      else if(d.cat==='quality') txt=`<b>≈${qKm} ${unit} total.</b> ${d.base}`;
+      else txt=`<b>${eKm} ${unit}</b> at ${P.Easy}. ${d.base}`;
+      return {dn:d.dn,role:d.role,color:d.color,txt};
     });
     const restDays=WEEKDAYS.filter(d=>!map.days.includes(d));
     const wk=document.createElement('div');wk.className='week';

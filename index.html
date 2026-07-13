@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VDOT Coach — Daniels-Style Running Coach</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#131c2e; --panel2:#1a2740; --line:#25344f;
+    --text:#eaf0fb; --muted:#93a3c0; --accent:#38e1a4; --accent2:#5aa9ff;
+    --easy:#3fb98f; --marathon:#5aa9ff; --thresh:#f1b24a; --interval:#f06d6d; --rep:#c98bff;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#16233d 0%,var(--bg) 55%);
+    color:var(--text); line-height:1.5; min-height:100vh;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:24px 18px 64px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .logo{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:24px;box-shadow:var(--shadow)}
+  h1{font-size:1.5rem;margin:0;letter-spacing:.2px}
+  .tag{color:var(--muted);font-size:.9rem;margin:2px 0 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:20px;margin-top:18px;box-shadow:var(--shadow)}
+  .card h2{margin:0 0 4px;font-size:1.1rem}
+  .card .sub{color:var(--muted);font-size:.88rem;margin:0 0 16px}
+  label{display:block;font-size:.82rem;color:var(--muted);margin:0 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  select,input{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);
+    background:var(--panel2);color:var(--text);font-size:1rem;outline:none}
+  select:focus,input:focus{border-color:var(--accent2)}
+  .btn{margin-top:16px;width:100%;padding:14px;border:0;border-radius:12px;cursor:pointer;
+    font-size:1.02rem;font-weight:700;color:#06231a;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+  .btn:active{transform:translateY(1px)}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .quick button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+    border-radius:999px;padding:7px 12px;font-size:.82rem;cursor:pointer}
+  .quick button:hover{border-color:var(--accent2);color:var(--text)}
+  .hidden{display:none}
+  .vdot{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .vdot .num{font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .vdot .lbl{color:var(--muted)}
+  .coach{background:var(--panel2);border-left:3px solid var(--accent);border-radius:10px;
+    padding:14px 16px;margin-top:14px;color:#dbe6fb}
+  .paces{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
+  .pace{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .pace .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+  .pace .p{font-size:1.35rem;font-weight:800;margin:4px 0 2px}
+  .pace .d{font-size:.78rem;color:var(--muted)}
+  .pace .bar{height:4px;border-radius:4px;margin-top:10px;opacity:.9}
+  table{width:100%;border-collapse:collapse;margin-top:6px;font-variant-numeric:tabular-nums}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:.94rem}
+  th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.5px}
+  td.t{font-weight:700}
+  .plan li{margin:6px 0}
+  .foot{color:var(--muted);font-size:.8rem;margin-top:26px;text-align:center;line-height:1.7}
+  .foot a{color:var(--accent2);text-decoration:none}
+  .pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+    padding:3px 10px;font-size:.75rem;color:var(--muted);margin-left:8px}
+  @media(max-width:560px){.row,.row3{grid-template-columns:1fr}.vdot .num{font-size:2.4rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">🏃</div>
+    <div>
+      <h1>VDOT Coach <span class="pill">Daniels method</span></h1>
+      <p class="tag">Tell the coach one recent race. Get your paces, predictions & plan.</p>
+    </div>
+  </header>
+
+  <!-- INPUT -->
+  <section class="card" id="inputCard">
+    <h2>What has the coach got to work with?</h2>
+    <p class="sub">Enter one honest recent race or time-trial. That's all I need to calibrate everything.</p>
+
+    <label for="dist">Distance</label>
+    <select id="dist">
+      <option value="1500">1500 m</option>
+      <option value="1609.34">1 mile</option>
+      <option value="3000">3000 m</option>
+      <option value="5000" selected>5 km</option>
+      <option value="10000">10 km</option>
+      <option value="15000">15 km</option>
+      <option value="21097.5">Half marathon</option>
+      <option value="42195">Marathon</option>
+    </select>
+
+    <div class="row" style="margin-top:14px">
+      <div>
+        <label>Your time</label>
+        <div class="row3">
+          <input id="hh" type="number" min="0" placeholder="h" inputmode="numeric">
+          <input id="mm" type="number" min="0" max="59" placeholder="m" inputmode="numeric">
+          <input id="ss" type="number" min="0" max="59" placeholder="s" inputmode="numeric">
+        </div>
+      </div>
+      <div>
+        <label>Show paces in</label>
+        <select id="unit">
+          <option value="km" selected>min / km</option>
+          <option value="mi">min / mile</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="quick" id="quick"></div>
+    <button class="btn" id="go">Coach me →</button>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="card hidden" id="resultCard">
+    <h2>Your fitness</h2>
+    <p class="sub">This is your VDOT — one number that captures your current running fitness.</p>
+    <div class="vdot"><span class="num" id="vdotNum">–</span><span class="lbl">VDOT</span></div>
+    <div class="coach" id="coachMsg"></div>
+  </section>
+
+  <section class="card hidden" id="paceCard">
+    <h2>Your 5 training paces</h2>
+    <p class="sub">Every workout in the Daniels system lives in one of these five zones. Run each at the right speed and fitness takes care of itself.</p>
+    <div class="paces" id="paces"></div>
+  </section>
+
+  <section class="card hidden" id="predCard">
+    <h2>What you can race right now</h2>
+    <p class="sub">Equivalent performances at your current fitness. Great for picking realistic goals.</p>
+    <table>
+      <thead><tr><th>Distance</th><th>Predicted time</th><th>Pace</th></tr></thead>
+      <tbody id="predBody"></tbody>
+    </table>
+  </section>
+
+  <section class="card hidden" id="planCard">
+    <h2>This week, in plain language</h2>
+    <p class="sub" id="planSub"></p>
+    <ul class="plan" id="planList"></ul>
+    <div class="coach" id="planNote"></div>
+  </section>
+
+  <p class="foot">
+    Built on Jack Daniels' VDOT methodology (VO₂ / %VO₂max model). Educational tool —
+    not affiliated with or endorsing any publication. Listen to your body; consult a
+    professional before starting hard training.
+  </p>
+</div>
+
+<script>
+/* ---------- Daniels VDOT engine ---------- */
+// VO2 cost of running at velocity v (m/min)
+function vo2(v){ return -4.60 + 0.182258*v + 0.000104*v*v; }
+// Fraction of VO2max sustainable for a race lasting t minutes
+function pctMax(t){ return 0.8 + 0.1894393*Math.exp(-0.012778*t) + 0.2989558*Math.exp(-0.1932605*t); }
+// VDOT from a race: distance d (m), time t (min)
+function vdotFromRace(d,t){ const v=d/t; return vo2(v)/pctMax(t); }
+// Velocity (m/min) that costs a given VO2
+function velFromVO2(target){
+  const a=0.000104,b=0.182258,c=-(4.60+target);
+  return (-b+Math.sqrt(b*b-4*a*c))/(2*a);
+}
+// Predict time (min) for distance d at a given VDOT (bisection)
+function predictTime(d,vdot){
+  let lo=0.5, hi=1200;
+  for(let i=0;i<80;i++){
+    const mid=(lo+hi)/2;
+    (vdotFromRace(d,mid) > vdot) ? lo=mid : hi=mid;
+  }
+  return (lo+hi)/2;
+}
+
+/* ---------- Training pace zones (intensity as fraction of VDOT) ---------- */
+const ZONES=[
+  {k:'Easy',       f:0.70, var:'--easy',     d:'Recovery & aerobic base. Most of your miles live here.'},
+  {k:'Marathon',   f:0.84, var:'--marathon', d:'Steady, controlled goal-marathon effort.'},
+  {k:'Threshold',  f:0.88, var:'--thresh',   d:'"Comfortably hard." Builds your lactate ceiling.'},
+  {k:'Interval',   f:0.98, var:'--interval', d:'~3–5 min reps. Sharpens VO₂max — your engine size.'},
+  {k:'Repetition', f:1.06, var:'--rep',      d:'Short, fast reps for speed & economy.'}
+];
+
+/* ---------- Formatting ---------- */
+function fmtTime(min){
+  const s=Math.round(min*60), h=Math.floor(s/3600), m=Math.floor((s%3600)/60), sec=s%60;
+  const pad=n=>String(n).padStart(2,'0');
+  return h>0 ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
+}
+function paceStr(vel, unit){ // vel m/min -> pace per unit
+  const perUnit = unit==='km' ? 1000/vel : 1609.34/vel;
+  const s=Math.round(perUnit*60), m=Math.floor(s/60), sec=s%60;
+  return `${m}:${String(sec).padStart(2,'0')}`;
+}
+
+/* ---------- UI ---------- */
+const $=id=>document.getElementById(id);
+const DIST_LABELS={1500:'1500 m','1609.34':'1 mile',3000:'3000 m',5000:'5 km',10000:'10 km',15000:'15 km','21097.5':'Half',42195:'Marathon'};
+const PRED_DISTS=[1609.34,5000,10000,21097.5,42195];
+const PRED_LABELS={1609.34:'1 mile',5000:'5 km',10000:'10 km','21097.5':'Half marathon',42195:'Marathon'};
+
+const QUICKS=[
+  {label:'5K in 25:00', d:'5000', h:0,m:25,s:0},
+  {label:'5K in 22:30', d:'5000', h:0,m:22,s:30},
+  {label:'10K in 50:00', d:'10000', h:0,m:50,s:0},
+  {label:'Half in 2:00', d:'21097.5', h:2,m:0,s:0},
+];
+const q=$('quick');
+QUICKS.forEach(x=>{
+  const b=document.createElement('button');
+  b.textContent=x.label;
+  b.onclick=()=>{ $('dist').value=x.d; $('hh').value=x.h||''; $('mm').value=x.m; $('ss').value=x.s; run(); };
+  q.appendChild(b);
+});
+
+function coachTalk(vdot){
+  let level, msg;
+  if(vdot<35){ level='building your engine'; }
+  else if(vdot<45){ level='a solid recreational runner'; }
+  else if(vdot<55){ level='a strong club-level runner'; }
+  else if(vdot<65){ level='competitive / sub-elite'; }
+  else { level='elite territory'; }
+  return `Got it. Your VDOT of <b>${vdot.toFixed(1)}</b> puts you in <b>${level}</b>. `+
+         `I've turned that into exact paces below — the whole trick is running each workout at the right one. `+
+         `Do that consistently and your VDOT climbs. Re-test with a fresh race every 4–6 weeks and we'll move the paces up together.`;
+}
+
+function weeklyPlan(vdot, unit, paces){
+  const p=k=>paces[k];
+  return {
+    sub:`A balanced Daniels week — adjust the number of days to your schedule. Paces shown per ${unit==='km'?'km':'mile'}.`,
+    items:[
+      `<b>3–4 Easy days</b> at <b>${p('Easy')}</b> — conversational. This is where fitness is built, not on the hard days.`,
+      `<b>1 Threshold session</b>, e.g. 20 min continuous or 4×5 min at <b>${p('Threshold')}</b> with short jogs. Raises your sustainable pace.`,
+      `<b>1 Interval session</b>, e.g. 5×3 min at <b>${p('Interval')}</b> with equal jog recovery. Grows your VO₂max.`,
+      `<b>1 Long run</b> at <b>${p('Easy')}</b>, building toward 90–120 min. Sprinkle in Marathon-pace (<b>${p('Marathon')}</b>) if racing longer.`,
+      `Optional strides: 6×20s at <b>${p('Repetition')}</b> after an easy run to stay smooth and fast.`
+    ],
+    note:`Golden rule: <b>~80% of weekly time easy, ~20% hard.</b> If a pace feels wrong, trust your body over the number and re-test.`
+  };
+}
+
+function run(){
+  const d=parseFloat($('dist').value);
+  const h=parseInt($('hh').value||0), m=parseInt($('mm').value||0), s=parseInt($('ss').value||0);
+  const tMin=h*60+m+s/60;
+  if(!(tMin>0)){ alert('Enter a time — minutes at minimum.'); return; }
+  const unit=$('unit').value;
+  const vdot=vdotFromRace(d,tMin);
+  if(!(vdot>0)||!isFinite(vdot)){ alert('That time looks off for the distance — double-check it.'); return; }
+
+  // VDOT + coach message
+  $('vdotNum').textContent=vdot.toFixed(1);
+  $('coachMsg').innerHTML=coachTalk(vdot);
+
+  // Paces
+  const paceMap={};
+  const pc=$('paces'); pc.innerHTML='';
+  ZONES.forEach(z=>{
+    const vel=velFromVO2(z.f*vdot);
+    const ps=paceStr(vel,unit);
+    paceMap[z.k]=ps+`/${unit}`;
+    const el=document.createElement('div'); el.className='pace';
+    el.innerHTML=`<div class="k">${z.k}</div><div class="p">${ps}<span style="font-size:.7rem;color:var(--muted)"> /${unit}</span></div>`+
+      `<div class="d">${z.d}</div><div class="bar" style="background:var(${z.var})"></div>`;
+    pc.appendChild(el);
+  });
+
+  // Predictions
+  const pb=$('predBody'); pb.innerHTML='';
+  PRED_DISTS.forEach(pd=>{
+    const t=predictTime(pd,vdot);
+    const vel=pd/t;
+    const tr=document.createElement('tr');
+    const isSelf = Math.abs(pd-d)<1;
+    tr.innerHTML=`<td>${PRED_LABELS[pd]}${isSelf?' <span class="pill">your race</span>':''}</td>`+
+      `<td class="t">${fmtTime(t)}</td><td>${paceStr(vel,unit)}/${unit}</td>`;
+    pb.appendChild(tr);
+  });
+
+  // Plan
+  const plan=weeklyPlan(vdot,unit,paceMap);
+  $('planSub').textContent=plan.sub;
+  const pl=$('planList'); pl.innerHTML='';
+  plan.items.forEach(t=>{ const li=document.createElement('li'); li.innerHTML=t; pl.appendChild(li); });
+  $('planNote').innerHTML=plan.note;
+
+  // Reveal
+  ['resultCard','paceCard','predCard','planCard'].forEach(id=>$(id).classList.remove('hidden'));
+  $('resultCard').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+$('go').onclick=run;
+document.addEventListener('keydown',e=>{ if(e.key==='Enter') run(); });
+</script>
+</body>
+</html>

@@ -378,6 +378,105 @@ CONTENT.cards = [
   { w: 12, type: "discrimination", front: "Laminar vs turbulent flow?", back: "Laminar = smooth, ordered layers. Turbulent = chaotic, mixing flow. Transition depends on speed, size, and viscosity." },
   { w: 12, type: "definition", front: "Bernoulli principle (in one line)?", back: "Faster-moving fluid exerts lower pressure; a pressure difference across a surface generates lift." },
 
+  // ==== EXPANSION DECK ====================================================
+  // ---- WEEK 1 (more) ----
+  { w: 1, type: "definition", front: "Biomechanics — one-line definition?", back: "The application of mechanics (forces and their effects) to biological systems — the study of forces acting on and within living organisms." },
+  { w: 1, type: "definition", front: "The two branches of dynamics?", back: "Kinematics (describing motion) and kinetics (the forces causing it). Dynamics is the study of accelerating systems." },
+  { w: 1, type: "application", front: "A car cruising at a constant 100 km/h on a straight road — static or dynamic?", back: "STATIC — constant velocity means no acceleration, so ΣF = 0. Motion ≠ dynamics; acceleration does." },
+  { w: 1, type: "definition", front: "SI base units for length, mass, and time?", back: "Metre (m), kilogram (kg), second (s)." },
+  { w: 1, type: "application", front: "Coach says 'her elbow drops on the follow-through' — qualitative or quantitative?", back: "Qualitative — a systematic observation with no numbers. A joint-angle measurement from video would be quantitative." },
+  { w: 1, type: "definition", front: "What are significant figures for?", back: "They communicate the precision of a measurement — you can't report more precision than your instrument or data supports." },
+
+  // ---- WEEK 2 (more) ----
+  { w: 2, type: "definition", front: "Flexion vs extension?", back: "Flexion = decreasing the joint angle; extension = increasing it. Both in the sagittal plane." },
+  { w: 2, type: "definition", front: "Abduction vs adduction?", back: "Abduction = moving a segment AWAY from the midline; adduction = moving it TOWARD the midline. Frontal plane." },
+  { w: 2, type: "definition", front: "Dorsiflexion vs plantarflexion?", back: "Dorsiflexion = toes up toward the shin; plantarflexion = toes down (pointing). At the ankle." },
+  { w: 2, type: "definition", front: "The sagittal plane divides the body into…?", back: "Left and right portions." },
+  { w: 2, type: "application", front: "Shaking your head 'no' — plane and axis?", back: "Transverse plane, longitudinal (vertical) axis." },
+  { w: 2, type: "application", front: "Bending sideways at the trunk — plane and axis?", back: "Frontal plane, anteroposterior axis." },
+  { w: 2, type: "definition", front: "Medial vs lateral rotation?", back: "Medial (internal) rotation = turning the anterior surface toward the midline; lateral (external) = away from it. Transverse plane." },
+
+  // ---- WEEK 3 (more) ----
+  { w: 3, type: "definition", front: "Young's modulus (stiffness) — what is it on the curve?", back: "The slope of the elastic (linear) region: stress ÷ strain. Steeper slope = stiffer material." },
+  { w: 3, type: "discrimination", front: "Elastic vs plastic deformation?", back: "Elastic = recoverable, springs back when unloaded. Plastic = permanent, does not return." },
+  { w: 3, type: "definition", front: "The yield point?", back: "The end of the elastic region — beyond it, deformation becomes permanent (plastic)." },
+  { w: 3, type: "definition", front: "The five ways bone can be loaded?", back: "Tension, compression, shear, bending, and torsion." },
+  { w: 3, type: "discrimination", front: "Tension vs compression loading?", back: "Tension pulls/stretches a structure apart; compression pushes/squashes it together." },
+  { w: 3, type: "application", front: "Astronauts and bedridden patients lose bone. Which principle, and why?", back: "Wolff's law — remove the mechanical load and bone resorbs/weakens along the unloaded lines. Loading builds bone; disuse loses it." },
+  { w: 3, type: "definition", front: "Ultimate strength / failure point?", back: "The maximum stress a material withstands before it fractures/fails (the top of the curve before break)." },
+
+  // ---- WEEK 4 (more) ----
+  { w: 4, type: "definition", front: "The three STRUCTURAL joint classes?", back: "Fibrous, cartilaginous, and synovial (by the connective tissue between bones)." },
+  { w: 4, type: "definition", front: "The three FUNCTIONAL joint classes?", back: "Synarthrosis (immovable), amphiarthrosis (slightly movable), diarthrosis (freely movable). By amount of motion." },
+  { w: 4, type: "application", front: "A hinge joint — example and motion?", back: "Elbow or knee — flexion/extension in one plane only (uniaxial)." },
+  { w: 4, type: "application", front: "A pivot joint — example and motion?", back: "Atlantoaxial (neck) or proximal radioulnar — rotation about one axis." },
+  { w: 4, type: "discrimination", front: "Centre of mass vs centre of gravity?", back: "COM = the mass-weighted balance point. COG = the point where gravity effectively acts. In a uniform gravitational field they coincide." },
+  { w: 4, type: "definition", front: "Line of gravity?", back: "The vertical line dropped from the COM to the ground. For balance it must fall within the base of support." },
+  { w: 4, type: "application", front: "Why does a sumo wrestler adopt a wide, low stance?", back: "It widens the base of support and lowers the COM — both increase stability (harder to topple)." },
+
+  // ---- WEEK 5 (more) ----
+  { w: 5, type: "definition", front: "The sarcomere?", back: "The functional contractile unit of muscle — the segment between two Z-lines where actin and myosin overlap." },
+  { w: 5, type: "definition", front: "Length–tension relationship?", back: "A muscle produces maximum active force at its optimal (near-resting) length, where actin–myosin overlap is ideal. Too short or too stretched → less force." },
+  { w: 5, type: "definition", front: "Force–velocity relationship (concentric)?", back: "As concentric shortening velocity increases, force output decreases. (Eccentrically, force can exceed isometric.)" },
+  { w: 5, type: "definition", front: "Agonist vs antagonist vs synergist?", back: "Agonist = prime mover; antagonist = opposes/controls it; synergist = assists or stabilises the movement." },
+  { w: 5, type: "application", front: "Which fibre type dominates in an elite marathoner vs a 100 m sprinter?", back: "Marathoner → Type I (slow, fatigue-resistant, aerobic). Sprinter → Type IIx (fast, powerful, quick to fatigue)." },
+  { w: 5, type: "definition", front: "The all-or-none principle (motor unit)?", back: "When a motor unit is activated, ALL its fibres contract fully; there's no partial contraction of a single motor unit." },
+  { w: 5, type: "application", front: "Triceps extending the elbow — which lever class?", back: "Class 1 — the fulcrum (elbow) sits between the effort (triceps behind) and the resistance (forearm/hand in front). F in the middle." },
+  { w: 5, type: "discrimination", front: "Isotonic vs isometric contraction?", back: "Isotonic = muscle changes length while producing force (concentric or eccentric). Isometric = force with no length change." },
+
+  // ---- WEEK 6 (more) ----
+  { w: 6, type: "definition", front: "A deterministic model?", back: "A hierarchical diagram linking a performance outcome (e.g. jump height) to the mechanical factors that determine it — used to guide analysis." },
+  { w: 6, type: "definition", front: "Heel strike and toe-off?", back: "Heel strike = start of stance (foot contacts ground); toe-off = end of stance (foot leaves ground, swing begins)." },
+  { w: 6, type: "definition", front: "What does a force plate measure? What does EMG measure?", back: "Force plate → ground reaction force (kinetics). EMG → muscle electrical activity / when a muscle is active." },
+  { w: 6, type: "definition", front: "Stride vs step?", back: "A step = one foot contact to the opposite foot contact. A stride = one full gait cycle (same foot to same foot) = two steps." },
+  { w: 6, type: "discrimination", front: "Reliability vs objectivity?", back: "Reliability = same result on repeat by the same tester. Objectivity = same result across different testers (inter-rater agreement)." },
+
+  // ---- WEEK 8 (more) ----
+  { w: 8, type: "formula", front: "Average velocity?", back: "v_avg = Δx / Δt (change in displacement ÷ change in time)." },
+  { w: 8, type: "formula", front: "Average acceleration?", back: "a_avg = Δv / Δt (change in velocity ÷ change in time)." },
+  { w: 8, type: "definition", front: "Value and direction of g?", back: "≈ 9.81 m/s², directed downward (toward Earth's centre)." },
+  { w: 8, type: "formula", front: "Resolve a vector V at angle θ into components?", back: "Vx = V·cosθ, Vy = V·sinθ." },
+  { w: 8, type: "formula", front: "Recombine components into magnitude and angle?", back: "|V| = √(Vx² + Vy²); θ = tan⁻¹(Vy / Vx)." },
+  { w: 8, type: "application", front: "A ball dropped and a ball thrown horizontally from the same height — which lands first?", back: "They land at the SAME time. Vertical motion is independent of horizontal — gravity acts identically on both." },
+  { w: 8, type: "discrimination", front: "Instantaneous vs average velocity?", back: "Average = over a time interval (Δx/Δt). Instantaneous = at a single instant (the slope of the position graph at that point)." },
+  { w: 8, type: "application", front: "For a projectile landing at its launch height, how does time to the peak compare to total flight time?", back: "Time to the peak = half the total flight time (the path is symmetric)." },
+
+  // ---- WEEK 9 (more) ----
+  { w: 9, type: "formula", front: "Angular velocity ω from angular displacement?", back: "ω = Δθ / Δt (rad/s)." },
+  { w: 9, type: "formula", front: "Angular acceleration α?", back: "α = Δω / Δt (rad/s²)." },
+  { w: 9, type: "formula", front: "Arc length from angle?", back: "s = rθ (θ in radians)." },
+  { w: 9, type: "discrimination", front: "Tangential vs centripetal (radial) acceleration?", back: "Tangential (a_t = rα) = along the path, changes SPEED. Centripetal (a_c = v²/r) = toward the centre, changes DIRECTION." },
+  { w: 9, type: "application", front: "A gymnast on a high bar extends into a giant swing. Why do the hands speed up?", back: "A larger radius r at the same ω gives greater linear speed (v = rω). Lengthening the rotating radius multiplies end-point speed." },
+  { w: 9, type: "definition", front: "Units for angular displacement, and the base one for equations?", back: "Degrees, revolutions, or radians — but radians are required for v = rω, a_t = rα, s = rθ." },
+
+  // ---- WEEK 10 (more) ----
+  { w: 10, type: "formula", front: "Friction force?", back: "f = μN (coefficient of friction × normal force)." },
+  { w: 10, type: "formula", front: "Weight from mass?", back: "W = mg (mass × gravitational acceleration). Units: N." },
+  { w: 10, type: "discrimination", front: "Mass vs weight?", back: "Mass = amount of matter (kg), constant everywhere. Weight = the gravitational force on that mass (N), varies with g." },
+  { w: 10, type: "definition", front: "Newton's first law?", back: "An object at rest stays at rest and one in motion stays in uniform motion unless acted on by a net external force (the law of inertia)." },
+  { w: 10, type: "application", front: "You walk forward by pushing the ground backward. Which law?", back: "Newton's third law — you push the ground back, the ground pushes you forward (equal and opposite reaction = ground reaction force)." },
+  { w: 10, type: "definition", front: "Normal force?", back: "The support force a surface exerts perpendicular to itself on an object resting on it." },
+  { w: 10, type: "definition", front: "Conservation of momentum?", back: "In an isolated system (no net external force), total momentum before = total momentum after a collision/interaction." },
+  { w: 10, type: "formula", front: "Mechanical work?", back: "W = F·d — force × displacement in the direction of the force. Units: joules (J)." },
+  { w: 10, type: "discrimination", front: "Positive vs negative work by a muscle?", back: "Positive work = concentric (muscle shortens, does work on load). Negative work = eccentric (muscle lengthens, absorbs work)." },
+
+  // ---- WEEK 11 (more) ----
+  { w: 11, type: "definition", front: "A force couple?", back: "Two equal, opposite, parallel forces acting at a distance — they produce pure rotation (torque) with no net translation." },
+  { w: 11, type: "formula", front: "Moment of inertia of a point mass?", back: "I = mr² — mass times the square of its distance from the axis. Farther mass = much larger I." },
+  { w: 11, type: "application", front: "A figure skater pulls their arms in during a spin. What happens and why?", back: "Arms in → mass closer to the axis → I decreases → ω increases (L = Iω conserved). They spin faster with no added energy." },
+  { w: 11, type: "application", front: "Why does a longer wrench loosen a bolt more easily?", back: "A longer handle = a longer moment arm, so the same hand force produces more torque (τ = F·d⊥)." },
+  { w: 11, type: "discrimination", front: "Stable, unstable, and neutral equilibrium?", back: "Stable = returns to position after a small disturbance (COM rises). Unstable = moves further away (COM falls). Neutral = stays put (COM height unchanged)." },
+  { w: 11, type: "application", front: "A seesaw balances. What is equal on both sides?", back: "The torques (Στ = 0): force × moment arm on each side are equal and opposite. A lighter person farther out can balance a heavier one closer in." },
+  { w: 11, type: "discrimination", front: "Can a first-class lever have MA > 1 or < 1?", back: "Either — it depends on where the fulcrum sits. Effort arm longer → MA > 1 (favours force); resistance arm longer → MA < 1 (favours speed)." },
+
+  // ---- WEEK 12 (more) ----
+  { w: 12, type: "definition", front: "Viscosity?", back: "A fluid's internal resistance to flow / to shearing. Higher viscosity = thicker, harder to move through." },
+  { w: 12, type: "application", front: "Why do cyclists crouch into a low tuck at speed?", back: "It reduces the frontal area and streamlines the body, cutting form (pressure) drag — which matters hugely since drag ∝ v²." },
+  { w: 12, type: "application", front: "Why is a golf ball dimpled?", back: "Dimples trip the boundary layer into turbulence that clings to the ball longer, shrinking the low-pressure wake → less form drag and greater range." },
+  { w: 12, type: "discrimination", front: "Will an object float or sink?", back: "Compare densities: if the object's density < the fluid's, buoyant force wins and it floats; if greater, it sinks." },
+  { w: 12, type: "discrimination", front: "Form drag vs surface drag — how do you reduce each?", back: "Form/pressure drag: streamline the shape, reduce frontal area. Surface/friction drag: smoother surfaces, less wetted area (e.g. swimsuits, shaving)." },
+  { w: 12, type: "definition", front: "Relative velocity (in fluids)?", back: "The velocity of the object relative to the fluid — a headwind or current adds to it, increasing drag; a tailwind reduces it." },
+
   // ---- ERROR-LOG SEED CARDS ----
   { w: 3, type: "application", front: "ERROR-LOG TRAP: Can bone bend?", back: "YES, slightly — bone is stiff, not rigid. It deforms elastically and springs back. Small deformation ≠ no deformation." },
 ];
@@ -444,6 +543,64 @@ CONTENT.quiz = [
   { w: 12, q: "Drag scales with velocity as:", opts: ["∝ v", "∝ v²", "∝ 1/v", "∝ √v"], a: 1, why: "Drag ∝ v² — why speed is so expensive energetically." },
   { w: 12, q: "A curveball curves because of:", opts: ["Buoyancy", "The Magnus effect (spin-driven pressure asymmetry)", "Pure gravity", "Wave drag"], a: 1, why: "Spin creates a pressure difference across the ball — the Magnus effect, not a simple Bernoulli claim." },
   { w: 12, q: "Archimedes' principle: buoyant force equals:", opts: ["The object's weight", "The weight of fluid displaced", "The drag force", "The lift force"], a: 1, why: "Buoyant force = weight of the displaced fluid." },
+
+  // ==== EXPANSION QUIZ BANK ================================================
+  { w: 1, q: "A car travels at a constant 90 km/h in a straight line. It is:", opts: ["Dynamic — it's moving", "Static — ΣF = 0, no acceleration", "Neither", "Both static and dynamic"], a: 1, why: "Constant velocity = no acceleration = ΣF = 0 = statics. Movement alone does not make a system dynamic." },
+  { w: 1, q: "Kinematics and kinetics are:", opts: ["The same thing", "Two independent axes from statics/dynamics", "Both about forces only", "Subsets of statics"], a: 1, why: "Describing vs explaining motion — an independent split from statics/dynamics. You can have static kinetics." },
+  { w: 1, q: "Which pairing lists SI base units for length, mass, time?", opts: ["cm, g, min", "m, kg, s", "km, lb, hr", "ft, kg, s"], a: 1, why: "Metre, kilogram, second." },
+  { w: 1, q: "'His trunk leans too far forward at push-off' is a ___ observation.", opts: ["Quantitative", "Qualitative", "Kinetic", "Static"], a: 1, why: "No numbers — a systematic qualitative observation. A measured trunk angle would be quantitative." },
+
+  { w: 2, q: "Flexion means the joint angle:", opts: ["Increases", "Decreases", "Stays the same", "Rotates"], a: 1, why: "Flexion decreases the joint angle; extension increases it. Both in the sagittal plane." },
+  { w: 2, q: "Abduction moves a limb:", opts: ["Toward the midline", "Away from the midline", "Into rotation", "Downward"], a: 1, why: "Abduction = away from the midline (frontal plane); adduction = toward it." },
+  { w: 2, q: "Shaking your head 'no' occurs in which plane / axis?", opts: ["Sagittal / mediolateral", "Frontal / anteroposterior", "Transverse / longitudinal", "Sagittal / longitudinal"], a: 2, why: "Rotation about the vertical body axis = transverse plane, longitudinal axis." },
+  { w: 2, q: "Pointing your toes downward is:", opts: ["Dorsiflexion", "Plantarflexion", "Eversion", "Abduction"], a: 1, why: "Plantarflexion (toes down). Dorsiflexion is toes up toward the shin." },
+
+  { w: 3, q: "Young's modulus (stiffness) is represented on the stress–strain curve by:", opts: ["The failure point", "The slope of the elastic region", "The area under the curve", "The yield point"], a: 1, why: "Stiffness = stress/strain = slope of the linear elastic region." },
+  { w: 3, q: "Deformation that does NOT recover when the load is removed is:", opts: ["Elastic", "Plastic", "Isometric", "Tensile"], a: 1, why: "Plastic deformation is permanent; elastic deformation springs back." },
+  { w: 3, q: "Astronauts lose bone density in microgravity. This is explained by:", opts: ["Newton's third law", "Wolff's law (unloaded bone resorbs)", "Archimedes' principle", "The size principle"], a: 1, why: "Wolff's law — bone remodels to load. Remove the load and it weakens." },
+  { w: 3, q: "Squashing a structure end-to-end is ___ loading.", opts: ["Tension", "Compression", "Shear", "Torsion"], a: 1, why: "Compression pushes together; tension pulls apart." },
+
+  { w: 4, q: "The three STRUCTURAL joint classes are:", opts: ["Hinge, pivot, saddle", "Fibrous, cartilaginous, synovial", "Synarthrosis, amphiarthrosis, diarthrosis", "Stable, unstable, neutral"], a: 1, why: "Structural = by connective tissue: fibrous, cartilaginous, synovial. (Functional = synarthrosis/amphiarthrosis/diarthrosis.)" },
+  { w: 4, q: "A hinge joint such as the elbow allows:", opts: ["Motion in all three planes", "Flexion/extension in one plane", "Rotation only", "Gliding only"], a: 1, why: "Hinge = uniaxial, flexion/extension in one plane." },
+  { w: 4, q: "For balance, the line of gravity from the COM must fall:", opts: ["Outside the base of support", "Within the base of support", "Above the head", "At the knees"], a: 1, why: "If the line of gravity leaves the base of support, you topple." },
+  { w: 4, q: "On Earth, the centre of mass and centre of gravity:", opts: ["Are always far apart", "Coincide (uniform gravity)", "Are unrelated", "Only match underwater"], a: 1, why: "In a uniform gravitational field the COM and COG are the same point." },
+
+  { w: 5, q: "A muscle produces its maximum active force at:", opts: ["Its fully stretched length", "Its fully shortened length", "Its optimal (near-resting) length", "Any length equally"], a: 2, why: "Length–tension: peak force at optimal actin–myosin overlap, near resting length." },
+  { w: 5, q: "As concentric shortening velocity increases, muscle force:", opts: ["Increases", "Decreases", "Stays constant", "Doubles"], a: 1, why: "Force–velocity relationship: faster concentric shortening → less force. (Eccentric is the opposite.)" },
+  { w: 5, q: "Triceps extending the elbow is which lever class?", opts: ["Class 1", "Class 2", "Class 3", "Not a lever"], a: 0, why: "The elbow (fulcrum) sits between the triceps effort and the forearm resistance → class 1 (F in the middle)." },
+  { w: 5, q: "An elite marathon runner's muscles are dominated by:", opts: ["Type IIx fibres", "Type I fibres", "Type IIa only", "No particular type"], a: 1, why: "Type I — slow, fatigue-resistant, aerobic. Sprinters lean on Type IIx." },
+  { w: 5, q: "The all-or-none principle states that when a motor unit fires:", opts: ["Only some of its fibres contract", "All of its fibres contract fully", "Force is graded within the unit", "It fatigues instantly"], a: 1, why: "A motor unit contracts fully or not at all; whole-muscle force is graded by recruiting more units and rate coding." },
+
+  { w: 6, q: "Toe-off marks the:", opts: ["Start of stance", "End of stance / start of swing", "Middle of swing", "End of the stride"], a: 1, why: "Toe-off ends stance and begins the swing phase; heel strike begins stance." },
+  { w: 6, q: "Which device measures ground reaction force?", opts: ["EMG", "Force plate", "Goniometer", "Accelerometer"], a: 1, why: "A force plate measures GRF (kinetics). EMG measures muscle electrical activity." },
+  { w: 6, q: "Getting the same result when a DIFFERENT tester repeats a measurement is:", opts: ["Reliability", "Objectivity", "Validity", "Accuracy"], a: 1, why: "Objectivity = agreement across testers. Reliability = same tester repeating." },
+
+  { w: 8, q: "The components of a vector V at angle θ are:", opts: ["Vx = V·sinθ, Vy = V·cosθ", "Vx = V·cosθ, Vy = V·sinθ", "Vx = V/θ, Vy = V·θ", "Vx = Vy = V"], a: 1, why: "Vx = V·cosθ (adjacent), Vy = V·sinθ (opposite)." },
+  { w: 8, q: "A ball dropped and a ball thrown horizontally from the same height hit the ground:", opts: ["Dropped one first", "Thrown one first", "At the same time", "Depends on speed"], a: 2, why: "Vertical motion is independent of horizontal — gravity acts equally, so they land together." },
+  { w: 8, q: "The value of gravitational acceleration near Earth's surface is about:", opts: ["1.0 m/s²", "9.81 m/s² downward", "9.81 m/s² upward", "45 m/s²"], a: 1, why: "g ≈ 9.81 m/s², directed downward." },
+  { w: 8, q: "The magnitude of a vector from components Vx, Vy is:", opts: ["Vx + Vy", "√(Vx² + Vy²)", "Vx · Vy", "Vx − Vy"], a: 1, why: "Pythagoras: |V| = √(Vx² + Vy²); direction = tan⁻¹(Vy/Vx)." },
+
+  { w: 9, q: "Arc length along a rotating segment is:", opts: ["s = r/θ", "s = rθ (θ in radians)", "s = θ/r", "s = rω"], a: 1, why: "s = rθ with θ in radians." },
+  { w: 9, q: "Centripetal acceleration is directed:", opts: ["Along the path (tangent)", "Toward the centre of rotation", "Outward", "Downward"], a: 1, why: "Centripetal (radial) acceleration points toward the centre and changes direction; tangential acceleration changes speed." },
+  { w: 9, q: "Angular velocity ω is:", opts: ["Δθ/Δt", "Δv/Δt", "rθ", "Iω"], a: 0, why: "ω = angular displacement ÷ time (rad/s)." },
+  { w: 9, q: "A gymnast lengthens their body in a giant swing to:", opts: ["Reduce hand speed", "Increase r so hand speed rises (v = rω)", "Decrease ω", "Change the plane"], a: 1, why: "Larger radius at the same ω → greater linear (hand) speed." },
+
+  { w: 10, q: "Friction force is calculated as:", opts: ["f = N/μ", "f = μN", "f = μ/N", "f = mgμ²"], a: 1, why: "f = μN — coefficient of friction times the normal force." },
+  { w: 10, q: "Mass differs from weight because mass:", opts: ["Is a force in newtons", "Is constant regardless of gravity", "Changes on the Moon", "Equals mg"], a: 1, why: "Mass (kg) is amount of matter, constant. Weight (N) = mg and varies with g." },
+  { w: 10, q: "You propel yourself forward when walking by:", opts: ["Pulling the ground forward", "Pushing the ground backward (3rd law)", "Reducing your mass", "Increasing friction only"], a: 1, why: "Newton's third law: push the ground back, it pushes you forward (ground reaction force)." },
+  { w: 10, q: "In an isolated collision, the total momentum:", opts: ["Increases", "Decreases", "Is conserved", "Becomes zero"], a: 2, why: "With no net external force, total momentum before = after (conservation of momentum)." },
+  { w: 10, q: "An eccentric (lengthening) muscle action does ___ work.", opts: ["Positive", "Negative", "Zero", "Rotational"], a: 1, why: "Eccentric = negative work (the muscle absorbs energy); concentric = positive work." },
+
+  { w: 11, q: "The moment of inertia of a point mass is:", opts: ["mr", "mr²", "½mv²", "Iω"], a: 1, why: "I = mr² — distance from the axis is squared, so it dominates." },
+  { w: 11, q: "A longer wrench handle loosens a bolt more easily because it:", opts: ["Reduces friction", "Increases the moment arm, so more torque", "Adds mass", "Changes the bolt"], a: 1, why: "τ = F·d⊥ — a longer moment arm multiplies the torque for the same force." },
+  { w: 11, q: "In STABLE equilibrium, a small disturbance causes the object to:", opts: ["Move further away", "Return to its original position", "Stay wherever pushed", "Fall over"], a: 1, why: "Stable = COM rises when displaced, so it returns. Unstable = COM falls, it topples. Neutral = no change." },
+  { w: 11, q: "A force couple produces:", opts: ["Pure translation", "Pure rotation, no net translation", "No motion", "Only compression"], a: 1, why: "Two equal, opposite, parallel forces create rotation (torque) with zero net force." },
+  { w: 11, q: "A lighter child balances a heavier one on a seesaw by:", opts: ["Sitting closer to the pivot", "Sitting farther from the pivot", "Adding weight", "Pushing harder"], a: 1, why: "Balance needs equal torques (F·d). A smaller force needs a larger moment arm — sit farther out." },
+
+  { w: 12, q: "Viscosity is a fluid's:", opts: ["Density", "Resistance to flow/shear", "Buoyant force", "Spin rate"], a: 1, why: "Viscosity = internal resistance to flow. Thicker fluids have higher viscosity." },
+  { w: 12, q: "A cyclist crouches low mainly to reduce:", opts: ["Surface drag", "Form (pressure) drag", "Buoyancy", "Lift"], a: 1, why: "A low tuck cuts frontal area and streamlines the body → less form drag (and drag ∝ v²)." },
+  { w: 12, q: "Golf-ball dimples reduce drag by:", opts: ["Adding mass", "Tripping the boundary layer into turbulence that clings longer", "Increasing viscosity", "Creating lift only"], a: 1, why: "Turbulent boundary layer stays attached longer → smaller wake → less form drag → greater range." },
+  { w: 12, q: "An object floats when its density is ___ the fluid's density.", opts: ["Greater than", "Less than", "Equal to", "Unrelated to"], a: 1, why: "Lower density than the fluid → buoyant force exceeds weight → it floats." },
 ];
 
 /* ----------------------------------------------------------------------------

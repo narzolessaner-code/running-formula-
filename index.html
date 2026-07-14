@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Biomechanics — Study System</title>
+  <meta name="description" content="A daily study system for biomechanics: flashcards with spaced repetition, quizzes, the 13-week map, formulas, and an error log." />
+  <meta name="theme-color" content="#2f6f6b" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦴</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand-row">
+        <span class="dot"></span>
+        <h1>Biomechanics · Study System</h1>
+        <span class="spacer"></span>
+        <button id="themeBtn" class="theme-btn">◐ Auto</button>
+        <button id="resetBtn" class="reset-btn" title="Reset all progress">Reset</button>
+      </div>
+      <nav class="tabs">
+        <button class="tab" data-view="dashboard">Today</button>
+        <button class="tab" data-view="flashcards">Flashcards</button>
+        <button class="tab" data-view="quiz">Quiz</button>
+        <button class="tab" data-view="weeks">13-Week Map</button>
+        <button class="tab" data-view="formulas">Formulas</button>
+        <button class="tab" data-view="math">Math Prep</button>
+        <button class="tab" data-view="errors">Error Log</button>
+        <button class="tab" data-view="library">Library</button>
+        <button class="tab" data-view="rules">Rules</button>
+      </nav>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="view-dashboard" class="view"></section>
+
+    <!-- FLASHCARDS -->
+    <section id="view-flashcards" class="view">
+      <h2 class="view-title">Flashcards</h2>
+      <p class="view-sub">Spaced repetition — cards resurface right as you're about to forget. Tap to flip · <b>space</b> reveals · <b>1–4</b> grade. Grade honestly; "Again" re-shows this session.</p>
+      <div class="card">
+        <div class="fc-toolbar">
+          <select id="fcWeek"></select>
+          <select id="fcType"></select>
+          <span style="color:var(--text-soft);font-size:.82rem">Discrimination & application cards are what produce A's.</span>
+        </div>
+      </div>
+      <div id="fcProgress"></div>
+      <div id="fcStage" class="fc-stage"></div>
+      <div id="fcControls"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="view-quiz" class="view">
+      <h2 class="view-title">Learning Quiz</h2>
+      <p class="view-sub">10 questions a round, drawn from every week. Wrong answers can go straight to your Error Log.</p>
+      <div class="card">
+        <div class="fc-toolbar">
+          <select id="qzWeek"></select>
+          <button id="qzStart" class="btn">Start / new quiz</button>
+        </div>
+      </div>
+      <div id="qzStage"></div>
+    </section>
+
+    <!-- WEEKS -->
+    <section id="view-weeks" class="view"></section>
+
+    <!-- FORMULAS -->
+    <section id="view-formulas" class="view">
+      <h2 class="view-title">Formula Sheet</h2>
+      <p class="view-sub">The quantitative half in one place. Building this by hand IS the studying — but keep it here to drill. <b>Units on every line.</b></p>
+      <div id="formulaList"></div>
+    </section>
+
+    <!-- MATH PREP -->
+    <section id="view-math" class="view">
+      <h2 class="view-title">Math Prep Track</h2>
+      <p class="view-sub">10 min/day during Weeks 1–6, while content is light. By Week 8 you're the only person for whom the maths isn't the hard part.</p>
+      <div id="mathList"></div>
+      <div class="callout">And forever: <b>units on every line.</b> Not just the answer — every line. If your units come out wrong, your working is wrong, and you'll know before the examiner does.</div>
+    </section>
+
+    <!-- ERROR LOG -->
+    <section id="view-errors" class="view">
+      <h2 class="view-title">Error Log</h2>
+      <p class="view-sub">One line per mistake: what you got wrong · what's actually true · the one-sentence reason. Read it before every exam.</p>
+      <div class="card">
+        <h3>Add an entry</h3>
+        <div class="errform">
+          <input id="errWrong" placeholder="What I got wrong…" />
+          <input id="errTruth" placeholder="What's actually true…" />
+          <input id="errReason" placeholder="The one-sentence reason I got it wrong (optional)" />
+        </div>
+        <button id="errAdd" class="btn">Add to log</button>
+      </div>
+      <div id="errList"></div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section id="view-library" class="view">
+      <h2 class="view-title">Free Library</h2>
+      <p class="view-sub">All legal, all free, no login. Download the Hamm PDF today so you have it offline.</p>
+      <div class="card"><div id="resList"></div></div>
+    </section>
+
+    <!-- RULES -->
+    <section id="view-rules" class="view">
+      <h2 class="view-title">Two subjects, one name</h2>
+      <p class="view-sub">Your course is two different subjects wearing one name. Understand this first.</p>
+      <div class="card"><div id="shapeBox"></div></div>
+      <h2 class="view-title" style="margin-top:26px">The Rules</h2>
+      <p class="view-sub">Pin these.</p>
+      <div class="card"><ol id="ruleList" class="rule-list"></ol></div>
+    </section>
+
+    <footer class="foot">
+      Built from your Biomechanics study system · progress saved in this browser · works offline
+    </footer>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

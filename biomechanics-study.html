@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Biomechanics — Study System</title>
-<meta name="description" content="A daily biomechanics study system: spaced-repetition flashcards, quizzes, the 13-week map, formulas, and an error log." />
 <meta name="theme-color" content="#2f6f6b" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🦴</text></svg>" />
 <style>
@@ -888,6 +887,48 @@ CONTENT.cards = [
   { w: 12, type: "discrimination", front: "Form drag vs surface drag — how do you reduce each?", back: "Form/pressure drag: streamline the shape, reduce frontal area. Surface/friction drag: smoother surfaces, less wetted area (e.g. swimsuits, shaving)." },
   { w: 12, type: "definition", front: "Relative velocity (in fluids)?", back: "The velocity of the object relative to the fluid — a headwind or current adds to it, increasing drag; a tailwind reduces it." },
 
+  // ==== BOOK-SOURCED DECK (Hamill Ch.1–4 · Knudson) ======================
+  // -- Week 1 --
+  { w: 1, type: "definition", front: "Linear motion (translation) — Hamill's definition?", back: "Movement along a straight or curved path in which ALL points on the body move the same distance, in the same direction, in the same time. E.g. a sprinter's path, a punted ball." },
+  { w: 1, type: "discrimination", front: "Linear vs angular vs general motion?", back: "Linear = all points translate together. Angular = rotation about an axis. General = a combination of both — and it describes most human movement." },
+  { w: 1, type: "application", front: "Running is which type of motion, and why?", back: "General motion — the limbs rotate about joints (angular) while the whole body translates forward (linear)." },
+  { w: 1, type: "definition", front: "The sagittal plane divides the body into…? Its axis?", back: "Right and left halves; motion occurs about the MEDIOLATERAL axis (running side to side through the COM)." },
+  { w: 1, type: "definition", front: "The frontal (coronal) plane divides the body into…? Its axis?", back: "Front and back halves; motion occurs about the ANTEROPOSTERIOR axis." },
+
+  // -- Week 2 --
+  { w: 2, type: "definition", front: "Horizontal abduction / adduction — which plane?", back: "The transverse plane — the arm moves across the body at roughly shoulder height." },
+  { w: 2, type: "application", front: "A figure-skating spin about the long axis of the body is motion in which plane?", back: "The transverse plane, about the longitudinal axis, around the body's centre of mass." },
+
+  // -- Week 3 --
+  { w: 3, type: "definition", front: "Cortical bone — Hamill's facts?", back: "The hard, compact outer layer; looks solid; makes up about 80% of the skeleton. (Cancellous/spongy bone lies internal to it.)" },
+  { w: 3, type: "discrimination", front: "Cortical vs cancellous bone?", back: "Cortical (compact) = dense outer layer, ~80% of skeleton. Cancellous (spongy/trabecular) = porous internal architecture, suited to the mechanical demands of movement." },
+  { w: 3, type: "definition", front: "Wolff's law — the book's phrasing?", back: "Every change in the form and function of a bone is followed by definite changes in its internal architecture and external conformation. Bone adapts its structure to the loads placed on it." },
+  { w: 3, type: "definition", front: "Why does the RATE of loading matter for bone?", back: "Bone is viscoelastic — its strength and response depend on how fast the load is applied, not just its magnitude. Faster loading changes how bone fails." },
+
+  // -- Week 5 --
+  { w: 5, type: "definition", front: "Motor unit — Hamill's definition?", back: "A group of muscle fibres innervated by a single motor neuron. When the neuron fires, all its fibres are stimulated together." },
+  { w: 5, type: "definition", front: "Excitation–contraction coupling — the key ion?", back: "Calcium (Ca2+). Its release links the action potential to contraction by binding the filaments and switching on actin–myosin interaction in the sarcomere." },
+  { w: 5, type: "definition", front: "The two ways muscle force is increased?", back: "1) Recruiting more (and larger) motor units. 2) Rate coding — increasing the firing frequency of active motor units." },
+  { w: 5, type: "discrimination", front: "Type I vs Type II fibres (Hamill)?", back: "Type I = slow-twitch, oxidative, red (high myoglobin), fatigue-resistant. Type II = fast-twitch (subdivided into IIa and IIb/IIx), more powerful, quicker to fatigue." },
+  { w: 5, type: "definition", front: "Agonist vs antagonist (Hamill)?", back: "Agonists = muscles creating the same joint movement (prime movers). Antagonists = muscles producing the opposite movement; they relax to allow motion or contract concurrently to control/slow it." },
+  { w: 5, type: "definition", front: "Where is the sarcomere?", back: "Inside the myofibrils that fill each muscle fibre — it is the contractile unit of muscle (between two Z-lines)." },
+
+  // -- Week 10 (Knudson) --
+  { w: 10, type: "definition", front: "Inertia — Knudson's definition?", back: "The property of ALL objects to resist changes in their state of motion. Linear measure = mass (m); angular measure = moment of inertia (I)." },
+  { w: 10, type: "discrimination", front: "What did Newton's inertia overturn?", back: "The Aristotelian idea that constant force is needed to keep something moving. Inertia means an object keeps its motion until a net force changes it." },
+  { w: 10, type: "definition", front: "Knudson's Force–Time principle pairs with which relationship?", back: "The impulse–momentum relationship — applying force over a longer time produces a greater change in momentum (or a smaller peak force for the same Δp)." },
+
+  // -- Week 11 (Knudson principles) --
+  { w: 11, type: "definition", front: "Knudson's nine principles of biomechanics?", back: "Range of Motion, Force–Motion, Force–Time, Inertia, Segmental Interaction, Balance, Coordination Continuum, Spin, and Optimal Projection." },
+  { w: 11, type: "definition", front: "The Segmental Interaction principle?", back: "Forces and motion transfer between adjacent linked segments (the kinetic chain) — energy passes proximal-to-distal, as in a whip-like throw or kick." },
+  { w: 11, type: "discrimination", front: "Coordination Continuum principle — simultaneous vs sequential?", back: "High-FORCE tasks tend to use simultaneous segment motions; high-SPEED tasks use sequential (proximal-to-distal) motions. Skills sit on a continuum between the two." },
+  { w: 11, type: "definition", front: "Knudson's Principle of Balance?", back: "Manage stability vs mobility by adjusting the base of support and the height/position of the centre of gravity to suit the task." },
+
+  // -- Week 12 (Knudson fluids) --
+  { w: 12, type: "definition", front: "Knudson's four fluid forces?", back: "Buoyancy, drag, lift, and the Magnus effect (spin) — leading into the Principle of Spin." },
+  { w: 12, type: "application", front: "A volleyball hit above centre (topspin) — what does the lift force do?", back: "Topspin creates a DOWNWARD lift force, making the ball dive steeply and harder to pass." },
+  { w: 12, type: "discrimination", front: "Spin for stability vs spin for curve?", back: "A thrown football's spin stabilises its orientation (gyroscopic — Principle of Spin). A curveball's spin creates a sideways pressure force (Magnus effect). Both are spin, different effects." },
+
   // ---- ERROR-LOG SEED CARDS ----
   { w: 3, type: "application", front: "ERROR-LOG TRAP: Can bone bend?", back: "YES, slightly — bone is stiff, not rigid. It deforms elastically and springs back. Small deformation ≠ no deformation." },
 ];
@@ -1012,6 +1053,43 @@ CONTENT.quiz = [
   { w: 12, q: "A cyclist crouches low mainly to reduce:", opts: ["Surface drag", "Form (pressure) drag", "Buoyancy", "Lift"], a: 1, why: "A low tuck cuts frontal area and streamlines the body → less form drag (and drag ∝ v²)." },
   { w: 12, q: "Golf-ball dimples reduce drag by:", opts: ["Adding mass", "Tripping the boundary layer into turbulence that clings longer", "Increasing viscosity", "Creating lift only"], a: 1, why: "Turbulent boundary layer stays attached longer → smaller wake → less form drag → greater range." },
   { w: 12, q: "An object floats when its density is ___ the fluid's density.", opts: ["Greater than", "Less than", "Equal to", "Unrelated to"], a: 1, why: "Lower density than the fluid → buoyant force exceeds weight → it floats." },
+
+  // ==== BOOK-SOURCED QUIZ BANK (Hamill Ch.1–4 · Knudson) ==================
+  { w: 1, q: "Linear motion (translation) means that all points on the body:", opts: ["Rotate about an axis", "Move the same distance in the same direction in the same time", "Move at different speeds", "Stay still"], a: 1, why: "Hamill: in linear motion all points travel the same distance, in the same direction, in the same time — e.g. a sprinter's path or a punted ball's trajectory." },
+  { w: 1, q: "A gymnast doing a somersault rotating about their centre of mass is an example of:", opts: ["Linear motion", "Angular motion", "General motion", "Static equilibrium"], a: 1, why: "Rotation about an axis = angular motion. (Most human movement is general motion — a mix of both.)" },
+  { w: 1, q: "The sagittal plane bisects the body into:", opts: ["Front and back halves", "Right and left halves", "Top and bottom halves", "Diagonal halves"], a: 1, why: "Hamill: sagittal = right/left halves, movement about the mediolateral axis. Frontal = front/back; transverse = top/bottom." },
+  { w: 1, q: "Running, throwing, and most sport skills are best described as:", opts: ["Pure linear motion", "Pure angular motion", "General motion (linear + angular combined)", "Static"], a: 2, why: "Segments rotate about joints (angular) while the whole body translates (linear) — the combination is general motion." },
+
+  { w: 2, q: "Horizontal abduction/adduction occurs in which plane?", opts: ["Sagittal", "Frontal", "Transverse", "Diagonal"], a: 2, why: "Hamill: horizontal ab/adduction (arm moving across the body at shoulder height) is a transverse-plane motion." },
+  { w: 2, q: "The anatomical (zero) reference position has the palms facing:", opts: ["Backward", "Each other", "Forward", "Down"], a: 2, why: "Anatomical position: upright, feet together, arms at the sides, palms facing forward — the zero position for describing motion." },
+
+  { w: 3, q: "Cortical (compact) bone makes up roughly what fraction of the skeleton?", opts: ["20%", "50%", "80%", "5%"], a: 2, why: "Hamill: cortical bone is the hard outer layer and constitutes about 80% of the skeleton; cancellous (spongy) bone is internal." },
+  { w: 3, q: "The hard, dense outer layer of a long bone is:", opts: ["Cancellous bone", "Cortical bone", "Trabecular bone", "Marrow"], a: 1, why: "Cortical = compact outer bone; cancellous/trabecular = porous inner bone." },
+  { w: 3, q: "Wolff's law says a bone's internal architecture changes in response to:", opts: ["Diet alone", "Its mechanical loading (form/function)", "Body temperature", "Age only"], a: 1, why: "Hamill quotes Wolff: changes in a bone's form and function are followed by changes in its internal architecture — bone adapts to the loads placed on it." },
+  { w: 3, q: "The rate of loading (how fast a load is applied) affects bone because bone is:", opts: ["Perfectly elastic", "Viscoelastic (rate-dependent)", "Rigid", "Frictionless"], a: 1, why: "Bone is viscoelastic — its response depends on how quickly the load is applied, not just how large it is." },
+
+  { w: 5, q: "A motor unit is:", opts: ["A single muscle fibre", "A group of muscle fibres innervated by one motor neuron", "One sarcomere", "A tendon and its bone"], a: 1, why: "Hamill: a motor unit = a group of muscle fibres innervated by a single motor neuron." },
+  { w: 5, q: "In excitation–contraction coupling, which ion release triggers cross-bridge formation?", opts: ["Na+", "K+", "Ca2+ (calcium)", "Cl−"], a: 2, why: "Hamill: released Ca2+ ions bind the filaments and switch on actin–myosin interaction, starting the contraction." },
+  { w: 5, q: "Type I (slow-twitch) fibres are red because of their high content of:", opts: ["Glycogen", "Myoglobin", "Calcium", "Fat"], a: 1, why: "Hamill: slow-twitch type I fibres are oxidative and appear red due to high myoglobin content." },
+  { w: 5, q: "The contractile unit housed within a myofibril is the:", opts: ["Sarcomere", "Motor unit", "Fascicle", "Tendon"], a: 0, why: "Hamill: each muscle fibre contains myofibrils that house the contractile unit — the sarcomere." },
+  { w: 5, q: "Muscles that produce the SAME joint movement are called:", opts: ["Antagonists", "Agonists", "Synergists only", "Fixators"], a: 1, why: "Hamill: agonists create the same joint movement; antagonists oppose it and must relax or contract concurrently to control the motion." },
+  { w: 5, q: "The two main ways the nervous system increases muscle force are recruiting more motor units and:", opts: ["Lengthening the muscle", "Increasing their firing rate (rate coding)", "Cooling the muscle", "Adding sarcomeres"], a: 1, why: "Force rises by (1) recruiting more/larger motor units and (2) rate coding — increasing the firing frequency of active units." },
+
+  { w: 10, q: "Newton's first law is also known as the principle of:", opts: ["Acceleration", "Inertia", "Reaction", "Momentum"], a: 1, why: "Knudson: Newton's first law outlines the principle of inertia — objects resist changes in their state of motion." },
+  { w: 10, q: "Inertia is defined as an object's tendency to:", opts: ["Speed up on its own", "Resist changes in its state of motion", "Fall toward Earth", "Rotate"], a: 1, why: "Knudson: inertia = the property of all objects to resist changes in their state of motion. Its linear measure is mass; its angular measure is moment of inertia." },
+  { w: 10, q: "The linear measure of inertia is mass; the ANGULAR measure of inertia is:", opts: ["Weight", "Moment of inertia", "Torque", "Momentum"], a: 1, why: "Knudson: mass is linear inertia; moment of inertia (I) is its angular counterpart." },
+  { w: 10, q: "The Aristotelian view Newton overturned wrongly claimed that motion requires:", opts: ["No force at all", "Constant application of force", "Only gravity", "A vacuum"], a: 1, why: "Knudson: Newton's leap was rejecting the old idea that constant force is needed to keep something moving — inertia keeps it moving." },
+  { w: 10, q: "Knudson's Force–Time principle is the applied form of which relationship?", opts: ["Work–energy", "Impulse–momentum", "Lever–torque", "Stress–strain"], a: 1, why: "Knudson pairs the Force–Time principle with the impulse–momentum relationship: applying force over more time changes momentum more (or lowers peak force for the same Δp)." },
+
+  { w: 11, q: "Knudson's Principle of Balance concerns manipulating stability and mobility via the:", opts: ["Muscle fibre type", "Base of support and centre of gravity", "Bone density", "Fluid drag"], a: 1, why: "Knudson's balance principle: adjust the base of support and the position/height of the centre of gravity to trade stability against mobility as the task demands." },
+  { w: 11, q: "Which is one of Knudson's nine principles of biomechanics?", opts: ["Principle of Osmosis", "Coordination Continuum principle", "Principle of Diffusion", "Thermal principle"], a: 1, why: "Knudson's nine: Range of Motion, Force–Motion, Force–Time, Inertia, Segmental Interaction, Balance, Coordination Continuum, Spin, and Optimal Projection." },
+  { w: 11, q: "The Coordination Continuum principle contrasts simultaneous vs ___ segmental movements.", opts: ["Sequential", "Random", "Isometric", "Passive"], a: 0, why: "Knudson: high-force tasks tend to use simultaneous segment motions; high-speed tasks use a sequential (proximal-to-distal) coordination." },
+  { w: 11, q: "The Segmental Interaction principle explains how forces/torques:", opts: ["Cancel out completely", "Transfer between adjacent body segments", "Only act at the ground", "Are irrelevant to skill"], a: 1, why: "Knudson: motion and forces transfer between linked segments — energy passes up or down the kinetic chain (e.g. a whip-like throw)." },
+
+  { w: 12, q: "Knudson's four fluid forces are buoyancy, drag, lift, and the:", opts: ["Bernoulli force", "Magnus effect", "Normal force", "Friction force"], a: 1, why: "Knudson Ch. 8 covers buoyancy, drag, lift, and the Magnus effect (spin), leading into the Principle of Spin." },
+  { w: 12, q: "A volleyball struck above its centre gets topspin, creating a downward lift force that makes it:", opts: ["Float longer", "Dive steeply", "Curve sideways", "Slow down only"], a: 1, why: "Knudson: topspin produces a downward lift force, so the ball dives steeply — harder to pass." },
+  { w: 12, q: "The spin on a thrown American football mainly serves to:", opts: ["Add lift for distance", "Stabilise the ball's orientation (gyroscopic)", "Increase drag", "Slow its spin"], a: 1, why: "Knudson: the spin stabilises the ball's orientation, keeping it aerodynamic — the Principle of Spin, distinct from the Magnus curve." },
+  { w: 12, q: "The Magnus effect refers to the sideways force on a ball caused by its:", opts: ["Weight", "Spin (pressure asymmetry)", "Surface colour", "Temperature"], a: 1, why: "Spin drags air around the ball, creating a pressure difference and a lift/curve force — the Magnus effect behind curveballs and topspin." },
 ];
 
 /* ----------------------------------------------------------------------------

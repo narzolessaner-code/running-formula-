@@ -159,6 +159,11 @@ A complete, paste-ready prompt for Gemini that edits this exact episode:
   word-by-word caption rules, sound design + ducking, "Manila Blue Hour"
   grade, 9:16 1080x1920 export specs, the never-show-a-face rule, and the
   instruction that the voiceover file is the master timeline.
+* Branding block: instruct the editor to place the standard brand assets —
+  watermark.png top-right (8% width, 60% opacity, entire video), series
+  badge top-left (first 5s + reveal, when applicable), verdict stamp at the
+  reveal beat, and endcard.png for the final 1.5–2s. (Asset specs live in
+  brand/ASSET-KIT.md.)
 * Fallback line: if this Gemini tool can't render video, output the final
   timeline as a CapCut-ready cut list instead.
 

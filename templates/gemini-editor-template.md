@@ -18,6 +18,11 @@ SOUND: VO on top, music ducked -12dB, beat drop at [TIME], near-silent
 first 3 seconds, whoosh per hard cut, SFX on slow-mo foot strikes.
 GRADE: "Manila Blue Hour" — teal shadows, warm orange highlights, crushed
 blacks, ~15% film grain, consistent across clips.
+BRANDING (uploaded PNG assets): place watermark.png top-right at 8% frame
+width, 60% opacity, for the ENTIRE video. If a series badge PNG is provided,
+pin it top-left for the first 5 seconds and during the reveal. If a verdict
+stamp PNG is provided, slam it on at the reveal beat with a small shake and
+a deep hit. Always end with endcard.png full screen for the last 1.5–2s.
 EXPORT: 1080x1920, 30fps, high bitrate, all text inside middle 80% of frame.
 
 If a clip is too short, slow or loop it — never change VO timing. If you

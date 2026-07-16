@@ -43,3 +43,10 @@
 - TikTok 6:00 PM PH → FB Reels 8:30 PM → IG Reels 7 AM next day → Shorts evening. Launch Tue/Wed.
 - Affiliate: HR watch, pinned comment Shopee link (video makes people want HR data). No hard sell in VO.
 - First hour: pin comment trap, reply to every HR number with a one-line coach verdict ("178? Gray zone 'yan. Bagalan mo. 💪").
+
+## 📟 11. Para sa Lahat (Budget Mode)
+- **Zero-gadget method — TALK TEST:** Hindi mo kailangan ng watch para sa Zone 2. Habang tumatakbo, magsalita ka ng isang buong pangungusap. Kaya mo nang tuloy-tuloy? Zone 2 ka. Hingal ka sa kalagitnaan? Masyadong mabilis — bagalan mo.
+- **Extra callout:** at 22s (sa foot-strike canvas): `WALANG WATCH? TALK TEST — DAPAT KAYA MONG MAGSALITA`
+- **VO insert (optional, +4s):** "Walang watch? Ganito: magsalita ka habang tumatakbo. Kapag hindi mo kaya ang isang buong pangungusap — bagalan mo."
+- **Caption add-on:** "Walang heart rate watch? Gamitin mo ang talk test — nasa video."
+- **Ready reply for "wala akong Garmin" comments:** "Hindi mo kailangan. Talk test: kaya mo bang magsalita ng buong pangungusap habang tumatakbo? Kung hindi — bagalan mo. Libre 'yan. 💪"

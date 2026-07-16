@@ -25,4 +25,5 @@
 ---
 
 **❌ FACE RULE:** face enters frame = reshoot or angle down. Neck-down always.
+**📵 WALANG GIMBAL?** Brace elbows sa tagiliran (shots A/D), prop the phone sa bag/curb/sapatos (shots B/E/F), at gamitin ang slow-mo — tinatago ng 60fps slow-mo ang shake (shots A/E).
 **✅ DONE WHEN:** 6 shots × 2 good takes ≈ 20–25 min session.

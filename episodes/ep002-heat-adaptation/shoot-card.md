@@ -25,5 +25,6 @@
 ---
 
 **❌ FACE RULE:** face enters frame = reshoot or angle down. Back of head is OK, face never.
+**📵 WALANG GIMBAL?** Prop the phone sa bag/curb (shots D/E/F), brace elbows sa tagiliran (B), at slow-mo ang sagot sa shake (A/D/E).
 **⚠️ HEAT RULE:** you're filming at noon — hydrate for real, keep the shoot under 30 min, film near shade.
 **✅ DONE WHEN:** 6 shots × 2 good takes. Session 1 ≈ 25–30 min, Session 2 ≈ 10 min.

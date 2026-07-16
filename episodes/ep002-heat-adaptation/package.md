@@ -47,3 +47,10 @@
 ## 🧪 10. Hook Lab (A/B Variants)
 - **Alt Hook A (money angle):** Visual: watch close-up + sweat. First line: "May ₱15,000 sauna suit ang mga pro — para lang magaya ang takbo mo kahapon." Hook text: "BINABAYARAN NILA ANG INIT MO."
 - **Alt Hook B (callout angle):** Visual: drenched shirt wring-out slow-mo. First line: "Nahiya ka ba sa pace mo sa Strava? Panoorin mo 'to." Hook text: "MABAGAL SA INIT ≠ MAHINA."
+
+## 📟 11. Para sa Lahat (Budget Mode)
+- **Zero-gadget method — SAME EFFORT, HINDI SAME PACE:** Ang heat adaptation ay nangyayari sa katawan mo, hindi sa watch. Ang tuntunin: sa init, panatilihin mo ang HIRAP (effort na 5–6 sa 10), hindi ang bilis. Kusang babagal ang pace mo — tama 'yan, ganoon gumagana ang adaptation. Cellphone timer lang: tumakbo ka ng 30–40 minuto sa parehong effort, 3–4 beses kada linggo, at 10–14 araw ang adaptation.
+- **Extra callout:** at 22s (sa water-pour canvas): `WALANG GADGET? SAME EFFORT, HINDI SAME PACE`
+- **VO insert (optional, +4s):** "Walang watch? Simple: sa init, sundin mo ang hirap, hindi ang bilis. Kusang babagal ang pace mo — at tama 'yan."
+- **Caption add-on:** "Walang watch? Effort ang sundin mo, hindi pace — nasa video."
+- **Ready reply for "wala akong Garmin" comments:** "Hindi kailangan. Timer lang ng cellphone mo: 30–40 minuto, effort na kaya mo pang magsalita, 3–4 beses kada linggo. Ang init na mismo ang training equipment mo. 🔥"

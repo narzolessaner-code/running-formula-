@@ -12,21 +12,21 @@
 5. **Science beat (16–24s):** Macro slow-mo foot strike through wet pavement — canvas for callouts.
 6. **Payoff (24–35s):** Golden-hour silhouette/shadow cruising effortlessly, jeepney/cars passing.
 
-## 🗣️ 3. Voiceover (Taglish, ~40s, time-aligned)
-> **[0–3s | calling them out]** Laging hingal after 2 kilometers? [beat] Hindi ka mahina. Mali lang 'yung bilis mo.
-> **[3–8s | authoritative]** Check mo 'to — 178 ang heart rate mo sa "easy run" mo. That's not easy. That's gray zone — masyadong mabilis para mag-build ng endurance, masyadong mabagal para bumilis ka.
-> **[8–16s | reveal, slower]** Ito 'yung hindi sinasabi sa'yo: elite runners? Halos **80 percent** ng takbo nila... [pause] ...SLOW. Sobrang slow na kaya mo pang mag-kwento habang tumatakbo. 'Yan ang Zone 2.
-> **[16–24s | science mode]** Sa Zone 2, tinutrain mo 'yung mitochondria mo — 'yung engine ng katawan mo — para mag-burn ng fat instead of pure sugar. Mas malaking gas tank, mas malayong takbo, less hingal.
-> **[24–33s | PH twist, emphatic]** At dito sa Pilipinas? Mas importante 'to. 'Yung init natin, plus 10 to 15 beats sa heart rate mo — kaya kung kinokopya mo pace ng mga influencer sa malamig na bansa, gray zone ka LAGI.
-> **[33–40s | mic drop]** Kaya next run mo: bagalan mo. Kayang-kaya mag-salita dapat. Mukhang mabagal ngayon... [pause] ...pero ito 'yung dahilan kung bakit ka bibilis. Takbo Lab 'to. Test natin lahat.
+## 🗣️ 3. Voiceover (Mostly Tagalog, intense coach, direct "ikaw/mo", ~40s, time-aligned)
+> **[0–3s | diretso, walang paligoy]** Hingal ka agad pagkatapos ng 2 kilometro? [beat] Makinig ka. Hindi ka mahina — mali lang ang bilis mo.
+> **[3–8s | matigas, sinisita ka]** Tingnan mo 'to. 178 ang heart rate mo sa sinasabi mong "easy run." Hindi 'yan easy. Gray zone 'yan — masyadong mabilis para lumakas ang endurance mo, masyadong mabagal para bumilis ka.
+> **[8–16s | mabagal, may bigat]** Ito ang hindi sinasabi sa'yo: ang mga elite runner, halos **80 percent** ng takbo nila... [pause] ...MABAGAL. Sobrang bagal na kaya mo pang magkwento habang tumatakbo. 'Yan ang Zone 2.
+> **[16–24s | science mode, kumpiyansa]** Sa Zone 2 lumalakas ang mitochondria mo — 'yan ang makina ng katawan mo. Matututo 'yang magsunog ng fat imbes na puro asukal. Mas malaki ang tangke mo, mas malayo ang takbo mo, mas kaunti ang hingal mo.
+> **[24–33s | diin, totoong sitwasyon mo]** At dito sa Pilipinas, mas kailangan mo 'to. Ang init dito, dagdag na 10 hanggang 15 beats sa puso mo. Kaya kung ginagaya mo ang pace ng mga runner sa malamig na bansa — gray zone ka palagi.
+> **[33–40s | utos, mic drop]** Kaya sa susunod mong takbo: bagalan mo. Dapat kaya mo pang magsalita. Mukhang mabagal 'yan ngayon... [pause] ...pero diyan ka bibilis. Takbo Lab 'to. Subukan mo.
 
 ## 📱 4. Text-On-Screen
 - **Hook (0–2s):** "HINGAL AGAD? ITO KASI."
 - 4s: `❤️ 178 BPM = GRAY ZONE` (red) · 10s: `ELITES: 80% SLOW RUNS` · 14s: `140 BPM = ZONE 2 ✅` (teal) · 19s: `MITOCHONDRIA = MAS MALAKING GAS TANK` · 27s: `PH HEAT = +10–15 BPM 🥵` · 36s: `CONVERSATIONAL PACE. 'YUN LANG.`
 
 ## ✍️ 5. Caption & SEO
-- **Caption:** Hindi ka mahina — nagta-training ka lang sa maling zone. Elite runners run SLOW 80% of the time, at sa init ng Pilipinas, mas kailangan mo 'to kaysa kanino man. Bagalan mo para bumilis ka. 🔬🏃‍♂️
-- **Comment trap:** "Anong average heart rate mo sa 'easy' runs mo? Drop it below — sabihin ko sa'yo kung gray zone ka. 👇"
+- **Caption:** Hindi ka mahina — mali lang ang zone na tinatakbuhan mo. Ang mga elite runner, 80% ng takbo nila ay MABAGAL. At sa init ng Pilipinas, mas kailangan mo 'yan kaysa kanino man. Bagalan mo para bumilis ka. 🔬🏃‍♂️
+- **Comment trap:** "Ano ang average heart rate mo sa 'easy run' mo? Ilagay mo sa comments — sasabihin ko sa'yo kung gray zone ka. 👇"
 - **Tags:** #TakboLab #Zone2Training #RunningPH #TakboTips #RunningEraPH
 
 ## ✂️ 6. Edit Blueprint (EDL)
@@ -42,4 +42,4 @@
 ## 💰 7. Distribution & Money
 - TikTok 6:00 PM PH → FB Reels 8:30 PM → IG Reels 7 AM next day → Shorts evening. Launch Tue/Wed.
 - Affiliate: HR watch, pinned comment Shopee link (video makes people want HR data). No hard sell in VO.
-- First hour: pin comment trap, reply to every HR number with a one-line verdict ("178? Gray zone ka, lodi 😅 bagalan mo").
+- First hour: pin comment trap, reply to every HR number with a one-line coach verdict ("178? Gray zone 'yan. Bagalan mo. 💪").

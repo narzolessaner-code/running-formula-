@@ -45,8 +45,8 @@ final voiceover line. Callout at 36s: "CONVERSATIONAL PACE. 'YUN LANG."
 End card last 1.5s: "TAKBO LAB" + "New experiment weekly."
 
 === CAPTIONS ===
-Auto-caption the entire Taglish voiceover, word-by-word pop style, centered
-in the lower third, white bold with black outline. Keep Taglish spelling
+Auto-caption the entire Tagalog voiceover, word-by-word pop style, centered
+in the lower third, white bold with black outline. Keep the Tagalog spelling
 exactly as spoken; do not translate to English.
 
 === SOUND ===

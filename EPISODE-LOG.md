@@ -7,7 +7,8 @@ hook/retention/topic and corrects the next 3 topics.
 | Ep | Topic | Status | Posted | Views | Avg Watch % | Comments | Verdict / Next Action |
 |----|-------|--------|--------|-------|-------------|----------|-----------------------|
 | 001 | Zone 2 — "Hingal after 2km" | 🎬 to shoot | — | — | — | — | — |
-| 002 | Heat adaptation (queued) | 💡 idea | — | — | — | — | — |
+| 002 | Heat adaptation — "Mabagal ka sa init? Buti nga" | 📝 scripted | — | — | — | — | — |
+| 003 | Carbon plate shoes — sulit ba? (queued) | 💡 idea | — | — | — | — | — |
 
 **Status legend:** 💡 idea → 📝 scripted → 🎙️ VO done → 🎬 to shoot → ✂️ editing → ✅ posted → 🔁 hook-swapped repost
 

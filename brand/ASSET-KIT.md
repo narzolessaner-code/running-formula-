@@ -1,5 +1,13 @@
 # 🎨 TAKBO LAB — Visual Asset Kit (ilalagay sa BAWAT video)
 
+> ✅ BUILT — ang PNG files ay nasa `brand/assets/`:
+> `logo-profile.png` (1080² profile pic) · `watermark.png` (transparent) ·
+> `endcard.png` (1080×1920) · `badge-same-legs.png` / `badge-pace-mo.png` /
+> `badge-bayan.png` (transparent pills) · `stamp-totoo.png` / `stamp-mito.png` /
+> `stamp-depende.png` (transparent, rotated) · `reply-grayzone.png` /
+> `reply-zone2.png` / `reply-draw.png` / `reply-saludo.png` (1080² comment
+> stickers). May Canva editable din ang logo: https://www.canva.com/d/ofVtALZp82Fl8G5
+
 Style tokens for ALL assets (use in every image prompt):
 **dark navy background (#0A1628) · neon-teal line art (#2DD4BF) · single warm-orange accent (#F97316) · bold condensed all-caps type · flat vector, premium/scientific · high contrast · readable at 100×100px**
 

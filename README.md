@@ -9,9 +9,14 @@ episode's full production package.
 | Path | What it is |
 |---|---|
 | [`SKILI-RUNLAB-OS.md`](SKILI-RUNLAB-OS.md) | **The master system prompt** — paste into Claude to boot the whole company (research, scripts, storyboards, edit blueprints, SEO, money) |
+| [`CLAUDE.md`](CLAUDE.md) | Auto-boots the persona for any Claude session opened in this repo |
 | [`brand/BRANDING.md`](brand/BRANDING.md) | Locked channel identity: name, "Manila Blue Hour" grade, bio, logo prompt |
+| [`brand/assets/`](brand/assets/) | Built PNGs: profile logo, watermark, end card, series badges, verdict stamps, comment-reply stickers (specs: [`brand/ASSET-KIT.md`](brand/ASSET-KIT.md)) |
 | [`episodes/ep00X-topic/`](episodes/) | One folder per episode: `package.md` (full script + storyboard), `shoot-card.md` (phone-ready field checklist), `gemini-editor-prompt.md` (paste-ready edit handoff) |
-| [`templates/`](templates/) | Reusable prompts (Gemini editor template) |
+| [`LAUNCH-CALENDAR.md`](LAUNCH-CALENDAR.md) | Month-1 posting plan (3x/week) + weekly loop |
+| [`playbooks/MONETIZATION.md`](playbooks/MONETIZATION.md) | Money phases: affiliate → programs → brand deals |
+| [`innovations/INVENTIONS.md`](innovations/INVENTIONS.md) | Innovation Lab registry (original formats) |
+| [`templates/`](templates/) | Gemini editor template + voice recording guide |
 | [`EPISODE-LOG.md`](EPISODE-LOG.md) | Episode tracker + performance numbers → feeds the `ANALYZE` command |
 
 ## The pipeline per episode

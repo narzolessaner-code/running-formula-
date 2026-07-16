@@ -8,7 +8,8 @@ hook/retention/topic and corrects the next 3 topics.
 |----|-------|--------|--------|-------|-------------|----------|-----------------------|
 | 001 | Zone 2 — "Hingal after 2km" | 🎬 to shoot | — | — | — | — | — |
 | 002 | Heat adaptation — "Mabagal ka sa init? Buti nga" | 📝 scripted | — | — | — | — | — |
-| 003 | Carbon plate shoes — sulit ba? (queued) | 💡 idea | — | — | — | — | — |
+| 003 | Carbon vs ₱1,500 — Same Legs, Different Rules #1 (Inventions 1+2 launch) | 📝 scripted | — | — | — | — | Needs 2-run protocol muna bago i-record ang VO (may [PLACEHOLDERS]) |
+| 004 | "Pace Mo, Itetest Ko" #1 — piliin sa ep003 comments | 💡 idea | — | — | — | — | — |
 
 **Status legend:** 💡 idea → 📝 scripted → 🎙️ VO done → 🎬 to shoot → ✂️ editing → ✅ posted → 🔁 hook-swapped repost
 

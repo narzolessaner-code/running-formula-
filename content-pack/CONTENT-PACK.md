@@ -220,6 +220,43 @@ baha sa Pilipinas, flood control Philippines, baha Metro Manila, ulan at baha, f
 
 ---
 
+## 6B. POST 6 — KALUSUGAN NG MAMAMAYAN
+**Graphic:** `graphics/post6-kalusugan.png`
+
+### Caption (copy-paste)
+```
+Alam mo kung anong oras pumipila ang mga tao sa public hospital? 🏥
+
+Madaling-araw pa lang, may nakaupo na sa labas — matatanda, buntis, mga
+inang kalong ang anak na may lagnat. Tapos pagdating sa botika, may mga
+pamilyang pinagpipilian kung aling gamot sa reseta ang bibilhin muna,
+dahil hindi kayang bilhin lahat.
+
+Opinyon namin: sa bansang tapat magbayad ng buwis ang mamamayan, ang
+kalusugan ay hindi dapat luho na para lang sa may kaya. Karapatan ito
+ng bawat Pilipino — mahirap man o mayaman.
+
+💬 TANONG SA'YO: Ano ang karanasan mo o ng pamilya mo sa public hospital
+o sa presyo ng gamot? Ikwento mo sa comments — ang totoong kwento ng
+mamamayan ang pinakamalakas na boses. 👇
+
+#KalusuganNgMamamayan #PublicHospitalPH #PresyoNgGamot #KarapatanSaKalusugan #OpinyonNgMamamayan
+```
+
+### Pinned comment
+```
+Admin 🏥 Maraming pamilya ang may ganitong karanasan pero nahihiyang
+magkwento. Dito, walang hihiya sa'yo — karanasan mo 'yan at totoo 'yan.
+Paalala lang: walang personal na pag-atake sa mga health worker; sila rin
+ay kapwa nating naghihirap sa sistema. Ang usapan dito ay tungkol sa
+serbisyo, hindi sa mga taong nagseserbisyo.
+```
+
+### Keywords / SEO
+public hospital Philippines, presyo ng gamot, PhilHealth benefits, healthcare Philippines, libreng gamot sa health center
+
+---
+
 ## 7. POSTING & GROWTH STRATEGY (the honest playbook)
 
 ### Timing (Philippine audience)

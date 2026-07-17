@@ -129,6 +129,14 @@ posts = [
         sub='Ang kinabukasan ng bansa, <b>hindi dapat pinagsisiksikan.</b>',
     ),
     dict(
+        fname="post6-kalusugan.html",
+        chip="KALUSUGAN NG MAMAMAYAN",
+        headline='BAKIT PARANG <span class="y">KASALANAN</span> ANG MAGKASAKIT KUNG MAHIRAP KA?',
+        size=92,
+        sub='Pila bago pa sumikat ang araw. Resetang pinagpipilian kung alin ang kayang bilhin.<br>'
+            '<b>Ang kalusugan ay karapatan, hindi luho.</b>',
+    ),
+    dict(
         fname="post5-baha.html",
         chip="ULAN NA NAMAN, BAHA NA NAMAN",
         headline='ISANG ULAN LANG, LUBOG NA AGAD. <span class="y">HANGGANG KAILAN?</span>',

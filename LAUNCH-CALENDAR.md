@@ -27,8 +27,8 @@
 | Araw | Post | Notes |
 |---|---|---|
 | Tue | EP006 "Pace Mo, Itetest Ko" #1 (galing sa ep003 comments) | Tag/quote ang napiling commenter |
-| Thu | NEXT POST (bagong discovery — DISCOVER command) | |
-| Sat | Same Legs #2 (bagong variable: kanin vs gel / tulog / oras) | |
+| Thu | EP007 Sports drink "Sayang ang pera mo. Minsan." | DEPENDE stamp debut; share sa budget runner groups |
+| Sat | EP008 Kanin vs Gel (Same Legs #2) | Food angle = crossover reach |
 
 ## Week 4 — ANALYZE & DOUBLE DOWN
 - [ ] Punan ang `EPISODE-LOG.md` ng numbers ng lahat ng posts

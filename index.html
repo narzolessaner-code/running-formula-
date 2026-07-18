@@ -264,7 +264,7 @@
     <p class="lede" id="priceLede">You've just seen exactly what elite training looks like for you. The runners who hit their goals aren't the ones with the best plan on paper — they're the ones with someone in their corner every single week.</p>
     <p class="tag2">The app hands you the science for free, forever. This is the human layer on top: real-time adjustments, accountability, and a coach who knows your name, your legs, and your goal.</p>
 
-    <div class="pricetag"><span class="amt">$799</span><span class="per">/ month · billed monthly · cancel anytime</span></div>
+    <div class="pricetag"><span class="amt">₱709</span><span class="per">/ month · billed monthly · cancel anytime</span></div>
 
     <ul class="value">
       <li><span class="ck">✓</span><span><b>Unlimited chat with your coach, 7 days a week.</b> Wake up unsure about today's run? Ask. Get an answer in hours, not days.</span></li>
@@ -277,7 +277,7 @@
 
     <p class="reassure">🛡 <b>First week free.</b> Cancel anytime and keep every plan you've built. If a single month doesn't make you a sharper, more confident runner, you shouldn't pay for the next one — and you won't.</p>
 
-    <a class="cta" id="ctaBtn" href="#">Apply for coaching — $799/mo →</a>
+    <a class="cta" id="ctaBtn" href="#">Apply for coaching — ₱709/mo →</a>
     <p class="scarce" id="scarce">Only 5 athlete spots open this month.</p>
   </section>
 
@@ -317,6 +317,13 @@ const ZONES=[
 function fmtTime(min){const s=Math.round(min*60),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;const p=n=>String(n).padStart(2,'0');return h>0?`${h}:${p(m)}:${p(x)}`:`${m}:${p(x)}`;}
 function paceStr(vel,unit){const per=unit==='km'?1000/vel:1609.34/vel;const s=Math.round(per*60);return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;}
 const $=id=>document.getElementById(id);
+
+/* ================= payments =================
+   To take real ₱709/mo payments: create a recurring Payment Link in your
+   Stripe Dashboard (Products → Payment Links → monthly price ₱709), then paste
+   its URL below. Blank = the Apply button emails you the lead instead. */
+const STRIPE_LINK = "";
+const COACH_EMAIL = "narzolessaner@gmail.com";
 const DPRED=[[1609.34,'1 mile'],[5000,'5 km'],[10000,'10 km'],[21097.5,'Half marathon'],[42195,'Marathon']];
 const GLABEL={5000:'5 km',10000:'10 km','21097.5':'half marathon',42195:'marathon'};
 
@@ -612,11 +619,17 @@ function build(){
   }
   const subj = encodeURIComponent(`Coaching application — ${name||'new athlete'} (VDOT ${vdot.toFixed(1)}, goal ${goalWord})`);
   const body = encodeURIComponent(
-    `Hi Coach,\n\nI'd like to start 1:1 coaching ($799/mo).\n\n`+
+    `Hi Coach,\n\nI'd like to start 1:1 coaching (₱709/mo).\n\n`+
     `Name: ${name||'—'}\nAge: ${age}\nCurrent VDOT: ${vdot.toFixed(1)}\n`+
     `Goal: ${isFit?'general fitness':GLABEL[goal]||goal}\nDays/week: ${days}\nCurrent volume: ${base||'—'} ${unit}\n\n`+
     `Please send me the next steps to get started.\n\nThanks!`);
-  $('ctaBtn').href = `mailto:narzolessaner@gmail.com?subject=${subj}&body=${body}`;
+  if(STRIPE_LINK){
+    $('ctaBtn').href = STRIPE_LINK;
+    $('ctaBtn').textContent = 'Start coaching — ₱709/mo →';
+    $('ctaBtn').removeAttribute('target');
+  } else {
+    $('ctaBtn').href = `mailto:${COACH_EMAIL}?subject=${subj}&body=${body}`;
+  }
 
   show(3);
 }

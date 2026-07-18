@@ -1,47 +1,52 @@
-# 🏃 VDOT Coach
+# 🏃 Saner Coach
 
-A web-based running coach built on **Jack Daniels' VDOT methodology** (the engine
-behind *Daniels' Running Formula*). A runner enters **one recent race result** and
-the coach instantly returns:
+An evidence-based running coach at **sanercoach.com**. A runner enters their
+profile and one recent race, and the coach returns their VDOT, VO₂max estimate,
+personalized heart-rate zones, race predictions, goal feasibility, and a full
+periodized training program — plus a ₱709/month 1:1 coaching offer.
 
-- **VDOT** — a single number describing current running fitness
-- **The 5 training paces** — Easy, Marathon, Threshold, Interval, Repetition
-- **Race predictions** — equivalent times for the mile, 5K, 10K, half & marathon
-- **A plain-language weekly plan** — how to actually spend the training week
+Single self-contained `index.html`. No build step, no dependencies.
 
-No login, no build step, no dependencies. It's a single self-contained `index.html`.
+## Going live on sanercoach.com
 
-## Run it
+There are two parts: **hosting the file** (free) and **pointing your domain at it**.
+You only need to buy the domain once (~US$10–15/yr).
 
-Just open `index.html` in any browser — that's it.
+### Step 1 — Buy the domain
+Register **sanercoach.com** at any registrar (Namecheap, GoDaddy, Cloudflare, Porkbun…).
 
-### Publish it free (GitHub Pages)
+### Step 2 — Turn on free hosting (GitHub Pages)
+1. In this repo: **Settings → Pages**
+2. **Source:** Deploy from a branch → branch `main` (merge the PR first) → folder `/ (root)` → **Save**
+3. GitHub reads the `CNAME` file in this repo and serves the site at `sanercoach.com`.
 
-1. Push this repo to GitHub.
-2. Settings → Pages → Source: **Deploy from a branch** → pick your branch, folder `/root`.
-3. Your coach goes live at `https://<user>.github.io/<repo>/`.
+### Step 3 — Point the domain at GitHub
+At your registrar's DNS settings, add:
 
-## How it works
+| Type  | Host / Name | Value                |
+|-------|-------------|----------------------|
+| A     | @           | 185.199.108.153      |
+| A     | @           | 185.199.109.153      |
+| A     | @           | 185.199.110.153      |
+| A     | @           | 185.199.111.153      |
+| CNAME | www         | `<your-github-username>.github.io` |
 
-The math is the published VDOT model, not book text:
+Wait for DNS to propagate (minutes to a few hours), then in **Settings → Pages**
+tick **Enforce HTTPS**. Done — `https://sanercoach.com` is live.
 
-- **VO₂ cost of pace:** `VO₂ = -4.60 + 0.182258·v + 0.000104·v²` (v in m/min)
-- **Sustainable %VO₂max for a race of `t` minutes:**
-  `0.8 + 0.1894393·e^(-0.012778t) + 0.2989558·e^(-0.1932605t)`
-- **VDOT** = VO₂ ÷ %VO₂max for the entered race
-- Training paces are the velocities that hit each zone's intensity fraction of VDOT;
-  predictions invert the model to find equivalent times at equal VDOT.
+> Prefer drag-and-drop? Netlify or Vercel also host `index.html` free and let you
+> add `sanercoach.com` as a custom domain in their dashboard.
 
-Validated against Daniels' reference tables (e.g. a 5K of 19:57 → VDOT 50.0, with
-matching threshold/interval paces and race-equivalent predictions).
+## Taking payments
+Open `index.html` and set `STRIPE_LINK` (top of the script) to a recurring
+**Stripe Payment Link** (₱709/month). Blank = the Apply button emails the coach
+the lead instead. No secret keys ever live in the page.
 
-## Roadmap ideas
-
-- Pull recent runs automatically (a Garmin connector is available in this workspace)
-- Race-goal countdown plans (couch-to-5K → marathon build)
-- Save history and track VDOT progress over time
+## The science
+VDOT/VO₂ model (Daniels & Gilbert) · max-HR estimate (Tanaka 2001) · HR-reserve
+zones (Karvonen) · race cross-check (Riegel 1981) · 80/20 intensity (Seiler) ·
+load progression (acute:chronic workload) · taper (taper meta-analyses).
 
 ## Disclaimer
-
 Educational tool. Not affiliated with, nor endorsing, any book or publisher.
-Train sensibly and consult a professional before starting hard training.
+Train sensibly and consult a professional before hard training.

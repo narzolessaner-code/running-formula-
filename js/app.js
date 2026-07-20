@@ -237,6 +237,45 @@
   }
 
   /* ======================================================================
+     LABS
+     ==================================================================== */
+  function renderLabs() {
+    const wrap = $("#labList");
+    wrap.innerHTML = "";
+    C.labs.forEach((L) => {
+      const card = el("div", "card");
+      const list = (arr, ol) => `<${ol ? "ol" : "ul"} class="lab-list">${arr.map((x) => `<li>${esc(x)}</li>`).join("")}</${ol ? "ol" : "ul"}>`;
+      card.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px">
+          <span class="pill gold">Lab ${L.n}</span>
+          <span class="pill muted">Week ${L.w}</span>
+          <h3 style="margin:0">${esc(L.title)}</h3>
+        </div>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:2px 0 14px">${esc(L.subtitle)}</p>
+        <div class="callout" style="margin-bottom:16px"><b>Key takeaway.</b> ${esc(L.takeaway)}</div>
+
+        <div class="lab-sec"><span class="lab-lbl">Learning outcomes</span>${list(L.outcomes)}</div>
+        <div class="lab-sec"><span class="lab-lbl">Pre-lab questions</span>${list(L.preLab, true)}</div>
+
+        <div class="lab-sec"><span class="lab-lbl">Key concepts — operational definitions</span>
+          <div class="lab-terms">${L.concepts.map((c) => `<div class="lab-term"><b>${esc(c.term)}</b><span>${esc(c.def)}</span></div>`).join("")}</div>
+        </div>
+
+        <div class="lab-sec"><span class="lab-lbl">Scenario</span><p style="margin:4px 0 0;font-size:.92rem">${esc(L.scenario)}</p></div>
+        <div class="lab-sec"><span class="lab-lbl">Equipment</span>${list(L.equipment)}</div>
+        <div class="lab-sec"><span class="lab-lbl">Procedure — discipline over instruments</span>${list(L.procedure)}</div>
+
+        <div class="lab-sec"><span class="lab-lbl">Calculations</span>
+          ${L.calcs.map((c) => `<div class="formula-row"><span class="nm" style="flex:none;min-width:150px;color:var(--text)">${esc(c.name)}</span><span class="sym" style="min-width:auto">${esc(c.formula)}</span></div>`).join("")}
+        </div>
+
+        <div class="lab-sec"><span class="lab-lbl">Overhead-squat checklist</span>${list(L.squatChecklist)}</div>
+        <div class="lab-sec"><span class="lab-lbl">Interpretation questions</span>${list(L.interpretation, true)}</div>`;
+      wrap.appendChild(card);
+    });
+  }
+
+  /* ======================================================================
      FLASHCARDS — SM-2 lite spaced repetition
      ==================================================================== */
   const FC = (function () {
@@ -606,6 +645,7 @@
     $("#themeBtn").onclick = cycleTheme;
     initReset();
     renderShape();
+    renderLabs();
     renderWeeks();
     renderFormulas();
     renderMath();

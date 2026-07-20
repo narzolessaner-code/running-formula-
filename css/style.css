@@ -284,4 +284,14 @@ h2.view-title { font-size: 1.5rem; margin: 4px 0 4px; letter-spacing: -0.02em; }
 .callout { background: var(--accent-2-soft); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 0.9rem; border-left: 3px solid var(--accent-2); }
 .callout b { color: var(--accent-2); }
 
+/* ---------- Labs ---------- */
+.lab-sec { margin: 16px 0; }
+.lab-lbl { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 6px; }
+.lab-list { margin: 4px 0 0; padding-left: 20px; font-size: 0.92rem; }
+.lab-list li { margin-bottom: 5px; }
+.lab-terms { display: grid; gap: 8px; }
+.lab-term { background: var(--surface-2); border-radius: var(--radius-sm); padding: 10px 13px; }
+.lab-term b { display: block; color: var(--accent); font-size: 0.9rem; margin-bottom: 2px; }
+.lab-term span { font-size: 0.88rem; color: var(--text-soft); }
+
 footer.foot { text-align: center; color: var(--text-soft); font-size: 0.8rem; margin-top: 30px; }

@@ -535,6 +535,21 @@ CONTENT.cards = [
   { w: 5, type: "application", front: "DOMS (delayed-onset muscle soreness) comes mostly from which action, and why?", back: "Eccentric (lengthening) actions — they produce the highest force and most microdamage, so the most soreness 24–72 h later." },
   { w: 2, type: "definition", front: "Hyperextension (Hall)?", back: "Rotation of a segment BEYOND anatomical position, in the direction opposite flexion. (Extension only returns it to anatomical position.)" },
 
+  // ==== LAB ACTIVITY I (Introduction to Biomechanics) ====================
+  { w: 1, type: "discrimination", front: "Mechanics vs biomechanics vs kinesiology?", back: "Mechanics supplies the LAWS (forces & the motion they produce). Biomechanics APPLIES those laws to the moving human body. Kinesiology PLACES that application in the wider study of why and how people move." },
+  { w: 1, type: "definition", front: "Operational definition — mechanics?", back: "The branch of physics dealing with forces and the motion they produce in any object, living or non-living." },
+  { w: 1, type: "definition", front: "Operational definition — biomechanics?", back: "The application of mechanical principles to describe and explain the forces acting on, and produced by, the human body during movement." },
+  { w: 1, type: "definition", front: "Operational definition — kinesiology?", back: "The academic discipline studying human movement in its full scope — mechanical, anatomical, physiological, and behavioral. Biomechanics is one of its sub-disciplines." },
+  { w: 1, type: "definition", front: "Axis of rotation (operational)?", back: "The imaginary line around which a body segment rotates during a joint movement." },
+  { w: 1, type: "definition", front: "Center of gravity (COG) — operational?", back: "The point at which the body's mass is considered to be balanced in all directions." },
+  { w: 1, type: "definition", front: "Base of support (BOS) — operational?", back: "The area beneath a person bounded by all points of contact with the supporting surface." },
+  { w: 1, type: "definition", front: "Qualitative movement analysis (lab definition)?", back: "The systematic, non-numerical observation and judgment of movement quality, typically using a structured checklist." },
+  { w: 1, type: "discrimination", front: "Why do observation-based labs work at the KINEMATIC (not kinetic) level?", back: "Force can't be seen directly — only inferred from its visible effects. Observation captures displacement, velocity, joint angle, cadence (kinematics), not the forces themselves (kinetics)." },
+  { w: 1, type: "application", front: "Why does trained human observation still matter as AI motion-analysis grows?", back: "AI/computer-vision tools are trained against, and still checked by, expert human judgment of movement quality. Structured visual observation is the entry point to all the technology." },
+  { w: 1, type: "formula", front: "Lab: how do you compute cadence from a 15-second count?", back: "Cadence = (steps counted in 15 s) × 4 = steps/min." },
+  { w: 1, type: "formula", front: "Lab: the gait Symmetry Index formula?", back: "Symmetry Index (%) = |Left − Right| ÷ [(Left + Right) ÷ 2] × 100. Lower % = more symmetric." },
+  { w: 1, type: "application", front: "Overhead squat — which is the PRIMARY plane of motion, and why?", back: "Sagittal — the dominant hip, knee, and ankle flexion/extension of the descent and ascent occurs in it. Frontal is secondary (checking left–right symmetry / knee valgus)." },
+
   // ---- ERROR-LOG SEED CARDS ----
   { w: 3, type: "application", front: "ERROR-LOG TRAP: Can bone bend?", back: "YES, slightly — bone is stiff, not rigid. It deforms elastically and springs back. Small deformation ≠ no deformation." },
 ];
@@ -712,6 +727,14 @@ CONTENT.quiz = [
   { w: 5, q: "Delayed-onset muscle soreness (DOMS) is most associated with which muscle action?", opts: ["Concentric", "Isometric", "Eccentric", "Passive"], a: 2, why: "Eccentric (lengthening) actions cause the most microdamage and the most DOMS — consistent with eccentric producing the highest force." },
   { w: 5, q: "Electromechanical delay is the time between:", opts: ["Two heartbeats", "Muscle activation and the onset of force", "Stance and swing", "Flexion and extension"], a: 1, why: "Hall: electromechanical delay is the brief lag between the muscle's electrical activation and measurable force production." },
   { w: 2, q: "Hyperextension is:", opts: ["Flexion past 90°", "Extension beyond anatomical position", "Rotation in the frontal plane", "Return to anatomical position"], a: 1, why: "Hall: extension returns a segment to anatomical position; hyperextension continues past it, opposite the direction of flexion." },
+
+  // ==== LAB ACTIVITY I QUIZ (Introduction to Biomechanics) ===============
+  { w: 1, q: "Which best captures the relationship between the three fields?", opts: ["They are three names for the same thing", "Mechanics supplies the laws, biomechanics applies them to the body, kinesiology places that in the wider study of movement", "Kinesiology is a branch of mechanics", "Biomechanics is broader than kinesiology"], a: 1, why: "Lab: mechanics = the laws; biomechanics = those laws applied to the moving human body; kinesiology = the wider discipline that contains biomechanics." },
+  { w: 1, q: "An observation-only lab works mainly at the kinematic level because:", opts: ["Kinetics is unimportant", "Force cannot be seen directly, only inferred from its effects", "Kinematics needs a force plate", "Joint angles are forces"], a: 1, why: "Lab: you can see displacement, velocity, joint angle and cadence (kinematics); force (kinetics) is invisible and only inferred." },
+  { w: 1, q: "In the overhead-squat task, the PRIMARY plane of motion is:", opts: ["Frontal", "Transverse", "Sagittal", "Oblique"], a: 2, why: "The dominant hip/knee/ankle flexion–extension of a squat is sagittal-plane motion; frontal is secondary (symmetry, knee valgus)." },
+  { w: 1, q: "You count 21 steps in 15 seconds. The cadence is:", opts: ["21 steps/min", "42 steps/min", "84 steps/min", "126 steps/min"], a: 2, why: "Cadence = steps in 15 s × 4 = 21 × 4 = 84 steps/min." },
+  { w: 1, q: "Left stride = 1.4 m, right = 1.2 m. The Symmetry Index is about:", opts: ["7.7%", "15.4%", "20%", "2%"], a: 1, why: "|1.4−1.2| ÷ [(1.4+1.2)/2] × 100 = 0.2 ÷ 1.3 × 100 ≈ 15.4%. A larger % means greater left–right asymmetry." },
+  { w: 1, q: "Why does trained visual observation still matter as AI motion analysis grows?", opts: ["AI has replaced coaches", "AI tools are trained against and still checked by expert human judgment", "Observation is more precise than sensors", "It doesn't — it's obsolete"], a: 1, why: "Lab/evidence: computer-vision and ML tools are calibrated against expert human judgment of movement quality — observation stays foundational." },
 ];
 
 /* ----------------------------------------------------------------------------
@@ -802,6 +825,78 @@ CONTENT.rules = [
 CONTENT.errorLogSeeds = [
   { wrong: "Said bone cannot bend.", truth: "Bone bends slightly and elastically (stiff, not rigid).", reason: "Confused 'small deformation' with 'no deformation'." },
   { wrong: "Garbled the society acronyms (ISBS, ISB, ISEK, DOAJ).", truth: "Geographic = ASB/CSB/ESB; international & specialist = ISB/ISBS/ISEK; DOAJ is a database.", reason: "Never spoke them aloud / no memory hook." },
+];
+
+/* ----------------------------------------------------------------------------
+   LABS — hands-on laboratory activities
+   -------------------------------------------------------------------------- */
+CONTENT.labs = [
+  {
+    n: 1,
+    w: 1,
+    title: "Introduction to Biomechanics",
+    subtitle: "Observing the Basis of Motion — an introductory biomechanical analysis of human movement.",
+    venue: "High Performance Gym · observation-based (no motion capture or force plates)",
+    outcomes: [
+      "Analyze the basis for human movement from the definitions of mechanics, biomechanics, and kinesiology.",
+      "Explain the importance of biomechanics to movement, exercise, and sport.",
+      "Apply biomechanical knowledge to the observation and interpretation of human movement.",
+      "Operationally define and apply kinematics, kinetics, plane of motion, axis, COG, and BOS to a live movement.",
+    ],
+    preLab: [
+      "In your own words, define mechanics, biomechanics, and kinesiology, and explain how the three relate.",
+      "Name the three anatomical planes of motion and give one human movement that occurs primarily in each.",
+      "Why might a coach rely on visual, qualitative observation instead of (or alongside) expensive motion-analysis equipment?",
+      "What is qualitative movement analysis, and why does trained human observation still matter as AI-based tools become common?",
+    ],
+    concepts: [
+      { term: "Mechanics", def: "The branch of physics dealing with forces and the motion they produce in any object, living or non-living." },
+      { term: "Biomechanics", def: "The application of mechanical principles to describe and explain the forces acting on, and produced by, the human body during movement." },
+      { term: "Kinesiology", def: "The academic discipline studying human movement in its full scope — mechanical, anatomical, physiological, and behavioral." },
+      { term: "Kinematics", def: "The description of motion in terms of position, displacement, velocity, and joint angle, without reference to the forces causing it." },
+      { term: "Kinetics", def: "The study of the forces (muscular, gravitational, ground-reaction) that cause or modify motion." },
+      { term: "Plane of motion", def: "One of three imaginary flat surfaces (sagittal, frontal, transverse) that divide the body and along which movement is described." },
+      { term: "Axis of rotation", def: "The imaginary line around which a body segment rotates during a joint movement." },
+      { term: "Center of gravity (COG)", def: "The point at which the body's mass is considered to be balanced in all directions." },
+      { term: "Base of support (BOS)", def: "The area beneath a person bounded by all points of contact with the supporting surface." },
+      { term: "Qualitative movement analysis", def: "The systematic, non-numerical observation and judgment of movement quality, typically using a structured checklist." },
+    ],
+    scenario: "You are a student intern supporting a PATHFIT instructor / S&C coach during a pre-activity movement screening. With only a stopwatch, tape measure, goniometer, plumb line, and a trained eye, observe two everyday tasks (walking gait and an overhead squat) and describe what you see in biomechanical language. Your notes flag any athlete who may need technique coaching or a referral.",
+    equipment: [
+      "Masking tape or floor cones (mark a 6 m walkway + fixed observation point)",
+      "Measuring tape · Stopwatch or phone timer · Goniometer (baseline joint angles)",
+      "Plumb line / weighted string (visualize vertical COG alignment)",
+      "Phone/tablet camera for optional slow-motion review (with consent)",
+      "Rating sheets, clipboards, pens, blank paper",
+    ],
+    procedure: [
+      "Assign fixed observer positions — one to the side (sagittal view), one in front (frontal view) — and keep them constant across trials.",
+      "Collect at least three trials per task (three gait passes, three squat reps); record each separately before averaging.",
+      "Use the goniometer and plumb line to the nearest 5°; don't estimate angles by eye when a tool is available.",
+      "Count cadence over a fixed 15-second interval and multiply by four.",
+      "If filming, keep camera distance, height, and angle identical across trials.",
+      "When two observers rate the same trial, compare and discuss disagreements before recording a final value (reduces bias).",
+    ],
+    calcs: [
+      { name: "Average cadence", formula: "(steps counted in 15 s) × 4  =  steps/min" },
+      { name: "Average stride length", formula: "sum of trial values ÷ number of trials  (m)" },
+      { name: "Symmetry Index", formula: "|Left − Right| ÷ [(Left + Right) ÷ 2] × 100  (%)" },
+    ],
+    squatChecklist: [
+      "Heels remain in contact with the floor",
+      "Knees track in line with the toes (no excessive valgus/varus)",
+      "Trunk remains upright with a neutral spine",
+      "Arms remain overhead throughout descent and ascent",
+      "Left–right symmetry maintained (hips, knees, arms)",
+    ],
+    interpretation: [
+      "Was the walking pattern kinematically efficient? Justify using cadence, stride length, and symmetry values.",
+      "Which biomechanical principle best explains any trunk lean or left–right asymmetry you observed?",
+      "Identify the primary and secondary planes of motion in the overhead squat, citing specific joint actions.",
+      "How would these observations inform a coach's decision about whether a corrective intervention is needed?",
+    ],
+    takeaway: "Observation-based labs work at the KINEMATIC level — force can't be seen directly, only inferred from its visible effects. Structured visual observation is the entry point to all motion-analysis technology: AI tools are trained against, and still checked by, the trained eye.",
+  },
 ];
 
 window.CONTENT = CONTENT;

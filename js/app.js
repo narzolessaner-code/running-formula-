@@ -239,12 +239,38 @@
   /* ======================================================================
      LABS
      ==================================================================== */
+  // Decode a base64 data URI once into a reusable blob URL
+  const _pdfBlobUrls = {};
+  function labPdfUrl(n) {
+    const stash = window.LAB_PDFS || {};
+    const dataUri = stash[n];
+    if (!dataUri) return null;
+    if (_pdfBlobUrls[n]) return _pdfBlobUrls[n];
+    try {
+      const b64 = dataUri.split(",")[1];
+      const bin = atob(b64);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      _pdfBlobUrls[n] = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+      return _pdfBlobUrls[n];
+    } catch (e) {
+      return dataUri; // fallback to the data URI directly
+    }
+  }
+
   function renderLabs() {
     const wrap = $("#labList");
     wrap.innerHTML = "";
     C.labs.forEach((L) => {
       const card = el("div", "card");
       const list = (arr, ol) => `<${ol ? "ol" : "ul"} class="lab-list">${arr.map((x) => `<li>${esc(x)}</li>`).join("")}</${ol ? "ol" : "ul"}>`;
+      const url = labPdfUrl(L.n);
+      const pdfRow = url
+        ? `<div class="lab-pdf-row">
+             <button class="btn" data-pdf-open="${L.n}">📄 Open the original lab PDF</button>
+             <a class="btn ghost" href="${url}" download="Lab${L.n}-Introduction-to-Biomechanics.pdf">Download PDF</a>
+           </div>`
+        : "";
       card.innerHTML = `
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px">
           <span class="pill gold">Lab ${L.n}</span>
@@ -252,6 +278,8 @@
           <h3 style="margin:0">${esc(L.title)}</h3>
         </div>
         <p style="color:var(--text-soft);font-size:.92rem;margin:2px 0 14px">${esc(L.subtitle)}</p>
+        ${pdfRow}
+        <div id="pdfView-${L.n}" class="lab-pdf-view" hidden></div>
         <div class="callout" style="margin-bottom:16px"><b>Key takeaway.</b> ${esc(L.takeaway)}</div>
 
         <div class="lab-sec"><span class="lab-lbl">Learning outcomes</span>${list(L.outcomes)}</div>
@@ -272,6 +300,24 @@
         <div class="lab-sec"><span class="lab-lbl">Overhead-squat checklist</span>${list(L.squatChecklist)}</div>
         <div class="lab-sec"><span class="lab-lbl">Interpretation questions</span>${list(L.interpretation, true)}</div>`;
       wrap.appendChild(card);
+    });
+    // wire "Open PDF" buttons — toggle an inline embedded viewer
+    $$("#labList [data-pdf-open]").forEach((btn) => {
+      btn.onclick = () => {
+        const n = btn.dataset.pdfOpen;
+        const box = $("#pdfView-" + n);
+        const url = labPdfUrl(n);
+        if (box.hidden) {
+          box.innerHTML = `<embed src="${url}" type="application/pdf" class="lab-embed" />
+            <p class="lab-pdf-fallback">Can't see it? <a href="${url}" target="_blank" rel="noopener">Open the PDF in a new tab ↗</a></p>`;
+          box.hidden = false;
+          btn.textContent = "✕ Close lab PDF";
+        } else {
+          box.innerHTML = "";
+          box.hidden = true;
+          btn.textContent = "📄 Open the original lab PDF";
+        }
+      };
     });
   }
 

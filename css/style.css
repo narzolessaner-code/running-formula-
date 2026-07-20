@@ -293,5 +293,11 @@ h2.view-title { font-size: 1.5rem; margin: 4px 0 4px; letter-spacing: -0.02em; }
 .lab-term { background: var(--surface-2); border-radius: var(--radius-sm); padding: 10px 13px; }
 .lab-term b { display: block; color: var(--accent); font-size: 0.9rem; margin-bottom: 2px; }
 .lab-term span { font-size: 0.88rem; color: var(--text-soft); }
+.lab-pdf-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.lab-pdf-row .btn { text-decoration: none; }
+.lab-pdf-view { margin: 0 0 16px; }
+.lab-embed { width: 100%; height: 78vh; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); }
+.lab-pdf-fallback { font-size: 0.82rem; color: var(--text-soft); margin: 8px 0 0; text-align: center; }
+.lab-pdf-fallback a { color: var(--accent); }
 
 footer.foot { text-align: center; color: var(--text-soft); font-size: 0.8rem; margin-top: 30px; }

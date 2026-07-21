@@ -14,33 +14,33 @@
 2. **FRONT VIEW (12–26s):** Ang front-view running mo (neck-down o silhouette). Ito ang ikalawang kalahati + payoff.
 > Kung maiksi ang clips: i-loop o i-slow-mo (0.9x) para umabot; huwag baguhin ang timing ng VO.
 
-## 🗣️ 3. Voiceover (Mostly Tagalog, intense coach, direct "ikaw/mo", ~25s)
-> **[0–3s | diretso, mahina ang musika]** Isang tao. Isang telepono. Isang tanong: [beat] ano ba talaga ang totoo sa running science?
-> **[3–10s | POV shot, kumpiyansa]** Walang mukha. Walang drama. Binti lang, daan, at datos. Dito, hindi kita sasabihan ng chismis — itetest ko mismo sa sarili kong katawan, sa init ng Pilipinas.
-> **[10–18s | front view, tumataas]** Zone 2. Carbon shoes. Heat training. Tulog. Cadence. Isa-isa nating bubuksan — may science, may resibo, at may bersyon para sa'yo kahit walang mamahaling gadget.
-> **[18–26s | payoff, utos]** Kaya kung seryoso ka nang bumilis at tumigil sa panghuhula — sumunod ka. Bagong experiment kada linggo. [pause] Takbo Lab 'to. Simula na.
+## 🗣️ 3. Voiceover (Simple clear English, smartest-coach delivery, direct "you", ~25s)
+> **[0–3s | calm, music near-silent]** One person. One phone. One question: [beat] what's actually true about running?
+> **[3–10s | POV shot, certain]** No face. No hype. Just legs, road, and data. I won't feed you gym-bro myths — I test everything on my own body, in the heat of the Philippines.
+> **[10–18s | front view, rising]** Zone 2. Carbon shoes. Heat training. Sleep. Cadence. One by one, I open them up — real science, real proof, and a version that works for you even with zero gadgets.
+> **[18–26s | payoff, command]** So if you're serious about getting faster and done with guessing — follow. New experiment every week. [pause] This is Takbo Lab. Let's begin.
 
 ## 📱 4. Text-On-Screen
-- **Hook (0–2s):** "BUKAS NA ANG LAB."
-- 4s: `WALANG MUKHA. PURO DATOS.` · 8s: `RUNNING SCIENCE, TINEST SA SARILING BINTI` · 14s: `ZONE 2 · CARBON · INIT · TULOG · CADENCE` · 20s: `BAGONG EXPERIMENT KADA LINGGO` · 24s: `TAKBO LAB 'TO.`
+- **Hook (0–2s):** "THE LAB IS OPEN."
+- 4s: `NO FACE. JUST DATA.` · 8s: `RUNNING SCIENCE, TESTED ON MY OWN LEGS` · 14s: `ZONE 2 · CARBON · HEAT · SLEEP · CADENCE` · 20s: `NEW EXPERIMENT EVERY WEEK` · 24s: `THIS IS TAKBO LAB.`
 - Assets: `watermark.png` top-right buong video; `endcard.png` huling 1.5s.
 
 ## ✍️ 5. Caption & SEO
 - **Caption:**
-  🔬 BUKAS NA ANG LAB.
-  Isang tao, isang telepono, isang misyon: alamin kung ano talaga ang totoo sa running science — at itest mismo sa sarili kong binti, sa init ng Pilipinas. Walang mukha. Walang hype. Puro datos.
-  Zone 2, carbon shoes, heat training, tulog, cadence — isa-isa nating bubuksan, may bersyon kahit walang gadget.
-  Bagong experiment kada linggo. Sumunod ka. Takbo Lab 'to. 🏃‍♂️
-- **Comment trap:** "Ano ang pinaka-gusto mong malaman: bakit ka hingal, tama bang carbon shoes, o paano tumakbo sa init? I-comment mo — 'yan ang uunahin kong itest. 👇"
+  🔬 THE LAB IS OPEN.
+  One person, one phone, one mission: find out what's actually true about running — and test it on my own legs, in the heat of the Philippines. No face. No hype. Just data.
+  Zone 2, carbon shoes, heat training, sleep, cadence — I'll open them one by one, with a version that works even with zero gadgets.
+  New experiment every week. Follow. This is Takbo Lab. 🏃‍♂️
+- **Comment trap:** "What do you most want to know: why you gas out fast, if carbon shoes are worth it, or how to run in the heat? Comment it — that's the first thing I'll test. 👇"
 - **Tags:** #TakboLab #RunningPH #TakboTips #RunningEraPH #RunningScience
 
 ## ✂️ 6. Edit Blueprint
-- 0.0–2.0s POV shot + "BUKAS NA ANG LAB." text slam word-by-word + malalim na bass hit. Musika = halos tahimik pa.
-- 2.0–10.0s POV pababa sa binti; captions pumapasok; musika unti-unting lumalakas.
-- 10.0–12.0s isang mabilis na whoosh + hard cut papunta sa front view.
-- 12.0–18.0s front-view running; callout 14s; build-up ng musika.
-- 18.0s BEAT DROP dito — pinaka-malakas na strides + "BAGONG EXPERIMENT KADA LINGGO."
-- 18.0–26.0s payoff glide; musika bumaba sa huling linya; `endcard.png` huling 1.5s.
+- 0.0–2.0s POV shot + "THE LAB IS OPEN." text slam word-by-word + deep bass hit. Music near-silent.
+- 2.0–10.0s POV down at legs; captions appear; music builds slowly.
+- 10.0–12.0s one quick whoosh + hard cut to front view.
+- 12.0–18.0s front-view running; callout 14s; music keeps building.
+- 18.0s BEAT DROP here — strongest strides + "NEW EXPERIMENT EVERY WEEK."
+- 18.0–26.0s payoff glide; music ducks under the final line; `endcard.png` final 1.5s.
 - Grade: "Manila Blue Hour" — teal shadows, orange highlights, crushed blacks, 15% grain.
 
 ## 🎵 THE MUSIC (basahin ito — importante)
@@ -78,7 +78,6 @@ commercial library o YouTube Audio Library.
 - First hour: i-pin ang comment trap; sagutin ang bawat sagot; i-share sa
   personal mo + isang running group.
 
-## 📟 11. Para sa Lahat
-- Ang linyang "may bersyon para sa'yo kahit walang mamahaling gadget" ang
-  budget-runner promise mismo — ito ang magpapaparamdam sa masa runner na
-  kasama sila mula sa unang segundo.
+## 📟 11. For Everyone (Budget Mode)
+- The line "a version that works even with zero gadgets" IS the budget-runner
+  promise — it tells the no-watch runner they belong here from second one.

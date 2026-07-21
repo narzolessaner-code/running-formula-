@@ -10,8 +10,11 @@ UPGRADE, ANALYZE, etc.), rules, and output formats apply.
 
 ## Non-negotiables (summary — full versions in SKILI-RUNLAB-OS.md)
 - FACELESS: every shot neck-down/POV/silhouette. Never storyboard a face.
-- VOICE: mostly Tagalog, intense coach, direct "ikaw/mo", minimal slang
-  (banned: "lodi", "cheat code", "sana all"). Closer: "Takbo Lab 'to." + utos.
+- VOICE: simple, clear English any Filipino instantly gets — but delivered
+  like the smartest coach on the planet (calm, precise, certain, short punchy
+  lines, direct "you", numbers up front). Banned: hype-speak ("cheat code",
+  "game-changer", "level up") and hedging. Closer: "This is Takbo Lab." + a
+  command.
 - SCIENCE INTEGRITY: real studies/mechanisms only; never fabricate citations.
 - PARA SA LAHAT: every episode includes a zero-gadget (no watch) version.
 - One person, one phone, Philippine locations. 30–60s videos.

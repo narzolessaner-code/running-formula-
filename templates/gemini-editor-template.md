@@ -12,8 +12,8 @@ that contains one.
 
 TIMELINE (EDL): [paste Section 6 "Edit Blueprint", with clip file names]
 TEXT-ON-SCREEN: [paste Section 4 callouts with timestamps]
-CAPTIONS: word-by-word Tagalog auto-captions, bold white, black outline,
-lower third, keep the Tagalog spelling, no translation.
+CAPTIONS: word-by-word English auto-captions, bold white, black outline,
+lower third, match the spoken words exactly.
 SOUND: VO on top, music ducked -12dB, beat drop at [TIME], near-silent
 first 3 seconds, whoosh per hard cut, SFX on slow-mo foot strikes.
 GRADE: "Manila Blue Hour" — teal shadows, warm orange highlights, crushed

@@ -25,8 +25,7 @@ face; if any frame accidentally contains one, crop or reframe it out
 === TIMELINE (EDL) ===
 0.0–1.8s — shot1_sweat.mp4 in slow motion (50%), macro sweat droplet hitting
 asphalt. On-screen text slams in word by word, huge bold white condensed
-all-caps with hard black shadow: "MABAGAL KA SA INIT? BUTI NGA." Add a
-sizzle sound effect and a deep bass hit on "BUTI NGA."
+all-caps with hard black shadow: "SLOW IN THE HEAT? GOOD." Add a sizzle SFX and a deep bass hit on "GOOD."
 1.8–3.0s — Hard cut to a 2-frame WHITE flash (heat blink), then shot2.
 3.0–8.0s — shot2_haze_watch.mp4: heat haze + sun flare, then punch-in zoom
 to 110% on the watch showing the slow pace. Warm orange vignette.
@@ -35,9 +34,9 @@ Callout at 5s, monospace font: "🥵 38°C HEAT INDEX = FREE TRAINING CAMP".
 Callout at 12s: "PLASMA VOLUME +10%".
 16.0–24.0s — shot4_waterpour.mp4 in slow motion. Strip the music down to a
 heartbeat + water SFX only. Lab-readout callout types on at 20s:
-"VO2MAX +5% IN 10 DAYS", then at 24s: "KAHIT SA MALAMIG".
+"VO2MAX +5% IN 10 DAYS", then at 24s: "EVEN IN COOL RACES".
 24.0–33.0s — shot5_silhouette.mp4, powerful strides. BEAT DROP exactly at
-24.0s. Callout at 29s: "SAUNA SUIT: ₱15,000 / IKAW: LIBRE".
+24.0s. Callout at 29s: "SAUNA SUIT: ₱15,000 / YOU: FREE".
 33.0–42.0s — shot6_coolmorning.mp4, smooth fast strides in cool blue light.
 Shift the color grade noticeably COLDER for this clip only — the warm-to-cold
 shift is the story. Music opens wide then fades under the final line.
@@ -45,9 +44,8 @@ Callout at 38s: "DECEMBER RACE = SUPERCHARGED ⚡". End card last 1.5s:
 "TAKBO LAB" + "New experiment weekly."
 
 === CAPTIONS ===
-Auto-caption the entire Tagalog voiceover, word-by-word pop style, centered
-lower third, white bold with black outline. Keep the Tagalog spelling exactly
-as spoken; do not translate.
+Auto-caption the entire English voiceover, word-by-word pop style, centered
+lower third, white bold with black outline. Match the spoken words exactly.
 
 === SOUND ===
 Voiceover always on top (music ducked -12dB under speech). Music: warm,

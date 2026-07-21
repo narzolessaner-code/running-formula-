@@ -25,22 +25,21 @@ the ENTIRE video. End with endcard.png full screen for the final 1.5s.
 === TIMELINE (EDL) ===
 0.0–2.0s — shot1_pov.mp4. Music near-silent here. On-screen text slams in
 word by word, huge bold white condensed all-caps with hard black shadow:
-"BUKAS NA ANG LAB." Deep bass hit on the last word.
+"THE LAB IS OPEN." Deep bass hit on the last word.
 2.0–10.0s — continue shot1_pov.mp4 (slow it slightly if needed to fill).
-Music builds gradually. Callout at 4s, monospace: "WALANG MUKHA. PURO
-DATOS." and at 8s: "RUNNING SCIENCE, TINEST SA SARILING BINTI".
+Music builds gradually. Callout at 4s, monospace: "NO FACE. JUST DATA."
+and at 8s: "RUNNING SCIENCE, TESTED ON MY OWN LEGS".
 10.0–12.0s — one quick whoosh + hard cut to shot2_front.mp4.
 12.0–18.0s — shot2_front.mp4. Music keeps building. Callout at 14s:
-"ZONE 2 · CARBON · INIT · TULOG · CADENCE".
+"ZONE 2 · CARBON · HEAT · SLEEP · CADENCE".
 18.0–26.0s — continue shot2_front.mp4, its strongest strides. Place the
-MUSIC BEAT DROP at exactly 18.0s. Callout at 20s: "BAGONG EXPERIMENT KADA
-LINGGO", at 24s: "TAKBO LAB 'TO." Music ducks under the final voiceover
+MUSIC BEAT DROP at exactly 18.0s. Callout at 20s: "NEW EXPERIMENT EVERY
+WEEK", at 24s: "THIS IS TAKBO LAB." Music ducks under the final voiceover
 line, then endcard.
 
 === CAPTIONS ===
-Auto-caption the entire Tagalog voiceover, word-by-word pop style, centered
-lower third, white bold with black outline. Keep the Tagalog spelling
-exactly as spoken; do not translate.
+Auto-caption the entire English voiceover, word-by-word pop style, centered
+lower third, white bold with black outline. Match the spoken words exactly.
 
 === SOUND ===
 Voiceover always on top and clear (music ducked -12dB under speech).

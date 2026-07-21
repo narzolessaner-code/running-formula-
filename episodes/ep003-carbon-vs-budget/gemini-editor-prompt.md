@@ -40,7 +40,7 @@ huge bold white condensed all-caps, hard black shadow: "₱12,000 vs ₱1,500.
 SAME LEGS." Cash-register SFX + deep bass hit.
 3.0–10.0s — SPLIT SCREEN: shot_a1_budgetshoe.mp4 (left) vs
 shot_b1_carbonshoe.mp4 (right). Price labels lock in. Tick-tock SFX.
-Callout at 8s, monospace: "STUDY: -4% ENERGY (SA MABIBILIS)".
+Callout at 8s, monospace: "STUDY: -4% ENERGY (FOR FAST RUNNERS)".
 10.0–20.0s — SPLIT SCREEN: shot_a2_budgetrun.mp4 (left) vs
 shot_b2_carbonrun.mp4 (right). Align the two clips so the stride rhythm
 matches. Light metronome click SFX. Callout at 14s: "SAME ROUTE · SAME
@@ -48,20 +48,17 @@ EFFORT".
 20.0–30.0s — SPLIT SCREEN: shot_a3_budgetwatch.mp4 (left) vs
 shot_b3_carbonwatch.mp4 (right). Monospace data callouts type on at 21s:
 left "[PACE A] · [HR A]", right "[PACE B] · [HR B]". At 26.5s FREEZE both
-sides for one beat with FULL silence, then reveal centered: "PINAGKAIBA:
-[DIFF]" with a single deep hit.
+sides for one beat with FULL silence, then reveal centered: "DIFFERENCE: [DIFF]" with a single deep hit.
 30.0–38.0s — Full screen, alternating slow motion: shot_a4_budgetstrike.mp4
 then shot_b4_carbonstrike.mp4 (repeat once). Music drop at exactly 30.0s.
 Callout at 36s: "[ITO ANG CALLOUT NG NAPILING ENDING]".
 38.0–47.0s — shot_c_hero.mp4, running toward camera, neck-down. Music ducks
-under the casting-call voiceover. Callout at 41s: "I-COMMENT: PACE MO 👇
-BAKA IKAW ANG NEXT". End card last 2s: "SAME LEGS, DIFFERENT RULES —
-LINGGO-LINGGO. TAKBO LAB."
+under the casting-call voiceover. Callout at 41s: "COMMENT YOUR PACE 👇
+YOU COULD BE NEXT". End card last 2s: "SAME LEGS, DIFFERENT RULES — WEEKLY. TAKBO LAB."
 
 === CAPTIONS ===
-Auto-caption the entire Tagalog voiceover, word-by-word pop style, centered
-lower third, white bold with black outline. Keep the Tagalog spelling
-exactly as spoken; do not translate.
+Auto-caption the entire English voiceover, word-by-word pop style, centered
+lower third, white bold with black outline. Match the spoken words exactly.
 
 === SOUND ===
 Voiceover always on top (music ducked -12dB). Music: tense, minimal,

@@ -46,8 +46,7 @@ aggressive) beat opens at 34.0s. Callout at 38s: "+30 MIN NGAYONG GABI".
 Music fades under the final line, then endcard.
 
 === CAPTIONS ===
-Word-by-word Tagalog auto-captions, bold white with black outline, lower
-third, keep the Tagalog spelling exactly as spoken, no translation.
+Word-by-word English auto-captions, bold white with black outline, lower third, match the spoken words exactly.
 
 === SOUND ===
 VO on top (music -12dB under speech). Music: dark minimal ambient for the

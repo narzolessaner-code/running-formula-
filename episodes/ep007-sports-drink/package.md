@@ -1,46 +1,46 @@
-# EP007 — "Kailangan Mo Ba Talaga ng Sports Drink?" (Hydration Debunk — DEPENDE stamp)
+# EP007 — "Do You Really Need a Sports Drink?" (Hydration Debunk — DEPENDS stamp)
 
 ## 🔬 1. Science / Experiment Anchor
-- **Fact:** Ang sports nutrition consensus: para sa takbong WALA PANG ORAS, tubig ay sapat — ang katawan may sapat na glycogen at sodium reserves. Ang sports drinks (6–8% carbs + electrolytes) ay dinisenyo para sa 60–90+ minutong tuloy-tuloy na effort. PERO: sa PH heat, mas mataas ang sweat rate at sodium loss — kaya sa mahahabang takbo sa init, ang electrolytes ay TOTOONG kailangan. Verdict: DEPENDE — sa haba at sa init.
-- **Pinoy Hook:** ₱50–₱80 kada bote kada takbo = ₱1,000+/buwan na binubuhos sa 30-minutong easy run na hindi naman kailangan. Pero 'yung 21K training sa tanghaling init na tubig lang baon? Delikado 'yun. Parehong mali, magkabilang dulo.
+- **Fact:** The sports-nutrition consensus: for runs UNDER AN HOUR, water is enough — the body has plenty of glycogen and sodium reserves. Sports drinks (6–8% carbs + electrolytes) are designed for 60–90+ minutes of continuous effort. BUT: in PH heat, sweat rate and sodium loss are higher — so on long runs in the heat, electrolytes ARE genuinely needed. Verdict: DEPENDS — on length and heat.
+- **Pinoy Hook:** ₱50–₱80 per bottle per run = ₱1,000+/month poured into a 30-minute easy run that doesn't need it. But 21K training under the noon heat with only water? That's dangerous. Both wrong, opposite ends.
 
 ## 🎬 2. Visual Storyboard
-1. **Hook (0–3s):** Macro: sports drink ibinubuhos sa baso, neon ang kulay, slow-mo.
-2. **Ang gastos (3–9s):** Kamay naglalagay ng mga bote sa mesa isa-isa habang tumataas ang presyo on-screen; cut sa sari-sari store fridge.
-3. **Ang science (9–18s):** Watch timer close-up "42:15", tapos tubig sa bote — POV run na may bitbit na tubig.
-4. **Ang kabilang mukha (18–28s):** Init shots: pawis macro, heat haze, mahabang takbo — dito nagbabago ang sagot.
-5. **DIY fix (28–36s):** Kamay gumagawa: tubig + kurot ng asin + kalamansi sa bote. Sari-sari store total: ₱15.
-6. **Verdict (36–44s):** STAMP: `stamp-depende.png` slam; hero shot pagkatapos.
+1. **Hook (0–3s):** Macro: sports drink pouring into a glass, neon color, slow-mo.
+2. **The cost (3–9s):** Hand placing bottles on the table one by one as the price climbs on-screen; cut to a sari-sari store fridge.
+3. **The science (9–18s):** Watch timer close-up "42:15", then water in a bottle — POV run carrying water.
+4. **The other side (18–28s):** Heat shots: sweat macro, heat haze, long run — this is where the answer flips.
+5. **DIY fix (28–36s):** Hand making it: water + a pinch of salt + calamansi in a bottle. Sari-sari store total: ₱15.
+6. **Verdict (36–44s):** STAMP: `stamp-depende.png` slam; hero shot after.
 
-## 🗣️ 3. Voiceover (~44s, intense coach, ikaw/mo)
-> **[0–3s]** Bawat takbo mo, may sports drink ka. [beat] Sayang ang pera mo. Minsan.
-> **[3–10s | sinisita ka]** Kung 30 minutos ang takbo mo, 5K easy run — hindi mo kailangan 'yan. May sapat na gasolina at asin ang katawan mo. Ang binili mo: matamis na tubig na may kulay.
-> **[10–18s | science mode]** Ang science: ang sports drink ay ginawa para sa isang oras pataas na tuloy-tuloy na effort. Doon nauubos ang glycogen mo at doon lumalaki ang sodium na nawawala sa pawis.
-> **[18–28s | may bigat]** PERO. Dito sa Pilipinas, iba ang laban. Sa init natin, mas mabilis kang mag-pawis, mas maraming asin ang nawawala. Kaya kapag mahaba ang takbo mo — isang oras pataas, lalo na sa tanghali — kailangan mo na ng electrolytes. Hindi 'yan luho. Proteksyon 'yan.
-> **[28–36s | utos, how-to]** At hindi mo kailangang bumili ng mamahalin. Ganito: tubig, kurot ng asin, pigang kalamansi. Kinse pesos sa sari-sari store. 'Yan ang electrolyte drink mo.
-> **[36–44s | verdict]** Kaya ang sagot: DEPENDE. Maiksi at maaga? Tubig ka lang. Mahaba at mainit? Mag-asin ka. [pause] Takbo Lab 'to. Itigil mo na ang autopilot na gastos.
+## 🗣️ 3. Voiceover (~44s, smartest-coach English, direct "you")
+> **[0–3s]** Every run, you've got a sports drink. [beat] You're wasting money. Sometimes.
+> **[3–10s | calling it out]** If your run is 30 minutes, an easy 5K — you don't need it. Your body has enough fuel and salt. What you bought: sweet colored water.
+> **[10–18s | science mode]** The science: a sports drink is built for an hour or more of continuous effort. That's when your glycogen runs low and your sodium loss gets big.
+> **[18–28s | weighty]** BUT. Here in the Philippines, it's a different fight. In our heat, you sweat faster and lose more salt. So when your run is long — an hour or more, especially at noon — you DO need electrolytes. That's not a luxury. That's protection.
+> **[28–36s | command, how-to]** And you don't need to buy the expensive kind. Here: water, a pinch of salt, squeezed calamansi. Fifteen pesos at the sari-sari store. That's your electrolyte drink.
+> **[36–44s | verdict]** So the answer is: DEPENDS. Short and early? Water only. Long and hot? Add salt. [pause] This is Takbo Lab. Stop spending on autopilot.
 
 ## 📱 4. Text-On-Screen
-- **Hook:** "SAYANG ANG PERA MO. MINSAN."
-- 6s: `₱80 × 12 RUNS = ₱960/BUWAN` · 12s: `<60 MIN = TUBIG SAPAT NA` · 21s: `PH INIT = MAS MARAMING SODIUM LOSS` · 25s: `1 ORAS+ SA INIT = ELECTROLYTES NA` · 31s: `DIY: TUBIG + ASIN + KALAMANSI = ₱15` · 38s: STAMP DEPENDE
-- Assets: watermark buong video; `stamp-depende.png` sa 36–38s na may shake.
+- **Hook:** "YOU'RE WASTING MONEY. SOMETIMES."
+- 6s: `₱80 × 12 RUNS = ₱960/MONTH` · 12s: `<60 MIN = WATER IS ENOUGH` · 21s: `PH HEAT = MORE SODIUM LOSS` · 25s: `1 HR+ IN HEAT = ELECTROLYTES` · 31s: `DIY: WATER + SALT + CALAMANSI = ₱15` · 38s: STAMP DEPENDS
+- Assets: watermark entire video; `stamp-depende.png` at 36–38s with a shake.
 
 ## ✍️ 5. Caption & SEO
-- **Caption:** ₱960 kada buwan sa sports drinks para sa 30-minutong takbo? Hindi mo kailangan. Pero 'yung 21K sa tanghaling init na tubig lang? Delikado. Alamin mo kung kailan ang alin — at ang ₱15 na sari-sari store recipe. 🔬🥤
-- **Comment trap:** "Ano ang baon mong inumin sa long run — at magkano ang gastos mo kada buwan dito? Magulat tayo sabay-sabay. 👇"
+- **Caption:** ₱960 a month on sports drinks for a 30-minute run? You don't need it. But a 21K in the noon heat with only water? Dangerous. Learn when it's which — and the ₱15 sari-sari store recipe. 🔬🥤
+- **Comment trap:** "What do you drink on your long runs — and how much do you spend on it each month? Let's shock ourselves together. 👇"
 - **Tags:** #TakboLab #HydrationTips #RunningPH #BudgetRunner #RunningEraPH
 
 ## ✂️ 6. Edit Blueprint
-- 0–3s pour macro + hook slam + fizz SFX; 3–9s bote-bote counter na may cash SFX; 9–18s timer/tubig POV, kalmadong tono; 18–28s init sequence — grade nag-iinit (orange push), sizzle SFX; 28–36s DIY hands macro, ASMR-ish (asin, piga, halo); 36s STAMP slam + deep hit + 1-beat silence; 38–44s hero + endcard. Beat drop sa 28s (DIY reveal).
+- 0–3s pour macro + hook slam + fizz SFX; 3–9s bottle counter with cash SFX; 9–18s timer/water POV, calm tone; 18–28s heat sequence — grade heats up (orange push), sizzle SFX; 28–36s DIY hands macro, ASMR-ish (salt, squeeze, shake); 36s STAMP slam + deep hit + 1-beat silence; 38–44s hero + endcard. Beat drop at 28s (DIY reveal).
 
 ## 💰 7. Distribution & Money
-- TikTok 6 PM → FB 8:30 PM. Money-saving content = share-magnet sa budget runner groups.
-- Affiliate: electrolyte powder/tablets sa pinned PARA SA LONG RUNS lang — "Kung ayaw mo ng DIY, ito ang ginagamit ko sa 21K+: [link]. Pero sa maiksi, tubig ka lang." Balanced = binebenta ng totoo.
+- TikTok 6 PM → FB 8:30 PM. Money-saving content = share-magnet in budget runner groups.
+- Affiliate: electrolyte powder/tablets in the pinned FOR LONG RUNS only — "If you don't want the DIY, this is what I use for 21K+: [link]. But for short runs, water only." Balanced = sold honestly.
 
 ## 🧪 10. Hook Lab
-- **Alt A:** Sari-sari store fridge shot. "May ₱15 na sagot ang sari-sari store sa ₱80 mong gastos." / Text: "₱15 VS ₱80."
-- **Alt B:** Pawis macro. "May mga takbo na delikado ang tubig lang. Alamin mo kung alin." / Text: "MINSAN, KULANG ANG TUBIG."
+- **Alt A:** Sari-sari store fridge shot. "The sari-sari store has a ₱15 answer to your ₱80 habit." / Text: "₱15 VS ₱80."
+- **Alt B:** Sweat macro. "Some runs are dangerous on water alone. Learn which." / Text: "SOMETIMES WATER ISN'T ENOUGH."
 
-## 📟 11. Para sa Lahat
-- Zero-gadget rule of thumb (walang timer man): kung tapos ka bago uminit nang todo at hindi lumagpas sa isang oras ang pakiramdam — tubig sapat na. Kung lagpas at nasa init ka — asin-kalamansi mix.
-- **Ready reply sa "anong brand ng electrolytes?":** "Sa maiksing takbo: wala. Sa mahaba: kahit DIY na asin + kalamansi, gumagana. Ang mahal na brand ay convenience, hindi requirement. 💪"
+## 📟 11. For Everyone (Budget Mode)
+- Zero-gadget rule of thumb (even with no timer): if you finish before it gets fully hot and it never felt over an hour — water is enough. If it's longer and you're in the heat — the salt-calamansi mix.
+- **Ready reply for "what electrolyte brand?":** "Short runs: none. Long runs: even DIY salt + calamansi works. The expensive brand is convenience, not a requirement. 💪"

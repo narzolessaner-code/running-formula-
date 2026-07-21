@@ -3,12 +3,12 @@
 ## Step 1 — Rename files
 | Footage | Rename to |
 |---|---|
-| POV pababa sa binti + daan | `shot1_pov.mp4` |
+| POV down at legs + road | `shot1_pov.mp4` |
 | Front-view running (neck-down) | `shot2_front.mp4` |
-| Voiceover (kung meron) | `vo_intro.mp3` |
+| Voiceover (if you have one) | `vo_intro.mp3` |
 | Brand PNGs | `watermark.png`, `endcard.png` |
 
-## Step 2 — Upload lahat + ang napiling music file (kung hindi trending-audio route), paste this:
+## Step 2 — Upload everything + the chosen music file (if not the trending-audio route), paste this:
 
 ```
 You are the senior video editor for "TAKBO LAB," a faceless running-science
@@ -62,10 +62,10 @@ directly, output the final timeline as a CapCut-ready cut list instead.
 Show the final cut plus any spots where footage didn't cover the timeline.
 ```
 
-## Step 3 — Music (kung TRENDING-AUDIO route, gawin sa TikTok/CapCut mismo)
-- Huwag maglagay ng music sa Gemini. Sa halip, i-export ang video na WALANG
-  music (VO + captions + brand lang), tapos i-import sa TikTok/CapCut at
-  ilagay ang trending audio doon (yung may ↗️ arrow). Ilagay ang drop sa 18s.
-- Para sa FB/YT cross-post: gumamit ng copyright-safe audio (CapCut
-  Commercial library o YouTube Audio Library) — iwas mute/demonetize.
+## Step 3 — Music (if TRENDING-AUDIO route, do it in TikTok/CapCut itself)
+- Don't add music in Gemini. Instead, export the video with NO music
+  (VO + captions + brand only), then import it into TikTok/CapCut and add
+  the trending audio there (the one with the ↗️ arrow). Put the drop at 18s.
+- For the FB/YT cross-post: use copyright-safe audio (CapCut Commercial
+  library or YouTube Audio Library) — avoid mute/demonetize.
 ```

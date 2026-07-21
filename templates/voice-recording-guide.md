@@ -1,31 +1,31 @@
-# 🎙️ TAKBO LAB — Voice Recording Guide (cellphone lang)
+# 🎙️ TAKBO LAB — Voice Recording Guide (phone only)
 
-## Setup (5 minuto)
-1. **Kwarto na maraming tela** — kumot, unan, damit sa closet = walang echo.
-   Pro tip: mag-record sa loob ng kulambo o sa harap ng sinampay na kumot.
-2. **Cellphone voice recorder app** (default ay OK) o CapCut voiceover direct.
-3. **Isang dangkal** ang layo ng bibig sa mic, bahagyang naka-angle (hindi
-   diretso para walang "P" pops).
-4. **I-airplane mode** — walang notification sa gitna ng take.
+## Setup (5 min)
+1. **A room full of fabric** — blankets, pillows, clothes in the closet = no echo.
+   Pro tip: record inside a mosquito net or in front of hanging laundry.
+2. **Phone voice recorder app** (the default is fine) or CapCut voiceover direct.
+3. **A hand's width** from mouth to mic, slightly angled (not straight on, so no "P" pops).
+4. **Airplane mode** — no notifications in the middle of a take.
 
-## Ang delivery mo (intense coach)
-- **Basahin nang malakas ang script bago mag-record.** Kapag may salitang
-  hindi mo talaga sasabihin sa totoong buhay — palitan mo agad, saka mag-record.
-- Tumayo ka habang nagre-record. Ibang energy ang nakatayo.
-- **Pinaka-importante: ang unang linya.** Ito ang lalaban sa scroll — ulitin
-  mo ito ng 3–4 na beses, piliin ang pinaka-may-dagundong.
-- Sundin ang mga [bracket directions] sa script: [pause] = totoong huminto ka
-  ng isang segundo. [diin] = bagalan at bigatan ang salita.
-- Konting hingal pagkatapos ng totoong takbo? GAMITIN MO. Authenticity 'yan
-  na hindi kayang gayahin ng AI voice.
+## Your delivery (smartest coach on the planet)
+- **Read the script out loud before recording.** If there's a word you'd never
+  actually say — swap it right away, then record.
+- Stand while recording. Standing gives different energy.
+- **Most important: the first line.** This is what fights the scroll — repeat it
+  3–4 times, pick the one with the most weight.
+- Follow the [bracket directions] in the script: [pause] = actually stop for one
+  second. [emphasis] = slow down and hit the word harder.
+- A little breathlessness after a real run? USE IT. That's authenticity an AI
+  voice can't copy.
+- Calm and certain beats loud and fast. You KNOW this — you're not selling it.
 
-## Ang takes
-- 2 buong takes minimum. Take 1: sundan ang script. Take 2: mas mabilis at
-  mas galit nang konti — kadalasan ito ang panalo.
-- Huwag i-delete ang bad takes — minsan ang isang linya doon ang pinakamaganda.
-- I-save as: `vo_ep00X.mp3` (o m4a — tanggap ng Gemini pareho).
+## The takes
+- 2 full takes minimum. Take 1: follow the script. Take 2: a little faster and a
+  little more fired up — usually the winner.
+- Don't delete bad takes — sometimes one line in there is the best one.
+- Save as: `vo_ep00X.mp3` (or m4a — Gemini accepts both).
 
-## Red flags (ulitin ang take kapag narinig mo)
-- Parang binabasa (pabilisin, isipin na may kausap kang totoong tao)
-- Pabulong ang dulo ng mga pangungusap (ang UTOS ay hindi bumubulong)
-- Aircon hum o traffic sa background (patayin muna / lumipat ng kwarto)
+## Red flags (redo the take if you hear these)
+- Sounds like reading (speed up, imagine talking to a real person)
+- Sentences trailing off into a whisper (a command doesn't whisper)
+- AC hum or traffic in the background (turn it off / change rooms)

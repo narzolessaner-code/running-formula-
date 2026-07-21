@@ -1,9 +1,9 @@
 # 🤖 EP003 — Gemini Editor Handoff (Split-Screen Format)
 
-## Step 0 — BAGO i-record ang VO
-Palitan muna sa script ang [PACE A] [HR A] [PACE B] [HR B] [DIFF] ng totoong
-numero mula sa dalawang run, at piliin ang tamang ending (may bentahe ang
-carbon = Ending 1; halos wala = Ending 2). Saka ka mag-record.
+## Step 0 — BEFORE recording the VO
+First replace [PACE A] [HR A] [PACE B] [HR B] [DIFF] in the script with the
+real numbers from the two runs, and pick the correct ending (carbon has an
+edge = Ending 1; barely any = Ending 2). Then record.
 
 ## Step 1 — Rename files before uploading
 | Your footage | Rename to |

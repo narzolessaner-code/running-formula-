@@ -14,11 +14,11 @@
 
 ## Bio
 > 🔬 Running experiments on Manila streets.
-> Science-based takbo tips — tested on my own legs, not just sinabi.
-> 📉 Data over hype • 🇵🇭 Init-proof training
+> Science-based running tips — tested on my own legs, not just talked about.
+> 📉 Data over hype • 🇵🇭 Heat-proof training
 > 👇 New experiment every week
 
-TikTok short cut: "🔬 Running experiments sa init ng Pilipinas. Science-tested, hindi hula. New experiment weekly 👇"
+TikTok short cut: "🔬 Running experiments in the Philippine heat. Science-tested, not guessed. New experiment weekly 👇"
 
 ## Logo Prompt
 > "Minimalist athletic logo on a dark navy background: a glowing smartwatch on a wrist rendered as clean neon-teal line art, with a heartbeat/pace line running through the watch face and breaking off into small motion-blur speed lines. Flat vector style, premium and scientific, single warm-orange accent dot on the pace line, no text, no face, centered, high contrast, suitable as a social media profile picture."

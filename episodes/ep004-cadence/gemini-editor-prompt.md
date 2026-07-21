@@ -12,7 +12,7 @@
 | Voiceover | `vo_cadence.mp3` |
 | Brand PNGs | `watermark.png`, `endcard.png` |
 
-## Step 2 — Upload lahat, paste this:
+## Step 2 — Upload everything, paste this:
 
 ```
 You are the senior video editor for "TAKBO LAB," a faceless running-science

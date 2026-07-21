@@ -1,20 +1,20 @@
-# 📱 EP007 FIELD SHOOT CARD — Sports Drink (bahay + labas, isang araw)
+# 📱 EP007 FIELD SHOOT CARD — Sports Drink (home + outside, one day)
 
 **⚙️ Setup:** Vertical · 4K 60fps · wipe lens · lock exposure · 2–3 takes × 10s
-**🛒 Bilhin muna:** 1 sports drink (props), asin, kalamansi, bote ng tubig. ₱100 budget.
+**🛒 Buy first:** 1 sports drink (prop), salt, calamansi, a water bottle. ₱100 budget.
 
-## SA BAHAY / SARI-SARI STORE
+## AT HOME / SARI-SARI STORE
 
-**A — POUR MACRO 🥤** — Sports drink ibinubuhos sa baso, malapit na malapit, kita ang kulay at bula. Bintana light. *Slow-mo material, 3 takes.*
-**B — GASTOS COUNTER 💸** — Ilapag ang (mga) bote sa mesa isa-isa, top-down o side view. *10s.*
-**C — SARI-SARI FRIDGE 🏪** — Fridge/estante ng tindahan na kita ang mga inumin (walang tao sa frame). *5s pan.*
-**D — DIY MIX 🧂** — Kamay: (1) buhos tubig sa bote, (2) kurot ng asin, (3) piga kalamansi, (4) halo. Malapitan, ASMR feel — kukunin ang tunog. *Tig-2 takes bawat step.*
+**A — POUR MACRO 🥤** — Sports drink pouring into a glass, very close, color and bubbles visible. Window light. *Slow-mo material, 3 takes.*
+**B — COST COUNTER 💸** — Place the bottle(s) on the table one by one, top-down or side view. *10s.*
+**C — SARI-SARI FRIDGE 🏪** — Store fridge/shelf with the drinks visible (no people in frame). *5s pan.*
+**D — DIY MIX 🧂** — Hand: (1) pour water into the bottle, (2) pinch of salt, (3) squeeze calamansi, (4) shake. Close-up, ASMR feel — capture the sound. *2 takes per step.*
 
-## SA LABAS
+## OUTSIDE
 
-**E — TIMER + TUBIG POV ⏱️** — Watch/phone timer close-up mid-run (~40:00+), tapos POV na may bitbit na tubig. *10s each.*
-**F — INIT SEQUENCE 🥵** — Pawis macro (braso), heat haze sa daan, mabigat na hakbang sa araw. Reuse ep002 footage kung meron. *15s total.*
-**G — HERO SHOT 🌅** — Neck-down glide, bitbit ang DIY bote. *3 passes, propped.*
+**E — TIMER + WATER POV ⏱️** — Watch/phone timer close-up mid-run (~40:00+), then POV carrying water. *10s each.*
+**F — HEAT SEQUENCE 🥵** — Sweat macro (arm), heat haze on the road, heavy steps in the sun. Reuse ep002 footage if you have it. *15s total.*
+**G — HERO SHOT 🌅** — Neck-down glide, carrying the DIY bottle. *3 passes, propped.*
 
-**❌ FACE RULE:** mukha = ulitin. **📵 WALANG GIMBAL?** Lahat propped o braced — walang mahirap dito.
-**✅ DONE WHEN:** 7 shots × 2 takes ≈ 25 min + 10 min bahay prep.
+**❌ FACE RULE:** face = reshoot. **📵 NO GIMBAL?** All propped or braced — nothing hard here.
+**✅ DONE WHEN:** 7 shots × 2 takes ≈ 25 min + 10 min home prep.

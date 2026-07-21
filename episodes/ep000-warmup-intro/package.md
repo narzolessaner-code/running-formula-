@@ -1,18 +1,18 @@
-# EP000 — "BUKAS NA ANG LAB" (Warm-Up / Intro Post)
+# EP000 — "THE LAB IS OPEN" (Warm-Up / Intro Post)
 
-> 🎬 GAMIT ANG FOOTAGE NA MERON KA NA: (1) POV pababa sa binti + daan habang
-> tumatakbo, (2) front-view running (neck-down/silhouette). Walang bagong
-> kukunan. Ito ang unang mukha ng channel — announcement, hindi science pa.
-> Layunin: sabihin kung SINO tayo at anong aabangan. ~22–28 segundo.
+> 🎬 USES FOOTAGE YOU ALREADY HAVE: (1) POV down at legs + road while
+> running, (2) front-view running (neck-down/silhouette). No new shooting.
+> This is the channel's first face — an announcement, not science yet.
+> Goal: say WHO we are and what to expect. ~22–28 seconds.
 
-## 🔬 1. Ang Anchor (intro — walang study pa)
-- **Ang punto:** Ito ang faceless na channel na tine-test ang running science sa sariling binti, sa init ng Pilipinas. Ang unang video ay pangako, hindi lecture.
-- **Ang hook para sa manonood:** Bawat Pinoy runner na hingal, na-plateau, o naguguluhan sa kung ano ang totoo — ito ang lab para sa'yo.
+## 🔬 1. The Anchor (intro — no study yet)
+- **The point:** This is the faceless channel that tests running science on its own legs, in the heat of the Philippines. The first video is a promise, not a lecture.
+- **The hook for the viewer:** Every Filipino runner who gasses out, plateaus, or is confused about what's true — this is your lab.
 
-## 🎬 2. Storyboard (2 shots lang na meron ka na)
-1. **POV DOWN (0–12s):** Ang kuha mo na nakatutok ang phone pababa sa binti + daan habang tumatakbo. Ito ang buong unang kalahati.
-2. **FRONT VIEW (12–26s):** Ang front-view running mo (neck-down o silhouette). Ito ang ikalawang kalahati + payoff.
-> Kung maiksi ang clips: i-loop o i-slow-mo (0.9x) para umabot; huwag baguhin ang timing ng VO.
+## 🎬 2. Storyboard (just the 2 shots you already have)
+1. **POV DOWN (0–12s):** Your shot with the phone pointed down at your legs + road while running. This is the whole first half.
+2. **FRONT VIEW (12–26s):** Your front-view running (neck-down or silhouette). This is the second half + payoff.
+> If clips are short: loop or slow-mo (0.9x) to fill; don't change the VO timing.
 
 ## 🗣️ 3. Voiceover (Simple clear English, smartest-coach delivery, direct "you", ~25s)
 > **[0–3s | calm, music near-silent]** One person. One phone. One question: [beat] what's actually true about running?
@@ -23,7 +23,7 @@
 ## 📱 4. Text-On-Screen
 - **Hook (0–2s):** "THE LAB IS OPEN."
 - 4s: `NO FACE. JUST DATA.` · 8s: `RUNNING SCIENCE, TESTED ON MY OWN LEGS` · 14s: `ZONE 2 · CARBON · HEAT · SLEEP · CADENCE` · 20s: `NEW EXPERIMENT EVERY WEEK` · 24s: `THIS IS TAKBO LAB.`
-- Assets: `watermark.png` top-right buong video; `endcard.png` huling 1.5s.
+- Assets: `watermark.png` top-right entire video; `endcard.png` final 1.5s.
 
 ## ✍️ 5. Caption & SEO
 - **Caption:**
@@ -43,40 +43,39 @@
 - 18.0–26.0s payoff glide; music ducks under the final line; `endcard.png` final 1.5s.
 - Grade: "Manila Blue Hour" — teal shadows, orange highlights, crushed blacks, 15% grain.
 
-## 🎵 THE MUSIC (basahin ito — importante)
-Ang tamang audio ang 50% ng viral sa Reels/TikTok. Para sa intro na 'to,
-kailangan: **tahimik na unang 2 segundo** (para mangibabaw ang VO hook) tapos
-**malinaw na beat drop sa ~18s** (kasabay ng "bagong experiment kada linggo").
+## 🎵 THE MUSIC (read this — it matters)
+The right audio is 50% of going viral on Reels/TikTok. For this intro, you need:
+**a near-silent first 2 seconds** (so the VO hook dominates) then **a clear beat
+drop at ~18s** (landing on "new experiment every week").
 
-**A. KUNG MAY VOICEOVER KA (recommended):** cinematic/emotional na instrumental,
-walang lyrics (para hindi kalaban ng boses mo).
-- Sa CapCut/TikTok audio search, hanapin: `cinematic hopecore`, `emotional
-  running motivation`, `phonk slow build`, o `inspirational cinematic drop`.
-- Piliin 'yung may **tahimik na intro at malinaw na drop** — i-preview mo,
-  dapat pasok ang drop sa ~18s ng edit mo.
+**A. IF YOU HAVE A VOICEOVER (recommended):** cinematic/emotional instrumental,
+no lyrics (so it doesn't fight your voice).
+- In the CapCut/TikTok audio search, look for: `cinematic hopecore`, `emotional
+  running motivation`, `phonk slow build`, or `inspirational cinematic drop`.
+- Pick one with **a quiet intro and a clear drop** — preview it, the drop
+  should land at ~18s of your edit.
 
-**B. KUNG WALANG VOICEOVER (trending-audio route — mas mabilis mag-boost):**
-- Buksan ang TikTok/Reels, pindutin ang **"trending" na tugtog** (may ↗️
-  arrow icon) na ginagamit ng maraming running/gym video ngayong linggo.
-- Piliin ang mabigat, may-drop na beat. **Gamitin ang TRENDING sa platform —
-  ito ang binibigyan ng reach ng algorithm.** Nagbabago kada linggo kaya
-  hindi ako magbibigay ng lumang pangalan — ang ↗️ arrow ang gabay mo.
-- Kung ganito: bawasan ang VO, hayaang mangibabaw ang beat + captions.
+**B. IF NO VOICEOVER (trending-audio route — boosts faster):**
+- Open TikTok/Reels, tap a **"trending" track** (has a ↗️ arrow icon) that
+  many running/gym videos are using this week.
+- Pick a heavy beat with a drop. **Use the platform's TRENDING audio —
+  that's what the algorithm gives reach to.** It changes weekly, so I won't
+  name an outdated track — the ↗️ arrow is your guide.
+- If you go this way: cut the VO down, let the beat + captions carry it.
 
-**C. MahaLAGA — legal/monetization:** para sa FB at YouTube, gumamit ng
-**royalty-free** o platform-provided na audio (huwag copyrighted na kanta) —
-kung hindi, ma-mu-mute o hindi ma-mo-monetize. Sa CapCut: gamitin ang
-"Commercial/Copyright-safe" filter. Sa TikTok: OK ang in-app trending audio
-para sa TikTok mismo, pero para sa cross-post sa FB/YT, gumamit ng
-copyright-safe. Safe default sa lahat: instrumental na galing sa CapCut
-commercial library o YouTube Audio Library.
+**C. IMPORTANT — legal/monetization:** for FB and YouTube, use **royalty-free**
+or platform-provided audio (not a copyrighted song) — otherwise it gets muted
+or can't be monetized. In CapCut: use the "Commercial/Copyright-safe" filter.
+On TikTok: in-app trending audio is fine for TikTok itself, but for the FB/YT
+cross-post, use copyright-safe. Safe default everywhere: an instrumental from
+the CapCut commercial library or the YouTube Audio Library.
 
 ## 💰 7. Distribution & Money
-- I-post NGAYON bilang unang laman ng page. TikTok muna (trending audio route),
-  tapos FB Reels + IG Reels (copyright-safe audio), YouTube Shorts.
-- Walang affiliate — intro 'to; ang goal ay follow at abang, hindi benta.
-- First hour: i-pin ang comment trap; sagutin ang bawat sagot; i-share sa
-  personal mo + isang running group.
+- Post NOW as the page's first content. TikTok first (trending-audio route),
+  then FB Reels + IG Reels (copyright-safe audio), YouTube Shorts.
+- No affiliate — this is the intro; the goal is follows and anticipation, not sales.
+- First hour: pin the comment trap; reply to every response; share to your
+  personal profile + one running group.
 
 ## 📟 11. For Everyone (Budget Mode)
 - The line "a version that works even with zero gadgets" IS the budget-runner

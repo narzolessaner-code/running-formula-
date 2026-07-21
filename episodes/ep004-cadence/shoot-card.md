@@ -1,23 +1,23 @@
 # 📱 EP004 FIELD SHOOT CARD — Cadence
 
 **⚙️ Setup:** Vertical · 4K 60fps · wipe lens · lock focus/exposure · 2–3 takes × 10s
-**👕 Bring:** running fit + phone (watch optional — kung meron, may cadence screen). Metronome app naka-install na.
-**🕐 Time:** kahit anong maliwanag; golden hour para sa hero shot.
+**👕 Bring:** running fit + phone (watch optional — if you have one with a cadence screen). Metronome app already installed.
+**🕐 Time:** any bright light; golden hour for the hero shot.
 
 ## SHOTS (shooting order)
 
-**A — OVERSTRIDE SLOW-MO 🦵** — Phone propped sa tagiliran, tuhod-pababa ang frame. Takbuhan mo nang SADYANG mahaba ang hakbang (exaggerate ang heel strike sa unahan). 3–4 passes.
+**A — OVERSTRIDE SLOW-MO 🦵** — Phone propped to the side, knee-down frame. Run with a DELIBERATELY long stride (exaggerate the heel strike out front). 3–4 passes.
 
-**B — SHADOW STRIDE 🌤️** — Araw sa likod mo; i-film ang anino mo habang tumatakbo nang mahaba ang hakbang, tapos maiksi. *Phone sa dibdib pababa o propped.*
+**B — SHADOW STRIDE 🌤️** — Sun behind you; film your shadow as you run with a long stride, then a short one. *Phone at chest pointing down, or propped.*
 
-**C — CADENCE READOUT 📟** — Close-up ng watch cadence screen o phone app na may steps-per-minute habang tumatakbo. *30cm, 10s.*
+**C — CADENCE READOUT 📟** — Close-up of a watch cadence screen or phone app showing steps-per-minute while running. *30cm, 10s.*
 
-**D — QUICK STEPS POV 👣** — POV pababa: maliliit at mabibilis na hakbang, paa lumalapag sa ilalim mo. Kumpara dapat sa Shot A. *15s.*
+**D — QUICK STEPS POV 👣** — POV down: small, quick steps, foot landing under you. Should contrast with Shot A. *15s.*
 
-**E — METRONOME APP 📱** — Hawak ang phone, kita ang metronome app na tumatakbo; daliri nagtatakda ng BPM. Pwede sa bahay. *10s.*
+**E — METRONOME APP 📱** — Holding the phone, metronome app running visible; finger setting the BPM. Can be done at home. *10s.*
 
-**F — HERO GLIDE 🌅** — Golden hour, neck-down, magaan at maliksi ang hakbang. Propped o gimbal, 3 passes.
+**F — HERO GLIDE 🌅** — Golden hour, neck-down, light and nimble steps. Propped or gimbal, 3 passes.
 
-**❌ FACE RULE:** mukha sa frame = ulitin.
-**📵 WALANG GIMBAL?** A/B/F propped; C/E brace elbows; D slow-mo kung malikot.
+**❌ FACE RULE:** face in frame = reshoot.
+**📵 NO GIMBAL?** A/B/F propped; C/E brace elbows; D slow-mo if shaky.
 **✅ DONE WHEN:** 6 shots × 2 takes ≈ 20 min.

@@ -3,7 +3,7 @@
 ## Step 1 — Rename files before uploading
 | Your footage | Rename to |
 |---|---|
-| Hands on knees, hingal | `shot1_hingal.mp4` |
+| Hands on knees, gasping | `shot1_gasp.mp4` |
 | Watch @ 178 bpm | `shot2_178bpm.mp4` |
 | Slow run POV | `shot3_slowrun.mp4` |
 | Watch @ 140 bpm | `shot4_140bpm.mp4` |
@@ -22,9 +22,9 @@ audio. Edit them into ONE vertical short-form video (9:16, 1080x1920,
 a face; if any frame accidentally contains one, crop or reframe it out.
 
 === TIMELINE (EDL) ===
-0.0–1.8s — shot1_hingal.mp4 in slow motion (50% speed). On-screen text slams
+0.0–1.8s — shot1_gasp.mp4 in slow motion (50% speed). On-screen text slams
 in word by word, huge bold white condensed all-caps with hard black shadow:
-"HINGAL AGAD? ITO KASI." Add a deep bass hit on the last word.
+"GASSING OUT EARLY? HERE'S WHY." Add a deep bass hit on the last word.
 1.8–3.0s — Hard cut to black for 2 frames, then cut to shot2_178bpm.mp4.
 3.0–8.0s — shot2_178bpm.mp4. Slow punch-in zoom to 110% centered on the
 watch showing 178 BPM. Add a subtle red vignette pulsing to a heartbeat

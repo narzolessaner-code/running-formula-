@@ -6,6 +6,7 @@ hook/retention/topic and corrects the next 3 topics.
 
 | Ep | Topic | Status | Posted | Views | Avg Watch % | Comments | Verdict / Next Action |
 |----|-------|--------|--------|-------|-------------|----------|-----------------------|
+| 000 | Warm-up / intro — "Bukas na ang Lab" (gamit existing POV + front-view footage) | ✂️ editing | — | — | — | — | UNANG POST — footage ready, edit + music na lang |
 | 001 | Zone 2 — "Hingal after 2km" | 🎬 to shoot | — | — | — | — | — |
 | 002 | Heat adaptation — "Mabagal ka sa init? Buti nga" | 📝 scripted | — | — | — | — | — |
 | 003 | Carbon vs ₱1,500 — Same Legs, Different Rules #1 (Inventions 1+2 launch) | 📝 scripted | — | — | — | — | Needs 2-run protocol muna bago i-record ang VO (may [PLACEHOLDERS]) |

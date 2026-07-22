@@ -61,4 +61,9 @@ Respond with ONLY the blueprint below. No preamble, no sign-off, no
 - Optimize for shares and saves first, then watch-time; likes last.
 - Faceless framing only. Biohacking is satire and lifestyle, never prescriptive
   medical advice. No fabricated statistics, no punching down.
+- **Only require props the creator actually has.** Use the brand bible's
+  Creator's Kit plus universal, zero-cost basics (phone, running shoes, a
+  road/room, water, coffee, a shower, a mirror, sweat, natural light). Never
+  build a shot around gear that isn't listed — no smart rings, premium
+  wearables, plunge tubs, or specialized equipment.
 - One clear idea per post. If it needs explaining, it isn't the post.

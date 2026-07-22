@@ -70,7 +70,26 @@ Sound should feel like the inside of the narrator's head at 5 A.M.
 ## 8. Hard Rules
 
 - Faceless, always. Neck-down or environmental framing only.
+- **Only call for props the creator actually has.** Default to universal,
+  zero-cost items. Never assume premium gear — smart rings, Whoop/Oura,
+  expensive wearables, plunge tubs, home gyms, specialized equipment — unless
+  it's listed in the Creator's Kit below.
 - No medical claims stated as fact — biohacking is treated as *satire and
   lifestyle*, never as prescriptive health advice.
 - No slurs, no punching down, no fabricated statistics.
 - One clear idea per post. If it needs explaining, it's not the post.
+
+## 9. Creator's Kit (what we actually have)
+
+The engine may only build shots around items in this list plus the universal,
+zero-cost basics. If a prop isn't here and isn't a basic, don't require it.
+
+**Universal basics (always available):** phone camera, running shoes + everyday
+athletic wear, a road / street / room / stairwell, water, coffee or espresso, a
+shower, a mirror, sweat, natural light.
+
+**Owned gear (add yours here):**
+- _(none listed yet — e.g. a specific watch, headphones, a yoga mat, resistance band)_
+
+Anything not in either list — smart rings, premium wearables, ice baths,
+home-gym equipment, branded gadgets — is off-limits until it's added here.

@@ -89,7 +89,7 @@ athletic wear, a road / street / room / stairwell, water, coffee or espresso, a
 shower, a mirror, sweat, natural light.
 
 **Owned gear (add yours here):**
-- _(none listed yet — e.g. a specific watch, headphones, a yoga mat, resistance band)_
+- Running watch (GPS / pace / heart rate on the wrist)
 
 Anything not in either list — smart rings, premium wearables, ice baths,
 home-gym equipment, branded gadgets — is off-limits until it's added here.

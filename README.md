@@ -15,35 +15,54 @@ all share the same cope, the same delusion, the same fake math.
 
 ---
 
-## What's in here
+## Two ways to use it: the **app**, or the **prompt**
+
+### 🖥️ The App (no other AI needed — runs by itself)
+**`app/index.html`** — *The Running Content Machine* console. Open it, pick a
+runner level, hit **Generate**, and it builds a full post kit instantly: on-screen
+text, caption, voiceover, what to film neck-down, trending-audio direction, SEO
+hook + hashtags, a pinned comment, and *why it works* — with a **live phone
+preview** of the meme. "**Drop 7**" gives you a week to film in one session.
+Works offline, on your phone, no login. (Also published as a live link you can
+bookmark.)
+
+### 🧠 The Engine (scriptable)
+**`machine/generate.py`** — the same 8-formula engine in Python. Run it to spit
+out a batch of ready posts as Markdown:
+
+```bash
+python3 machine/generate.py -n 30                 # 30 post kits → output/content-drop.md
+python3 machine/generate.py --formula fake_study  # lock a formula
+python3 machine/generate.py --level beginner      # target one level
+```
+
+A fresh 30-post drop is already committed at **`output/content-drop.md`** —
+that's your content for the next two-plus weeks, right now.
+
+### 📋 The Prompts (paste into any AI when you want a human-level co-writer)
 
 | File | What it is | When to use it |
 |---|---|---|
-| **`prompts/RUNNING-CONTENT-MACHINE.md`** | ⭐ The master prompt. Paste it into Claude/Gemini/ChatGPT and it becomes your whole content company. | Every day, to generate posts. |
+| **`prompts/RUNNING-CONTENT-MACHINE.md`** | ⭐ Master prompt. Paste into Claude/Gemini/ChatGPT → it becomes your whole content company. | When you want a smart co-writer for a specific idea. |
 | **`prompts/BRANDING-KIT.md`** | One-time prompt to name & dress the page (name, handle, bio, profile pic, cover, fonts, colors, pillars, launch plan). | Once, before you start. |
-| **`swipe-file/VIRAL-TEXT-BANK.md`** | 50+ ready-to-use on-screen text lines + captions, sorted by runner level and joke formula. Plus a Filipino/Taglish layer. | Anytime you want to post *right now* without generating. |
+| **`swipe-file/VIRAL-TEXT-BANK.md`** | 50+ ready-to-use lines + captions by level & formula, plus a Filipino/Taglish layer. | Grab-and-post, no generation. |
 
 ---
 
-## Quick start (3 steps)
+## Quick start
 
-1. **Name the page (optional but recommended).**
-   Open `prompts/BRANDING-KIT.md`, fill the 4 blanks, paste it into your AI.
-   You get a name, handle, bio, profile pic + cover prompts, fonts, colors, and
-   your first 9 posts.
+**Fastest (30 seconds):** open **`app/index.html`** → pick a level → hit
+**Generate**. Copy the kit, film the neck-down clip, drop the text on top, post.
+Or run `python3 machine/generate.py -n 30` and pull from `output/content-drop.md`.
 
-2. **Turn on the machine.**
-   Copy **all** of `prompts/RUNNING-CONTENT-MACHINE.md` and paste it as the first
-   message in a fresh Claude/Gemini/ChatGPT chat. It replies `READY`.
-
-3. **Feed it and post.**
-   Send it anything — a topic, a random thought, a study you saw, or
-   `today's run: 8k, felt like death`. It hands back a full **Post Kit**:
-   on-screen text options, the caption, a voiceover line, exactly what to film
-   neck-down, which trending audio to grab, hashtags/SEO, a pinned comment, and
-   why it works. You film, you post. Done.
-
-**In a hurry?** Skip the AI — open the swipe file, grab a line, slap it on a clip.
+**Want a co-writer for a specific idea?**
+1. *(Optional)* Name the page: open `prompts/BRANDING-KIT.md`, fill the 4 blanks,
+   paste into your AI → name, handle, bio, profile/cover prompts, fonts, colors,
+   first 9 posts.
+2. Copy **all** of `prompts/RUNNING-CONTENT-MACHINE.md` into a fresh Claude/Gemini
+   chat. It replies `READY`.
+3. Send it anything — `today's run: 8k, felt like death` — and it hands back a
+   full Post Kit. You film, you post. Done.
 
 ---
 

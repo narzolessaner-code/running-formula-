@@ -1,0 +1,587 @@
+<title>The Running Content Machine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  /* ── TOKENS ──────────────────────────────────────────────────────────── */
+  :root {
+    --paper:   #E9ECEF;   /* cool clinical printout, deliberately not cream */
+    --panel:   #F6F7F8;
+    --card:    #FFFFFF;
+    --ink:     #16191C;
+    --muted:   #5C636A;
+    --faint:   #8A9299;
+    --line:    #D5DADE;
+    --line-2:  #C3C9CE;
+    --accent:  #E1342A;   /* heart-rate signal red */
+    --accent-ink: #FFFFFF;
+    --accent-soft: #FBE7E5;
+    --good:    #12805C;
+    --frame-a: #2b2f33;   /* placeholder footage gradient */
+    --frame-b: #4a5157;
+    --shadow:  0 1px 2px rgba(20,25,30,.06), 0 8px 24px rgba(20,25,30,.08);
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0D0F11; --panel: #15181B; --card: #1B1F23;
+      --ink: #E9ECEE; --muted: #98A0A6; --faint: #6C747A;
+      --line: #282D31; --line-2: #363C41;
+      --accent: #FF4A3D; --accent-ink: #14090a; --accent-soft: #2a1512;
+      --good: #35c491; --frame-a: #0a0c0d; --frame-b: #23282c;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#E9ECEF; --panel:#F6F7F8; --card:#FFF; --ink:#16191C; --muted:#5C636A;
+    --faint:#8A9299; --line:#D5DADE; --line-2:#C3C9CE; --accent:#E1342A;
+    --accent-ink:#FFF; --accent-soft:#FBE7E5; --good:#12805C; --frame-a:#2b2f33;
+    --frame-b:#4a5157; --shadow:0 1px 2px rgba(20,25,30,.06),0 8px 24px rgba(20,25,30,.08);
+  }
+  :root[data-theme="dark"] {
+    --paper:#0D0F11; --panel:#15181B; --card:#1B1F23; --ink:#E9ECEE; --muted:#98A0A6;
+    --faint:#6C747A; --line:#282D31; --line-2:#363C41; --accent:#FF4A3D;
+    --accent-ink:#14090a; --accent-soft:#2a1512; --good:#35c491; --frame-a:#0a0c0d;
+    --frame-b:#23282c; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 20px 18px 64px; }
+
+  /* ── INSTRUMENT HEADER ───────────────────────────────────────────────── */
+  header { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 22px; }
+  .topline {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .topline .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft); animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .readout { margin-left: auto; display: flex; gap: 14px; }
+  .readout b { color: var(--muted); font-weight: 600; }
+  #themeBtn {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+    background: transparent; color: var(--faint); border: 1px solid var(--line);
+    border-radius: 6px; padding: 4px 8px; cursor: pointer;
+  }
+  #themeBtn:hover { color: var(--ink); border-color: var(--line-2); }
+
+  h1 {
+    font-size: clamp(30px, 6.5vw, 52px); line-height: .96; letter-spacing: -.03em;
+    font-weight: 800; margin: 16px 0 8px; text-wrap: balance; text-transform: uppercase;
+  }
+  h1 .thin { display:block; font-size: .34em; letter-spacing: .02em; font-weight: 800;
+    color: var(--accent); -webkit-text-stroke: 0; }
+  .sub { color: var(--muted); max-width: 60ch; font-size: 15px; }
+  .sub b { color: var(--ink); font-weight: 700; }
+
+  /* ── CONTROL DECK ────────────────────────────────────────────────────── */
+  .deck {
+    margin-top: 22px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px; box-shadow: var(--shadow);
+  }
+  .fieldrow { margin-bottom: 14px; }
+  .fieldrow:last-child { margin-bottom: 0; }
+  .flabel {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 7px; display: flex; align-items: center; gap: 8px;
+  }
+  .flabel::before { content: ""; width: 5px; height: 5px; background: var(--accent); border-radius: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    font-family: var(--mono); font-size: 12px; padding: 6px 11px; border-radius: 999px;
+    border: 1px solid var(--line-2); background: var(--card); color: var(--muted);
+    cursor: pointer; transition: transform .08s ease, background .15s, color .15s, border-color .15s;
+    user-select: none; white-space: nowrap;
+  }
+  .chip:hover { color: var(--ink); border-color: var(--faint); }
+  .chip[aria-pressed="true"] {
+    background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600;
+  }
+  .chip:active { transform: translateY(1px); }
+
+  .seedrow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
+  .seedrow input {
+    flex: 1 1 220px; min-width: 0; font-family: var(--sans); font-size: 14px;
+    padding: 11px 13px; border-radius: 9px; border: 1px solid var(--line-2);
+    background: var(--card); color: var(--ink);
+  }
+  .seedrow input::placeholder { color: var(--faint); }
+  .seedrow input:focus-visible, .chip:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .btn {
+    font-family: var(--sans); font-weight: 700; font-size: 15px; cursor: pointer;
+    border-radius: 10px; padding: 13px 20px; border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 9px; transition: transform .08s, filter .15s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); flex: 1 1 240px; justify-content: center; }
+  .btn-primary:hover { filter: brightness(1.06); }
+  .btn-ghost { background: var(--card); color: var(--ink); border-color: var(--line-2); }
+  .btn-ghost:hover { border-color: var(--faint); }
+  .kbd { font-family: var(--mono); font-size: 10px; opacity: .7; border: 1px solid currentColor;
+    border-radius: 4px; padding: 1px 5px; }
+
+  /* ── OUTPUT ──────────────────────────────────────────────────────────── */
+  .stage { margin-top: 26px; }
+  .kit {
+    display: grid; grid-template-columns: 300px 1fr; gap: 22px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px; box-shadow: var(--shadow);
+  }
+  @media (max-width: 720px) { .kit { grid-template-columns: 1fr; } }
+
+  /* phone preview */
+  .phone { }
+  .frame {
+    position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(150deg, var(--frame-b), var(--frame-a) 70%);
+    border: 1px solid var(--line-2); box-shadow: inset 0 0 60px rgba(0,0,0,.4);
+  }
+  .frame::after { /* asphalt speck texture */
+    content: ""; position: absolute; inset: 0; opacity: .5; mix-blend-mode: overlay;
+    background-image: radial-gradient(rgba(255,255,255,.5) .5px, transparent .6px);
+    background-size: 7px 7px;
+  }
+  .legs { position:absolute; left:50%; bottom:-6%; width:64%; height:58%; transform:translateX(-50%);
+    background:
+      linear-gradient(100deg, transparent 46%, rgba(0,0,0,.55) 47% 53%, transparent 54%),
+      linear-gradient(80deg, transparent 46%, rgba(0,0,0,.5) 47% 53%, transparent 54%);
+    filter: blur(1px); }
+  .overlayText {
+    position: absolute; top: 7%; left: 0; right: 0; padding: 0 16px; text-align: center;
+    font-family: var(--sans); font-weight: 800; color: #fff; white-space: pre-line;
+    font-size: clamp(13px, 4.1vw, 17px); line-height: 1.12; letter-spacing: -.01em;
+    -webkit-text-stroke: .5px rgba(0,0,0,.9);
+    text-shadow: 0 1px 0 #000, 0 0 3px rgba(0,0,0,.7), 0 2px 8px rgba(0,0,0,.5);
+  }
+  .frame .rail { position:absolute; right:9px; bottom:60px; display:flex; flex-direction:column;
+    gap:15px; color:#fff; opacity:.92; }
+  .frame .rail svg { width:23px; height:23px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6)); }
+  .frame .handle { position:absolute; left:12px; bottom:44px; right:52px; color:#fff;
+    font-family: var(--sans); font-size:12px; font-weight:700; text-shadow:0 1px 3px rgba(0,0,0,.8); }
+  .frame .cliplabel { position:absolute; left:12px; bottom:14px; font-family:var(--mono);
+    font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.72);
+    text-shadow:0 1px 2px rgba(0,0,0,.9); }
+  .caption-preview { margin-top:11px; font-size:13.5px; color:var(--muted); }
+  .caption-preview b { color: var(--ink); font-weight:700; }
+  .rerolls { display:flex; gap:7px; margin-top:11px; }
+  .reroll { flex:1; font-family:var(--mono); font-size:11px; padding:7px; border-radius:8px;
+    border:1px solid var(--line-2); background:transparent; color:var(--muted); cursor:pointer; }
+  .reroll:hover { color:var(--ink); border-color:var(--faint); }
+
+  /* lab readout */
+  .readout-panel { min-width: 0; }
+  .tagrow { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:16px; }
+  .tag { font-family:var(--mono); font-size:11px; letter-spacing:.04em; padding:4px 9px; border-radius:6px;
+    text-transform:uppercase; }
+  .tag.formula { background: var(--accent); color: var(--accent-ink); font-weight:600; }
+  .tag.hits { background: transparent; border:1px solid var(--line-2); color: var(--muted); }
+  .copyall { margin-left:auto; font-family:var(--sans); font-weight:700; font-size:12.5px;
+    background:transparent; border:1px solid var(--line-2); color:var(--ink); border-radius:8px;
+    padding:6px 12px; cursor:pointer; }
+  .copyall:hover { border-color: var(--accent); color: var(--accent); }
+
+  .field { border-top: 1px dashed var(--line); padding: 12px 0; }
+  .field:first-of-type { border-top: 0; padding-top: 0; }
+  .fname { font-family: var(--mono); font-size: 10px; letter-spacing:.11em; text-transform:uppercase;
+    color: var(--faint); display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+  .fname .num { color: var(--accent); }
+  .fval { font-size: 14.5px; }
+  .fval.big { font-size: 16px; font-weight: 600; }
+  .fval.mono { font-family: var(--mono); font-size: 12.5px; color: var(--muted); word-break: break-word; }
+  .alt { color: var(--faint); font-size: 12.5px; margin-top: 4px; }
+  .why { color: var(--muted); font-size: 13px; font-style: italic; }
+  .copybtn { float:right; font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
+    background:transparent; border:1px solid var(--line); color:var(--faint); border-radius:5px;
+    padding:2px 7px; cursor:pointer; margin-left:8px; }
+  .copybtn:hover { color: var(--ink); border-color: var(--faint); }
+  .copybtn.done { color: var(--good); border-color: var(--good); }
+
+  /* batch grid */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:14px; margin-top:22px; }
+  .mini { background: var(--card); border:1px solid var(--line); border-radius:12px; padding:14px;
+    box-shadow: var(--shadow); display:flex; flex-direction:column; gap:9px; }
+  .mini .mtag { font-family:var(--mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--accent); }
+  .mini .mov { font-weight:600; font-size:14px; }
+  .mini .mcap { color:var(--muted); font-size:12.5px; }
+  .mini .copybtn { float:none; align-self:flex-start; margin:0; }
+  .stack-h { font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--faint); margin:30px 0 0; display:flex; align-items:center; gap:10px; }
+  .stack-h::after { content:""; flex:1; height:1px; background:var(--line); }
+
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
+    font-family: var(--mono); font-size: 11.5px; color: var(--faint); line-height: 1.7; }
+  footer b { color: var(--muted); }
+  .toast { position: fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--paper); font-family:var(--mono); font-size:12px;
+    padding:9px 16px; border-radius:8px; opacity:0; pointer-events:none; transition:.25s; z-index:20; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="topline">
+      <span class="dot" aria-hidden="true"></span> Running Content Machine
+      <span class="readout" aria-hidden="true">
+        <span><b id="hr">142</b> bpm</span><span><b>zone&nbsp;2</b></span><span><b id="cad">180</b> spm</span>
+      </span>
+      <button id="themeBtn" type="button">◑ theme</button>
+    </div>
+    <h1><span class="thin">Faceless running page, on autopilot</span>The Cope&nbsp;Science Console</h1>
+    <p class="sub">Deadpan, pseudo-scientific <b>runner-brain humor</b> — the same DNA as
+      <i>“slam enough espresso to hit 125–150 bpm and you’re basically biohacking zone 2.”</i>
+      Pick a level, hit generate, get a full post kit: on-screen text, caption, what to film neck-down, audio, and SEO.
+      Built to make <b>every</b> runner laugh — never-started to GOAT.</p>
+  </header>
+
+  <section class="deck" aria-label="controls">
+    <div class="fieldrow">
+      <div class="flabel">Who it hits hardest</div>
+      <div class="chips" id="levelChips" role="group" aria-label="audience level"></div>
+    </div>
+    <div class="fieldrow">
+      <div class="flabel">Joke formula</div>
+      <div class="chips" id="formulaChips" role="group" aria-label="formula"></div>
+    </div>
+    <div class="fieldrow">
+      <div class="flabel">Optional — seed a topic / your handle</div>
+      <div class="seedrow">
+        <input id="topic" type="text" placeholder="topic seed (e.g. 5am, treadmill, gels) — optional" aria-label="topic seed" />
+        <input id="brand" type="text" placeholder="@yourpage (for a branded hashtag)" aria-label="brand handle" style="flex:0 1 200px" />
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" id="genBtn" type="button">⚡ Generate post kit <span class="kbd">G</span></button>
+      <button class="btn btn-ghost" id="batchBtn" type="button">▣ Drop 7 to film</button>
+    </div>
+  </section>
+
+  <div class="stage" id="stage" aria-live="polite"></div>
+  <div id="batchStack"></div>
+
+  <footer>
+    <b>RULES BAKED IN:</b> punch at our own delusion — never at a person’s body or ability. Never joke away real safety (chest pain, heat, hydration).<br />
+    Overlay tells a small lie, the caption tells a bigger one. Real jargon + absurd logic, said dead serious.<br />
+    <b>ENGINE:</b> 8 formulas × interchangeable banks → thousands of combinations. Same logic ships as <b>machine/generate.py</b> in the repo.
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ── BANKS (mirror of machine/generate.py) ─────────────────────────────── */
+const LEVELS = { all:"All", never_started:"Never-started", beginner:"Beginner",
+  intermediate:"Intermediate", advanced:"Advanced", elite:"Elite", goat:"GOAT" };
+
+const ESCALATIONS = [
+  "I'm basically running 120 miles per week.","Peaking for Boston.",
+  "Manifesting the sub-3 in a body built for the couch.",
+  "Strava can't measure what the heart already knows.",
+  "This is elite-level training if you don't think about it.",
+  "The mitochondria understand even if you don't.",
+  "Adjusted for conditions, that was a marathon.",
+  "Doing the hard thing (the hard thing was nothing).",
+  "Kipchoge could never (he could, easily, but let me have this).",
+  "Currently in a training block nobody can see.",
+  "World-class engine, dial-up connection.",
+  "My VO2 max is potential energy right now.",
+  "Untrained talent is the most dangerous kind.",
+  "Sub-elite mind, pre-beginner legs, unbothered." ];
+
+const FILM = [
+  "Slow-mo of shoes striking wet pavement, then the feet stop dead.",
+  "Treadmill belt + legs; the watch beeps and you glance down (no face).",
+  "Sweaty forearm + GPS watch close-up; thumb hits stop.",
+  "Chugging a water bottle, framed from the collarbone down.",
+  "Lacing up in the dark at 5am, lit by a phone flashlight.",
+  "Hands on knees, bent over, heavy-breathing shot.",
+  "Feet crossing a finish-line mat in slow-mo.",
+  "POV legs on a trail, dust kicking up behind you.",
+  "Legs pacing the kitchen while 'resting'; coffee cup in frame.",
+  "Static shot of your running shoes by the door you didn't use today." ];
+
+const AUDIO = [
+  "Slowed sad-boy remix (~0:40), big drop ~0:15 — hit it on the punchline.",
+  "Trending phonk with a hard beat switch exactly when the text lands.",
+  "Soft 'deep thoughts' piano — contrast the sincerity with the dumb claim.",
+  "Whatever audio is trending this week; cut the beat to when the overlay hits.",
+  "Deadpan silence + one keyboard-clack SFX as the caption snaps in.",
+  "Uplifting cinematic build that absolutely does not match the effort shown." ];
+
+const H_BROAD = ["#running","#runtok","#runningmotivation","#marathon","#halfmarathon","#cardio","#fitness","#runners"];
+const H_NICHE = ["#zone2","#vo2max","#runnersofinstagram","#couchto5k","#runnerlife","#marathontraining","#trailrunning","#runningcommunity","#5k","#negativesplit"];
+const H_MICRO = ["#runnerbrain","#copescience","#delulurunner","#runningmemes","#5amclub"];
+
+const PINNED = [
+  "Be honest — which level are you 😭","Tag the runner who NEEDS to hear this science.",
+  "Sources? My heart. Next question.","Reply with your most delusional running cope, I'll wait.",
+  "Which one of you is the '5am is discipline' person.","Rate the science /10 in the comments." ];
+
+const COPE_MUNDANE = ["Standing up too fast and seeing stars","Drinking a triple espresso on an empty stomach",
+  "Carrying every grocery bag in one trip","Sprinting for a closing elevator","Shivering at a cold bus stop",
+  "Pacing the kitchen during an intense phone call","Taking the stairs because the lift was full",
+  "An hour of doomscrolling with my heart rate somehow up","Chugging a pre-workout and then doing absolutely nothing",
+  "A very heated argument (in my head, in the shower)","Walking to the fridge at 2am with real purpose",
+  "Carrying a full laundry basket up three floors","Rage-cleaning the entire apartment before guests",
+  "Holding a plank for the exact length of one TikTok"];
+const COPE_ELITE = ["zone 2 cardio","altitude training","heat adaptation","a lactate threshold session",
+  "a VO2 max workout","active recovery","plyometrics","a tempo run","cross-training","base-building",
+  "a fasted cardio block","interval work"];
+const COPE_CLOSE = ["Same physiological adaptation. Look it up.","The mitochondria don't know the difference.",
+  "Biohacking, technically.","Peer-reviewed by my nervous system.","Free gains. Scientifically.",
+  "My smartwatch logged it as exercise, so it's official."];
+
+const FAKE_FIND = ["runners who complain about their knees live seven years longer — it's the complaining",
+  "90% of your fitness is stored in the shoes you haven't bought yet",
+  "saying you woke up at 5am gives the same status as the run, at 0% the effort",
+  "the runner's high is just your body thanking you for finally shutting up and moving",
+  "one screenshot of your splits delivers 30% of the training effect",
+  "describing your long run in full detail burns an extra 200 calories socially",
+  "carbon plates improve your mood more than your time, and that still counts",
+  "the fastest route to a PR is buying a slightly nicer water bottle",
+  "people who say 'I'm not a real runner' run more than people who say they are",
+  "negative-splitting the walk to the fridge builds elite mental toughness"];
+const FAKE_ATTR = ["Peer-reviewed by me, on the couch, this morning.","The data is in my heart, not a journal.",
+  "Sources: it felt true.","n = 1, but a very confident 1.","Science is just organized coping and I respect it."];
+
+const MATH_COND = ["It was hot","There were hills","I forgot to fuel","The wind was in my face the whole time (both ways)",
+  "I went in already tired","The humidity was insane","I ran on dead legs","It was before coffee"];
+const MATH_INF = ["so today's 5k counts as a 10k — heat is basically hills for your blood",
+  "so every kilometer counts double; that's just physics",
+  "so that easy run was secretly a tempo — my watch simply can't measure vibes",
+  "so I'm rounding up to a half marathon, adjusted for conditions",
+  "so pace is irrelevant, only the suffering counts, and I suffered elite-ly",
+  "so technically I did altitude training at sea level"];
+
+const NOBODY = ["Me, describing my long run mile by mile to a person eating lunch",
+  "My watch after I stop at one red light: 'Resuming activity?'",
+  "Me at 4:57am fully dressed, staring at the rain, deciding if I'm a real one",
+  "Me explaining negative splits to someone who asked how my weekend was",
+  "Me pretending the 5am alarm is discipline and not just anxiety with shoes",
+  "Me telling everyone it was 'just an easy run' after nearly dying",
+  "My Strava caption doing more mileage than my actual legs",
+  "Me icing a knee that has never once been diagnosed with anything"];
+
+const GEAR_ITEM = ["New carbon plates","This overpriced GPS watch","A fresh pair of running socks",
+  "The compression sleeves I do not need","A gel I bought purely for the aesthetic",
+  "Sunglasses I only wear to run","The new colorway","A heart-rate strap I trust more than doctors"];
+const GEAR_FX = ["+4% VO2 max on paper. The confidence handles the other +11%",
+  "+2% to my pace, +40% to my personality","no faster, but now I'm a problem, and that's enough",
+  "mostly they just make me refuse to walk. That's the technology",
+  "one (1) PR I'll credit entirely to grit in the caption"];
+
+const REC_ACT = ["Lying face-down on the kitchen floor after a run","A second bowl of pasta 'for the glycogen'",
+  "Ice cream, as cold carb replenishment","A strategic 2pm nap","Skipping the cooldown to lie down immediately",
+  "Not moving a single muscle for four hours"];
+const REC_SCI = ["is active recovery — the tile is grounding me. Biohacking.",
+  "is where the actual gains are made. Silently. Horizontally.",
+  "is protein-adjacent nutrition timing. I did the math.",
+  "is when the magic happens; I'm 90% through the workout.",
+  "is elite recovery protocol. Kipchoge also lies down (probably)."];
+
+const SKIP = ["Overtraining kills more gains than laziness ever will — I'm protecting my VO2 max",
+  "Rest days are when you get faster, so by that logic I'm about to be extremely fast",
+  "You can't PR on tired legs, and mentally my legs are exhausted",
+  "The plan said 'listen to your body' and my body said absolutely not",
+  "Adaptation happens at rest, and I am adapting harder than anyone alive right now"];
+
+const NEVER = [
+  ["Watching a marathon on YouTube counts as visualization training. Elite athletes do this. I'm basically tapering.","Cope Equivalence"],
+  ["Signing up for the 5k already burned 400 calories emotionally. The sign-up page is the hardest mile.","Delusional Flex"],
+  ["Getting winded on the stairs is just my VO2 max being humble. The potential is right there.","Cope Equivalence"] ];
+
+/* ── ENGINE ────────────────────────────────────────────────────────────── */
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const sample = (a,n) => { const c=[...a]; const o=[]; while(n-- && c.length) o.push(c.splice(Math.floor(Math.random()*c.length),1)[0]); return o; };
+const cap = s => s.charAt(0).toLowerCase()+s.slice(1);
+
+const BUILDERS = {
+  cope: () => { let l = `${pick(COPE_MUNDANE)} is basically ${pick(COPE_ELITE)}. ${pick(COPE_CLOSE)}`;
+    if (Math.random()<0.45) l = "Scientifically speaking, "+cap(l);
+    return [l, "Cope Equivalence", ["beginner","intermediate","advanced"]]; },
+  fake_study: () => [`New study: ${pick(FAKE_FIND)}. ${pick(FAKE_ATTR)}`, "Fake Study", Object.keys(LEVELS).filter(k=>k!=="all")],
+  math: () => [`${pick(MATH_COND)}, ${pick(MATH_INF)}.`, "Delulu Runner Math", ["beginner","intermediate","advanced"]],
+  nobody: () => [`Nobody:\n${pick(NOBODY)}:`, "Nobody: / Runners:", ["intermediate","advanced","elite"]],
+  gear: () => [`${pick(GEAR_ITEM)}: ${pick(GEAR_FX)}.`, "Gear Placebo Science", ["intermediate","advanced","elite","goat"]],
+  recovery: () => [`${pick(REC_ACT)} ${pick(REC_SCI)}`, "Recovery Cope", ["beginner","intermediate","advanced","elite"]],
+  skip: () => [`Skipping today is the smart move. ${pick(SKIP)}.`, "Rationalized Skip", ["never_started","beginner","intermediate"]],
+};
+const WHY = {
+  "Cope Equivalence":"Real jargon + an absurd equivalence, said dead serious — the in-group password plus the cope.",
+  "Fake Study":"Invents 'science' that flatters the runner; the fake citation IS the joke.",
+  "Delulu Runner Math":"Effort-inflation logic everyone secretly uses — you just said the quiet part out loud.",
+  "Nobody: / Runners:":"Names a behavior every runner recognizes in themselves — instant self-tag + share.",
+  "Gear Placebo Science":"Turns gear guilt into fake performance math; light, universal, very shareable.",
+  "Recovery Cope":"Dresses up rest/food as elite protocol — permission to relax, delivered as science.",
+  "Rationalized Skip":"The science-y excuse not to run; the most relatable delusion there is.",
+  "Delusional Flex":"Tiny effort, enormous claim — the gap is the whole joke." };
+
+function overlayFor(formulaKey, levelKey){
+  if (levelKey === "never_started" && Math.random() < 0.7){ const n = pick(NEVER); return [n[0], n[1], ["never_started"]]; }
+  const key = (formulaKey && formulaKey!=="all") ? formulaKey : pick(Object.keys(BUILDERS));
+  return BUILDERS[key]();
+}
+function hashtags(brand){
+  const t = sample(H_BROAD,3).concat(sample(H_NICHE,3), sample(H_MICRO,1));
+  if (brand){ const b = brand.replace(/^[#@]/,"").toLowerCase().replace(/[^a-z0-9]/g,""); if(b) t.push("#"+b); }
+  return t.join(" ");
+}
+function searchHook(ov){ return ov.replace(/\n/g," ").split(" ").slice(0,6).join(" ").replace(/[.,:]+$/,"") + " …"; }
+function voiceover(ov){
+  if (Math.random()<0.4) return "none — let the on-screen text carry it in silence.";
+  const first = ov.split("\n")[0].split(". ")[0].trim().replace(/[.:]+$/,"");
+  return `Flat, dead-serious delivery: “${first}.” No smile. That’s the joke.`;
+}
+function makeKit(){
+  const fk = state.formula, lk = state.level;
+  const [ov, formula, levels] = overlayFor(fk, lk);
+  const hits = (lk && lk!=="all") ? lk : pick(levels);
+  const capA = pick(ESCALATIONS), capB = pick(ESCALATIONS.filter(e=>e!==capA));
+  const altOv = overlayFor(fk, lk)[0];
+  return { formula, hits: LEVELS[hits], overlay: ov, overlayAlt: altOv,
+    caption: capA, captionAlt: capB, vo: voiceover(ov), film: pick(FILM), audio: pick(AUDIO),
+    hashtags: hashtags(state.brand), hook: searchHook(ov), pinned: pick(PINNED), why: WHY[formula]||"" };
+}
+
+/* ── STATE + CHIPS ─────────────────────────────────────────────────────── */
+const state = { level:"all", formula:"all", brand:"", topic:"", current:null };
+const FORMULA_CHIPS = { all:"All", cope:"Cope", fake_study:"Fake Study", math:"Delulu Math",
+  nobody:"Nobody:", gear:"Gear", recovery:"Recovery", skip:"Skip" };
+
+function buildChips(hostId, obj, key){
+  const host = document.getElementById(hostId);
+  Object.entries(obj).forEach(([val,label])=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = label;
+    b.setAttribute("aria-pressed", val===state[key] ? "true":"false");
+    b.onclick = () => { state[key] = val;
+      [...host.children].forEach(c=>c.setAttribute("aria-pressed","false"));
+      b.setAttribute("aria-pressed","true"); };
+    host.appendChild(b);
+  });
+}
+buildChips("levelChips", LEVELS, "level");
+buildChips("formulaChips", FORMULA_CHIPS, "formula");
+
+/* ── RENDER ────────────────────────────────────────────────────────────── */
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const kitText = k => `ON-SCREEN TEXT:\n${k.overlay}\n\nCAPTION:\n${k.caption}\n\nVOICEOVER: ${k.vo}\n\nFILM (neck-down): ${k.film}\n\nAUDIO: ${k.audio}\n\nSEO HOOK: ${k.hook}\nHASHTAGS: ${k.hashtags}\n\nPINNED COMMENT: ${k.pinned}\n\nWHY IT WORKS: ${k.why}`;
+
+function fld(num,name,inner,extra){
+  return `<div class="field"><div class="fname"><span class="num">${num}</span> ${name}
+    ${extra?`<button class="copybtn" data-copy="${esc(extra)}">copy</button>`:""}</div>${inner}</div>`;
+}
+function renderKit(k){
+  state.current = k;
+  const handle = state.brand ? esc(state.brand.startsWith("@")?state.brand:"@"+state.brand.replace(/^@/,"")) : "@yourpage";
+  document.getElementById("stage").innerHTML = `
+    <div class="kit">
+      <div class="phone">
+        <div class="frame">
+          <div class="legs"></div>
+          <div class="overlayText">${esc(k.overlay)}</div>
+          <div class="rail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-5a8.4 8.4 0 0 1-.9-4 8.5 8.5 0 0 1 17 .5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>
+          </div>
+          <div class="handle">${handle}</div>
+          <div class="cliplabel">▶ your neck-down clip here</div>
+        </div>
+        <div class="caption-preview"><b>${handle}</b> ${esc(k.caption)}</div>
+        <div class="rerolls">
+          <button class="reroll" id="rrOverlay">↻ overlay</button>
+          <button class="reroll" id="rrCaption">↻ caption</button>
+        </div>
+      </div>
+      <div class="readout-panel">
+        <div class="tagrow">
+          <span class="tag formula">${esc(k.formula)}</span>
+          <span class="tag hits">hits: ${esc(k.hits)}</span>
+          <button class="copyall" data-copy="${esc(kitText(k))}">⧉ Copy whole kit</button>
+        </div>
+        ${fld("01","On-screen text","<div class='fval big'>"+esc(k.overlay).replace(/\n/g,"<br>")+"</div><div class='alt'>alt: "+esc(k.overlayAlt)+"</div>", k.overlay)}
+        ${fld("02","Caption (the bigger lie)","<div class='fval'>"+esc(k.caption)+"</div><div class='alt'>alt: "+esc(k.captionAlt)+"</div>", k.caption)}
+        ${fld("03","Voiceover","<div class='fval'>"+esc(k.vo)+"</div>")}
+        ${fld("04","Film this (neck-down)","<div class='fval'>"+esc(k.film)+"</div>")}
+        ${fld("05","Audio","<div class='fval'>"+esc(k.audio)+"</div>")}
+        ${fld("06","SEO / discovery","<div class='fval mono'>hook: "+esc(k.hook)+"<br>"+esc(k.hashtags)+"</div>", k.hashtags)}
+        ${fld("07","Pinned comment","<div class='fval'>"+esc(k.pinned)+"</div>", k.pinned)}
+        ${fld("08","Why it works","<div class='why'>"+esc(k.why)+"</div>")}
+      </div>
+    </div>`;
+  document.getElementById("rrOverlay").onclick = () => { const [ov]=overlayFor(state.formula,state.level); k.overlay=ov; k.hook=searchHook(ov); k.vo=voiceover(ov); renderKit(k); };
+  document.getElementById("rrCaption").onclick = () => { k.caption=pick(ESCALATIONS); renderKit(k); };
+  wireCopy();
+}
+
+function renderBatch(n){
+  const host = document.getElementById("batchStack");
+  const kits = Array.from({length:n}, makeKit);
+  host.innerHTML = `<div class="stack-h">Drop — ${n} kits to film in one session</div>
+    <div class="grid">` + kits.map(k=>`
+      <div class="mini">
+        <span class="mtag">${esc(k.formula)} · ${esc(k.hits)}</span>
+        <div class="mov">${esc(k.overlay).replace(/\n/g,"<br>")}</div>
+        <div class="mcap">${esc(k.caption)}</div>
+        <button class="copybtn" data-copy="${esc(kitText(k))}">copy kit</button>
+      </div>`).join("") + `</div>`;
+  wireCopy();
+}
+
+/* ── COPY + TOAST ──────────────────────────────────────────────────────── */
+let toastT;
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),1400); }
+function wireCopy(){
+  document.querySelectorAll("[data-copy]").forEach(b=>{
+    b.onclick = async () => {
+      try { await navigator.clipboard.writeText(b.getAttribute("data-copy")); }
+      catch(e){ const ta=document.createElement("textarea"); ta.value=b.getAttribute("data-copy");
+        document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+      if (b.classList.contains("copybtn")){ const o=b.textContent; b.textContent="✓ copied"; b.classList.add("done");
+        setTimeout(()=>{b.textContent=o;b.classList.remove("done");},1200); }
+      toast("Copied to clipboard");
+    };
+  });
+}
+
+/* ── WIRING ────────────────────────────────────────────────────────────── */
+const generate = () => { state.brand=document.getElementById("brand").value.trim();
+  state.topic=document.getElementById("topic").value.trim(); renderKit(makeKit());
+  window.scrollTo({top: document.getElementById("stage").offsetTop-70, behavior:"smooth"}); };
+document.getElementById("genBtn").onclick = generate;
+document.getElementById("batchBtn").onclick = () => { state.brand=document.getElementById("brand").value.trim();
+  renderBatch(7); document.getElementById("batchStack").scrollIntoView({behavior:"smooth"}); };
+document.addEventListener("keydown", e => {
+  if (e.target.tagName==="INPUT") return;
+  if (e.key==="g"||e.key==="G"||e.code==="Space"){ e.preventDefault(); generate(); }
+});
+
+/* theme toggle */
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme")
+    || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark":"light");
+  document.documentElement.setAttribute("data-theme", cur==="dark"?"light":"dark");
+};
+/* ambient instrument readout (respects reduced motion) */
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  setInterval(()=>{ document.getElementById("hr").textContent = 138+Math.floor(Math.random()*10);
+    document.getElementById("cad").textContent = 176+Math.floor(Math.random()*9); }, 1600);
+}
+/* first kit on load */
+renderKit(makeKit());
+</script>

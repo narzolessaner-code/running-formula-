@@ -47,6 +47,14 @@ that's your content for the next two-plus weeks, right now.
 | **`prompts/BRANDING-KIT.md`** | One-time prompt to name & dress the page (name, handle, bio, profile pic, cover, fonts, colors, pillars, launch plan). | Once, before you start. |
 | **`swipe-file/VIRAL-TEXT-BANK.md`** | 50+ ready-to-use lines + captions by level & formula, plus a Filipino/Taglish layer. | Grab-and-post, no generation. |
 
+### 🚀 The Setup (name, look, and how to launch on every platform)
+
+| File | What it is |
+|---|---|
+| **`BRAND.md`** | Your identity — name, handle `@basicallyelite`, bio, palette, fonts, on-screen text spec, 5 pillars, 9-post launch plan. |
+| **`PLATFORM-PLAYBOOK.md`** | Full launch playbook for **Facebook + Instagram + TikTok**: setup, categories, SEO, trending-audio strategy, hashtags, posting times, and a launch checklist. |
+| **`assets/README.md`** | Links to your profile pic + cover in Canva. |
+
 ---
 
 ## Quick start

@@ -385,7 +385,51 @@ function generatePlan(o){
 /* ---------------------------------------------------------------- MEMORY --*/
 
 const KEY="sanercoach:v1";
-const S={tab:"setup",ath:null,log:[],cfg:{apiKey:"",model:"claude-sonnet-5"},chat:[],openWeek:0};
+const S={tab:"setup",ath:null,log:[],cfg:{apiKey:"",model:"claude-sonnet-5"},chat:[],openWeek:0,pro:false};
+
+/* ------------------------------------------------------------ MEMBERSHIP --*/
+/* Free shows the first two weeks so a runner can see the quality of the work.
+   Everything that actually changes an outcome — the rest of the block, the
+   adaptive log, the coach — sits behind the subscription.
+   Hand a code to anyone who pays. Add or change codes here at any time.     */
+const PRICE="₱499";
+const FREE_WEEKS=2;
+const PRO_CODES=["SANER499","SANERPRO","COACHSANER"];
+const isPro=()=>S.pro===true;
+function redeem(code){
+  const c=String(code||"").trim().toUpperCase().replace(/[\s-]/g,"");
+  if(PRO_CODES.indexOf(c)>-1){S.pro=true;persist();return true;}
+  return false;
+}
+function joinLink(what){
+  const L=(S.ath&&S.ath.vdot)?live():{vdot:null};
+  const sub=encodeURIComponent("Saner Coach membership — "+(S.ath.name||"new athlete"));
+  const body=encodeURIComponent("Hi Coach,\n\nI want to unlock the full plan at "+PRICE+" a month.\n\n"+
+    "Name: "+((S.ath&&S.ath.name)||"")+"\nAge: "+((S.ath&&S.ath.age)||"")+
+    "\nLevel: "+(S.ath?LEVELS[S.ath.level].label:"")+
+    "\nGoal: "+(S.ath?((DISTANCES.filter(d=>d.id===S.ath.event)[0]||{label:""}).label+" in "+S.ath.weeks+" weeks"):"")+
+    (L.vdot?"\nVDOT: "+L.vdot.toFixed(1):"")+
+    (what?"\n\nI got stopped at: "+what:"")+
+    "\n\nPlease send me the payment details and my access code.\n\nThanks!");
+  return "mailto:narzolessaner@gmail.com?subject="+sub+"&body="+body;
+}
+function paywall(title,lines,what){
+  return '<div class="card" style="border-color:var(--z-i)">'+
+    '<span class="eyebrow" style="color:var(--z-i)">Members only</span>'+
+    '<h3 style="font-size:20px;margin:8px 0 6px">'+esc(title)+'</h3>'+
+    '<ul class="muted" style="margin:0 0 12px;padding-left:18px">'+
+      lines.map(l=>'<li style="margin:5px 0">'+l+'</li>').join("")+'</ul>'+
+    '<div class="num" style="font-size:30px;color:var(--ink)">'+PRICE+
+      '<span class="muted" style="font-size:14px"> / month</span></div>'+
+    '<p class="faint" style="margin:4px 0 12px">Cancel anytime. First week free. Your paces and your '+
+      'first '+FREE_WEEKS+' weeks stay free forever, with or without a membership.</p>'+
+    '<a href="'+joinLink(what)+'" style="display:inline-block;background:var(--z-i);color:#04141E;'+
+      'padding:11px 18px;border-radius:2px;font-family:\'Barlow Condensed\',ui-sans-serif,sans-serif;'+
+      'text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:14px;text-decoration:none">'+
+      'Unlock — '+PRICE+'/mo</a>'+
+    '<button class="ghost" style="margin-left:8px" data-act="gocode">I have a code</button>'+
+    '</div>';
+}
 
 const DEFAULT_ATH={name:"",age:30,male:true,weightKg:65,heightCm:170,level:"recreational",
   parq:[false,false,false,false,false,false,false],symptoms:false,lea:[],active:true,
@@ -393,7 +437,7 @@ const DEFAULT_ATH={name:"",age:30,male:true,weightKg:65,heightCm:170,level:"recr
   hrRest:55,hrMax:null,done:false};
 
 function persist(){
-  try{localStorage.setItem(KEY,JSON.stringify({ath:S.ath,log:S.log,cfg:S.cfg,chat:S.chat}));}
+  try{localStorage.setItem(KEY,JSON.stringify({ath:S.ath,log:S.log,cfg:S.cfg,chat:S.chat,pro:S.pro}));}
   catch(e){/* private mode or full — app still works this session */}
 }
 function restore(){
@@ -407,6 +451,7 @@ function restore(){
   // Old saved configs may hold retired model IDs.
   if(/4-6$|opus-4-5$|^claude-haiku-4-5$/.test(S.cfg.model))S.cfg.model="claude-sonnet-5";
   S.chat=(d&&Array.isArray(d.chat))?d.chat:[];
+  S.pro=!!(d&&d.pro);
   S.tab=S.ath.done?"paces":"setup";
 }
 
@@ -590,6 +635,15 @@ function vPaces(){
         '<td class="num">'+fmtTime(p)+'</td></tr>';}).join("")+
     '</tbody></table></div>';
 
+  if(!isPro()){
+    html+=paywall("Your paces are free. The rest of the analysis is not.",[
+      "What you can run right now at every distance from 800 m to the marathon",
+      "Critical speed and D′ — whether you should front-run or sit and kick",
+      "Your personal heart-rate zones, and hill and treadmill conversions",
+      "The full training block, your log, and the coach"],"the paces tab");
+    return html;
+  }
+
   const five=timeAtVdot(vd,5000);
   html+='<div class="card"><span class="eyebrow">Equivalent race times at VDOT '+vd.toFixed(1)+'</span>'+
     '<table style="margin-top:10px"><thead><tr><th>Distance</th><th>Model</th><th>Riegel from 5 km</th></tr></thead><tbody>'+
@@ -647,7 +701,9 @@ function vPlan(){
       'eight are the ones who get hurt and stop.</p>':"")+
     flags.filter(f=>f.sev==="warn").map(f=>'<div class="flag warn">'+esc(f.msg)+'</div>').join("")+'</div>';
 
+  const gated=!isPro();
   plan.forEach((w,i)=>{
+    if(gated&&i>=FREE_WEEKS)return;
     html+='<div class="card tight"><div class="wkhead" data-week="'+i+'">'+
       '<span class="disp" style="font-size:19px">Week '+w.week+'</span>'+
       '<span class="pill">'+w.phase+'</span>'+
@@ -660,6 +716,29 @@ function vPlan(){
       '</div>';
   });
 
+  if(gated&&plan.length>FREE_WEEKS){
+    const rest=plan.length-FREE_WEEKS;
+    // A teaser of the locked weeks: shape visible, sessions not.
+    html+='<div class="card tight" style="opacity:.45;pointer-events:none">'+
+      plan.slice(FREE_WEEKS,FREE_WEEKS+3).map(w=>'<div class="wkhead" style="padding:7px 0">'+
+        '<span class="disp" style="font-size:19px">Week '+w.week+'</span>'+
+        '<span class="pill">'+w.phase+'</span>'+
+        (w.volume?'<span class="num" style="margin-left:auto;color:var(--ink-dim)">'+w.volume+' km</span>':"")+
+        '</div>').join("")+
+      '<div class="faint" style="text-align:center;padding:10px 0">· · ·</div></div>';
+    html+=paywall("The other "+rest+" weeks are where the race is won",[
+      "Every remaining week, session by session, all the way to race day",
+      "The build, the peak, and the taper — the part that actually makes you faster",
+      "Your log, so the plan rebuilds itself around the runs you really did",
+      "The coach, who answers you and adjusts when life gets in the way"],
+      "week "+(FREE_WEEKS+1)+" of my plan");
+    html+='<div class="card"><span class="eyebrow">Why only two weeks free</span>'+
+      '<p class="muted" style="margin-top:8px">Two weeks is enough to prove the paces are right and the '+
+      'sessions are real. It is not enough to get you fit. Fitness comes from the block — the progression, '+
+      'the consolidation weeks, and the taper — and that is what a membership buys.</p></div>';
+    return html;
+  }
+
   html+='<div class="card"><span class="eyebrow">Why it is shaped this way</span>'+
     '<p class="muted" style="margin-top:8px">Roughly 80% of your running sits at easy intensity, because '+
     'that distribution consistently outperforms training everything in the middle. Every fourth week '+
@@ -670,6 +749,12 @@ function vPlan(){
 }
 
 function vLog(){
+  if(!isPro())return paywall("The log is what makes this a coach instead of a calculator.",[
+    "Log every run and your paces move with your real fitness, not a number from months ago",
+    "A race or time trial re-rates you on the spot",
+    "Two brutal sessions in a row and the plan backs off before you break",
+    "Miss ten days and it rebuilds from an honest lower base instead of pretending",
+    "Load, monotony and strain, so you see a bad week coming"],"the log");
   const L=live(),flags=guardFlags();
   const now=Date.now();
   const wk=S.log.filter(e=>now-new Date(e.date)<7*86400000);
@@ -727,6 +812,11 @@ function stat(label,val,color){
 }
 
 function vCoach(){
+  if(!isPro())return paywall("A coach who already knows your numbers.",[
+    "Ask anything, any day — it sees your paces, your log, and your flags",
+    "\"I felt terrible today\" and it adjusts tomorrow for you",
+    "Race pacing, missed weeks, niggles, travel, night shifts — real answers for your life",
+    "It will never prescribe faster than your engine says, and never train you through pain"],"the coach");
   const flags=guardFlags(),halted=flags.some(f=>f.sev==="stop");
   let html='<div class="card tight"><span class="eyebrow">Coach — sees your paces, your log, and your flags</span>'+
     (halted?'<div class="flag stop" style="margin-top:10px">A stop-flag is open, so the coach will not prescribe training. It can still talk with you.</div>':"")+
@@ -751,30 +841,31 @@ function vCoach(){
     (S.chat.length?'<button class="ghost" style="margin-top:10px" data-act="clearchat">Clear conversation</button>':"")+
     '</div>';
 
-  const mailSub=encodeURIComponent("Coaching application — "+(S.ath.name||"new athlete")+
-    (live().vdot?" (VDOT "+live().vdot.toFixed(1)+")":""));
-  const mailBody=encodeURIComponent("Hi Coach,\n\nI want to start 1 on 1 coaching at P709 per month.\n\n"+
-    "Name: "+(S.ath.name||"")+"\nAge: "+S.ath.age+"\nLevel: "+LEVELS[S.ath.level].label+
-    "\nGoal: "+((DISTANCES.filter(d=>d.id===S.ath.event)[0]||{label:""}).label)+" in "+S.ath.weeks+" weeks"+
-    (live().vdot?"\nVDOT: "+live().vdot.toFixed(1):"")+
-    "\n\nPlease send me the next steps.\n\nThanks!");
-  html+='<div class="card"><span class="eyebrow">Prefer a human? 1 on 1 coaching</span>'+
-    '<p class="muted" style="margin-top:8px">Everything in this app is yours, free, forever. If you want '+
-    'a real coach personally reviewing your week, rebuilding your plan around your actual life, and '+
-    'answering you every day, that is what I do. <strong style="color:var(--ink)">₱709 a month</strong>, '+
-    'cancel anytime, first week free.</p>'+
-    '<a href="mailto:narzolessaner@gmail.com?subject='+mailSub+'&body='+mailBody+'" '+
-    'style="display:inline-block;background:var(--z-i);color:#04141E;padding:11px 18px;border-radius:2px;'+
-    'font-family:\'Barlow Condensed\',ui-sans-serif,sans-serif;text-transform:uppercase;letter-spacing:.1em;'+
-    'font-weight:600;font-size:14px;text-decoration:none;margin-top:4px">Apply — ₱709/mo</a>'+
-    '<p class="faint" style="margin-top:10px">A handful of athletes at a time. Your profile above goes '+
-    'into the application automatically, so I already know where you are on day one.</p></div>';
   return html;
 }
 
 function vSettings(){
   const a=S.ath;
-  return '<div class="card"><span class="eyebrow">Connect a model</span>'+
+  const member=isPro()
+   ? '<div class="card" style="border-color:var(--z-m)"><span class="eyebrow" style="color:var(--z-m)">Membership active</span>'+
+     '<p class="muted" style="margin-top:8px">Everything is unlocked — the full block, your log, and the '+
+     'coach. Thank you for backing this.</p>'+
+     '<button class="ghost" data-act="signout">Sign out of membership</button></div>'
+   : '<div class="card" style="border-color:var(--z-i)"><span class="eyebrow" style="color:var(--z-i)">Membership</span>'+
+     '<p class="muted" style="margin-top:8px">Free gives you your VDOT, your five training paces, and the '+
+     'first '+FREE_WEEKS+' weeks of your block. A membership opens the rest of the plan, the adaptive log, '+
+     'the coach, and the full analysis.</p>'+
+     '<div class="num" style="font-size:30px">'+PRICE+'<span class="muted" style="font-size:14px"> / month</span></div>'+
+     '<p class="faint" style="margin:4px 0 12px">Cancel anytime. First week free.</p>'+
+     '<a href="'+joinLink("")+'" style="display:inline-block;background:var(--z-i);color:#04141E;'+
+     'padding:11px 18px;border-radius:2px;font-family:\'Barlow Condensed\',ui-sans-serif,sans-serif;'+
+     'text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:14px;text-decoration:none">'+
+     'Join — '+PRICE+'/mo</a>'+
+     '<div class="row" style="margin-top:16px">'+
+       fld("Access code",'<input id="s_code" placeholder="given to you after payment">')+
+     '</div><button data-act="redeem">Unlock</button>'+
+     '<div id="codeOut"></div></div>';
+  return member+'<div class="card"><span class="eyebrow">Connect a model</span>'+
    '<p class="muted" style="margin-top:8px">The coach needs an API key. Get one at '+
    '<a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener" style="color:var(--z-e)">platform.claude.com</a> '+
    '→ Settings → API keys → Create Key. Copy it straight away; it is shown once and never again.</p>'+
@@ -938,6 +1029,23 @@ document.addEventListener("click",e=>{
   if(act==="wipe"){
     if(confirm("Erase your profile, every logged session, and your key? This cannot be undone."))
       {localStorage.removeItem(KEY);restore();render();}
+    return;
+  }
+
+  if(act==="gocode"){S.tab="settings";render();
+    setTimeout(()=>{const el=document.getElementById("s_code");if(el)el.focus();},60);return;}
+
+  if(act==="redeem"){
+    const ok=redeem(val("s_code"));
+    const out=document.getElementById("codeOut");
+    if(ok){render();alert("Unlocked. Your full plan, log and coach are open.");}
+    else if(out)out.innerHTML='<div class="flag warn">That code was not recognised. Check for a typo, or '+
+      'email me and I will resend it.</div>';
+    return;
+  }
+
+  if(act==="signout"){
+    if(confirm("Lock the app back to the free version on this device?")){S.pro=false;persist();render();}
     return;
   }
 
